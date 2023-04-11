@@ -15,6 +15,9 @@
     <link type="text/css" rel="stylesheet" href="css/owl.carousel.min.css">
     <link type="text/css" rel="stylesheet" href="css/owl.theme.default.min.css">
     <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="js/extras.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
 
 </head>
 
@@ -22,6 +25,7 @@
     <div id="arrow">
         <i class="fa fa-arrow-up"></i>
     </div>
+
     <?php
     include_once 'fragments/barre.html'
 
@@ -29,11 +33,11 @@
     <header>
         <div class="container">
             <div class="header-info-par">
-                <h1 class="typewrite" data-period="2000" data-type='["The World Is A Beautiful Place To Be Explored.","Adventure Awaits, go find it.","More Memories All Over Te World."]'>
+                <h1 class="typewrite" data-period="2000" data-type='["The World Is A Beautiful Place To Be Explored.","Adventure Awaits, go find it.","More Memories All Over The World."]'>
                 </h1>
 
 
-                <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions. It broadens our horizons and exposes us to different perspectives and ways of life. By traveling, we have the opportunity to learn about history, art, and natural wonders, and we can create lifelong memories and connections with people from all around the world.</p>
+                <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions. It broadens our horizons and exposes us to different perspectives and ways of life</p>
                 <a href="#" class="a">Read More</a>
             </div>
             <div class="video">
@@ -43,8 +47,106 @@
             </div>
         </div>
     </header>
+    <!-- Second Slides Section -->
+    <section id="welcome-text">
+        <div class="container">
+            <h2>The Official Travel Site of the friendly Fiji Islands</h2>
+            <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
+        </div>
+    </section>
+    <!-- Slides Section Start-->
+    <section id="slides-par">
+        <div class="container">
+            <div class="slides">
+                <div class="slide_1 slide_2">
+                    <div class="slide-info">
+                        <p>Outer Islands</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_3">
+                    <div class="slide-info">
+                        <p>Pacific Harbour and Beqa</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_4">
+                    <div class="slide-info">
+                        <p>Savusavu & Surrounds</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_5">
+                    <div class="slide-info">
+                        <p>Suncoast</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_6">
+                    <div class="slide-info">
+                        <p>Taveun1</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_7">
+                    <div class="slide-info">
+                        <p>Yasawa Islands</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_8">
+                    <div class="slide-info">
+                        <p>Nadi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Book Now Section Start -->
+    <section id="book">
+        <div class="container">
+            <div class="book-content-par">
+                <div class="book-counter">
+                    <h3>Book Now</h3>
+                    <div id="clockdiv">
+                        <div>
+                            <span class="days"></span>
+                            <div class="smalltext">Days</div>
 
-    <script src="extras.js"></script>
+                        </div>
+                        <div>
+                            <span class="hours"></span>
+                            <div class="smalltext">Hours</div>
+
+                        </div>
+                        <div>
+                            <span class="minutes"></span>
+                            <div class="smalltext">Minutes</div>
+
+                        </div>
+                        <div>
+                            <span class="seconds"></span>
+                            <div class="smalltext">Seconds</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="book-form">
+                    <form>
+                        <input type="text" id="fname" name="firstname" placeholder="Your Name...">
+                        <input type="text" id="lname" name="lastname" placeholder="Your Last Name...">
+                        <select name="country" id="country">
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="india">USA</option>
+                        </select>
+                        <textarea name="subject" id="subject" placeholder="Write something..." style="height: 200px;"></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Book Now Section End -->
+
+
+
+
+
 </body>
 
 </html>
