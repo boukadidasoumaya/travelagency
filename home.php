@@ -39,7 +39,7 @@
             </div>
             <div class="video">
                 <video id="video" autoplay loop muted>
-                    <source src="photos/video2.mp4" type="video/mp4" />
+                    <source src="photos/video1.mp4" type="video/mp4" />
                 </video>
             </div>
         </div>
