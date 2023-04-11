@@ -33,7 +33,7 @@
             <div class="header-info-par">
                 <h1 class="typewrite" data-period="2000" data-type='["Happiness is closer than you think","Adventure Awaits, go find it.","Dont be a tourist, be a traveler."]'>
                 </h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, ea. Mollitia maiores voluptatum
+                <p>Lorem ipsum dolor sit amet consectetubwdfr, adipisicing elit. Ipsum, ea. Mollitia maiores voluptatum
                     vitae suscipit tenetur ut officiis assumfhcndenda ipsam.fds</p>
                 <a href="#" class="a">Read More</a>
             </div>
