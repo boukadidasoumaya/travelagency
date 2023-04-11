@@ -15,25 +15,25 @@
     <link type="text/css" rel="stylesheet" href="css/owl.carousel.min.css">
     <link type="text/css" rel="stylesheet" href="css/owl.theme.default.min.css">
     <link type="text/css" rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
     <div id="arrow">
         <i class="fa fa-arrow-up"></i>
     </div>
-    <nav>
-        <?php
-        include_once 'fragments/barre.html'
+    <?php
+    include_once 'fragments/barre.html'
 
-        ?>
-
-    </nav>
+    ?>
     <header>
         <div class="container">
             <div class="header-info-par">
-                <h1 class="typewrite"> Happiness is closer than you think
+                <h1 class="typewrite" data-period="2000" data-type='["The World Is A Beautiful Place To Be Explored.","Adventure Awaits, go find it.","More Memories All Over Te World."]'>
                 </h1>
-                <p>Lorem ipsum dolor sit amet consectetubwdfr, adipisicing elit. Ipsum, ea. Mollitia maiores voluptatum
+
+
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, ea. Mollitia maiores voluptatum
                     vitae suscipit tenetur ut officiis assumfhcndenda ipsam.fds</p>
                 <a href="#" class="a">Read More</a>
             </div>
@@ -44,6 +44,8 @@
             </div>
         </div>
     </header>
+
+    <script src="extras.js"></script>
 </body>
 
 </html>
