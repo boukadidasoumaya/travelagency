@@ -33,13 +33,12 @@
                 </h1>
 
 
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, ea. Mollitia maiores voluptatum
-                    vitae suscipit tenetur ut officiis assumfhcndenda ipsam.fds</p>
+                <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions. It broadens our horizons and exposes us to different perspectives and ways of life. By traveling, we have the opportunity to learn about history, art, and natural wonders, and we can create lifelong memories and connections with people from all around the world.</p>
                 <a href="#" class="a">Read More</a>
             </div>
             <div class="video">
                 <video id="video" autoplay loop muted>
-                    <source src="photos/video1.mp4" type="video/mp4" />
+                    <source src="photos/travel.mp4" type="video/mp4" />
                 </video>
             </div>
         </div>
