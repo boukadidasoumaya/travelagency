@@ -118,3 +118,44 @@ video#video{
     width: 80%;
     margin: auto;
 }
+/* CSS pour l'effet d'affichage de texte lettre par lettre */
+.typewrite {
+    overflow: hidden; /* pour cacher le texte supplémentaire */
+    border-right: .15em solid orange; /* ajout d'une bordure de type | en orange */
+    white-space: nowrap; /* pour empêcher le texte de se retourner */
+    letter-spacing: .15em; /* ajout d'un espacement entre chaque lettre */
+  }
+  
+  /* animation du texte qui s'affiche lettre par lettre */
+  .typewrite[data-period]:after {
+    content: " ";
+    display: inline-block;
+    animation: typewriter 4s steps(40) infinite;
+  }
+  
+  /* animation du texte qui s'affiche phrase par phrase */
+  @keyframes typewriter {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* animation de la phrase suivante */
+  .typewrite[data-period]:after {
+    animation-delay: 2s; /* délai avant l'affichage de la phrase suivante */
+  }
+  
+  /* styles pour la première phrase */
+  .typewrite[data-type="Happiness is closer than you think"]:after {
+    content: "Happiness is closer than you think";
+  }
+  
+  /* styles pour la deuxième phrase */
+  .typewrite[data-type="Adventure Awaits, go find it."]:after {
+    content: "Adventure Awaits, go find it.";
+  }
+  
+  /* styles pour la troisième phrase */
+  .typewrite[data-type="Dont be a tourist, be a traveler."]:after {
+    content: "Dont be a tourist, be a traveler.";
+  }
+  
