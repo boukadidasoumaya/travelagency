@@ -37,7 +37,7 @@
                 </h1>
 
 
-                <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions. It broadens our horizons and exposes us to different perspectives and ways of life</p>
+                <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions. It broadens our horizons and exposes us to different perspectives and ways of life.</p>
                 <a href="#" class="a">Read More</a>
             </div>
             <div class="video">
