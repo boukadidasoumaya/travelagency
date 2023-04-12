@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="css/owl.carousel.min.css">
     <link type="text/css" rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="home.css">
     <script src="js/extras.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
