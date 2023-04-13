@@ -26,10 +26,9 @@
         <i class="fa fa-arrow-up"></i>
     </div>
 
-    <?php
-    include_once 'fragments/barre.html'
-
-    ?>
+    <div id="toggle-btn">
+        <i class="fa fa-bars"></i>
+    </div>
     <header>
         <div class="container">
             <div class="header-info-par">
@@ -39,11 +38,6 @@
 
                 <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions. It broadens our horizons and exposes us to different perspectives and ways of life.</p>
                 <a href="#" class="a">Read More</a>
-            </div>
-            <div class="video">
-                <video id="video" autoplay loop muted>
-                    <source src="photos/travel.mp4" type="video/mp4" />
-                </video>
             </div>
         </div>
     </header>

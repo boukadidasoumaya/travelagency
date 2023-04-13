@@ -1,12 +1,8 @@
 //Will add class on nav if window scroll down to 100%
-$(window).scroll(function () {
-    if ($(this).scrollTop() >= 100) {
-        $('nav').addClass('nav-fixed');
-    } else {
-        $('nav').removeClass('nav-fixed');
-    }
-});
-
+window.addEventListener("scroll",function(){
+    var header=document.querySelector("header");
+    header.classList.toggle("sticky",window.scrollY>0);
+})
 
 //typingtext
 var TxtType = function (el, toRotate, period) {
