@@ -753,6 +753,24 @@ section {
   color: #fff;
 }
 
+
+/*hellooooooooooooooooooooooooooooooooooooooo*/
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+.text-primary {
+  --bs-text-opacity: 1;
+ /* color: rgba(var(--bs-primary-rgb),var(--bs-text-opacity))!important;*/
+ color: #18d26e;
+}
+
+
+
+
+
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
