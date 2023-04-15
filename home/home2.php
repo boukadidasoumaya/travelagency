@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;0,600;1,300&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="../fragments/barre/barre.css">
+    <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
 
@@ -15,7 +15,7 @@
         <i class="fa fa-arrow-up"></i>
     </div>
     <?php
-    include_once '../fragments/barre/barre.php'
+    include_once '../fragments/barre.php'
     ?>
 
     <header>
@@ -89,8 +89,8 @@
 
 
 
-    <script src="../fragments/barre/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
-    <script src="../fragments/barre/barre.js"></script>
+    <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
+    <script src="../fragments/js/barre.js"></script>
 </body>
 
 </html>

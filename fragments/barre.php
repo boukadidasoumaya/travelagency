@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;0,600;1,300&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="barre.css">
-    <script src="barre.js"></script>
-    <script src="jquery-3.1.1.min.js"></script>
+    <!-- <link type="text/css" rel="stylesheet" href="../../fragments/barre/barre.css">
+   <script src="../../fragments/barre/barre.js"></script>
+    <script src="../../fragments/barre/jquery-3.1.1.min.js"></script>-->
 </head>
 
 <body>
@@ -18,7 +18,7 @@
             <div class="menu-par">
                 <div class="logo-par ">
                     <a href="index.html">
-                        <img src="images/think travel1.png" alt="logo" class="logo">
+                        <img src="../fragments/images/think travel1.png" alt="logo" class="logo">
                     </a>
                 </div>
                 <div class="nav">
@@ -32,7 +32,7 @@
                     </ul>
                 </div>
                 <div id="toggle-btn">
-                    <img src="images/menu (4).png">
+                    <img src="../fragments/images/menu (4).png">
                 </div>
             </div>
         </div>
