@@ -73,7 +73,10 @@ nav{
     height: 60px;
     position: absolute;
     left: 60px;
-    top: 5px;
+    top: 20px;
+}
+.nav{
+    padding-bottom: 10px;
 }
 .nav ul li{
     display: inline-block;
@@ -105,10 +108,6 @@ nav{
 }
 .nav-fixed .menu-par{
     padding: 20px 10px;
-}
-
-.nav-fixed h2{
-    color: #00a8b4;
 }
 .nav-fixed ul li a{
     color: #00a8b4;
