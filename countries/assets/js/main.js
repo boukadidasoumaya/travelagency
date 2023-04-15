@@ -1,3 +1,20 @@
+
+$(window).scroll(function () {
+  if ($(this).scrollTop() >= 100) {
+      $('nav').addClass('nav-fixed');
+  } else {
+      $('nav').removeClass('nav-fixed');
+  }
+});
+
+
+$(document).ready(function () {
+  $(".toggle-btn").click(function () {
+      $(".nav").toggleClass("nav-active");
+      $(".toggle-btn ").toggleClass("nav-active");
+  });
+});
+
 /**
 * Template Name: Squadfree
 * Updated: Mar 10 2023 with Bootstrap v5.2.3
