@@ -1,41 +1,78 @@
+
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ }  
+include_once 'bdd.php';
+$cnx=CBD::getInstance();
+  /*if connected
   */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
-
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
   
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  $authorized='true';
+  $receiving_comment ="hello";
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+  $_SESSION['cmt']=$_POST['message'];
+   $_POST['name']="tr";
+ $id=2575;
+ echo '<p>'.$_POST['message'].'</p>';
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+  $query="SELECT * FROM `booking` ";
 
-  echo $contact->send();
-?>
+  $RESPONSE=$cnx->query($query);
+  $row = $RESPONSE ->fetch(PDO::FETCH_ASSOC);
+
+  if(isset($RESPONSE)){
+
+    $_SESSION['status']=true;
+  }else
+  $_SESSION['status']=false;
+
+function comment(){
+  if(
+    $_SESSION['status']){ 
+    echo'<div class="col-lg-6" id ="commentaire">
+    <form action="C:\Users\sapph\OneDrive\Documents\GitHub\travelagency\countries\forms\contact.php" method="post" role="form" class="comentaires">
+      
+      <div class="row">
+        <div class="col-md-6 form-group">
+         
+      <div class="form-group mt-3">
+        <textarea class="form-control" name="message" rows="5" placeholder="comment" required></textarea>
+      </div>
+      
+     
+      <div class="text-center" id="combut"><button  type="submit">post comment</button></div>
+    </form>
+  </div>
+</div>
+</div>';
+   
+}else{
+    echo '<div class="col-lg-6" id ="commentaire">
+    <form action="C:\Users\sapph\OneDrive\Documents\GitHub\travelagency\countries\forms\contact.php" method="post" role="form" class="comentaires">
+      
+      <div class="row">
+        <div class="col-md-6 form-group">
+         
+      <div class="form-group mt-3">
+        <textarea class="form-control" readonly name="message" rows="5" placeholder="comment" required></textarea>
+      </div>
+      
+      <div class="text-center" id="combut"><button  type="submit" disabled>post comment</button></div>
+      <div class="alert alert-danger" role="alert">
+  please sign up!
+</div>
+    </form>
+  </div>
+</div>
+</div>';
+} 
+} 
+function addingcomment(){
+
+};
+?> 
+
+
