@@ -15,6 +15,7 @@
     padding-right: 15px;
     padding-top: 20px;
 }
+
 h1, h2, h3, h4, h5, h6{
     font-family: 'Raleway';
     font-weight: 600;
@@ -122,7 +123,224 @@ video#video{
     width: 80%;
     margin: auto;
 }
+
+/* about section*/
+.about{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container1{
+    width: 100%;
+    min-height: 100vh;
+     background-image: url(../images/travel1.jfif);
+    background-color: #c9b1b1;
+}
+.container1 .title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #222;
+    letter-spacing: 1.5px;
+    padding: 50px 0px;
+}
+.container1 .title h1::after{
+    content: "";
+    height: 6px;
+    width: 180px;
+    background-color: #222;
+    border-radius: 6px;
+    position: relative;
+    display: block;
+    margin: auto;
+}
+.content{
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 40px;
+    margin: 30px auto;
+}
+.content .article{
+    box-shadow:0px 0px 2px 0px rgba(0,0,0,0.2) ;
+    background-color: #eee;
+    padding: 25px 25px;
+}
+.content .article h2{
+    color:#00a8b4;
+    font-size:22px ;
+    letter-spacing: 2px;
+}
+.content .article p{
+    margin-top: 30px;
+    font-size: 19px;
+    line-height: 1.5;
+    color: #222;
+}
+.content .article a{
+    font-size: 22px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #a2a29d;
+    border-radius: 25px;
+    color: #fff;
+    border: 1px solid #a2a29d;
+    letter-spacing: 1.5px;
+    margin-top: 100px;
+    margin-left: 104px;
+
+}
+.content .article a:hover{
+    background-color: #eee;
+    color: #a2a29d;
+    transition: 0.2s ease;
+
+}
+.image-section{
+    width: 100%;
+    margin: auto;
+}
+.image-section img{
+    width: 100%;
+    height: auto;
+
+}
+
+/*meet us section*/
+.text-blk {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    line-height: 25px;
+}
+
+.responsive-cell-block {
+    min-height: 75px;
+}
+
+.responsive-container-block {
+    min-height: 75px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    justify-content: space-evenly;
+}
+
+.outer-container {
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    background-color: rgb(244, 252, 255);
+}
+
+.inner-container {
+    max-width: 2000px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+}
+
+.section-head-text {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 48px;
+    color: rgb(0, 135, 177);
+    margin: 0 0 10px 0;
+}
+
+.section-subhead-text {
+    font-size: 25px;
+    color: rgb(153, 153, 153);
+    line-height: 35px;
+    max-width: 470px;
+    text-align: center;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 60px;
+    margin-left: 0px;
+}
+
+.img-wrapper {
+    width: 100%;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media-links {
+    width: 125px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(102, 102, 102);
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+}
+
+.position {
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(0, 135, 177);
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+}
+
+.team-card-container {
+    width: 280px;
+    margin: 0 0 40px 0;
+}
+
+@media (max-width: 500px) {
+    .outer-container {
+        padding: 10px 20px 10px 20px;
+    }
+
+    .section-head-text {
+        text-align: center;
+    }
+}
+
+
+
 /* Welcome-text section */
+.welcome{
+    background-color: rgb(195, 212, 218);
+}
 section#welcome-text h2{
     color: #343a40;
     font-size: 45px;
@@ -198,6 +416,7 @@ section#welcome-text p{
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../japan.jpg);
 }
 
+
 /* media queries */
 @media screen and (max-width: 768px) {
     div#toggle-btn{
@@ -220,6 +439,8 @@ section#welcome-text p{
         font-size: 14px;
         line-height: 26px;
     }
+   
+
     section#welcome-text h2{
         font-size: 26px;
     }
@@ -307,4 +528,24 @@ section#welcome-text p{
         padding: 12px 0px;
         font-size: 14px;
     }
+}
+
+@media screen and (max-width: 1433px){
+    .content{
+    grid-template-columns: repeat(1,1fr);
+}
+.article{
+    text-align:center;
+}
+.image-section{
+    width: 100%;
+    margin: auto;
+}
+.image-section img{
+    width: 100%;
+    height: auto;
+
+}
+
+
 }
