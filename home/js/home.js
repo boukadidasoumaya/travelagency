@@ -112,3 +112,5 @@ var swiper = new Swiper(".team-swiper", {
         },
     }
 });
+
+
