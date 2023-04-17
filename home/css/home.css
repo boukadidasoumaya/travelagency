@@ -395,22 +395,22 @@ section#welcome-text p{
 }
 
 .slide_2{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../italie.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(....\travelagency\home\images\italie.jpg);
 }
 .slide_3{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../bali.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(....\travelagency\home\images\bali.jpg);
 }
 .slide_4{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../greece.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(....\travelagency\home\images\greece.jpg);
 }
 .slide_5{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../suisse.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(....\travelagency\home\images\suisse.jpg);
 }
 .slide_6{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../iceland.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(....\travelagency\home\images\iceland.jpg);
 }
 .slide_7{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../tunisie.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(....\travelagency\home\images\tunisie.jpg);
 }
 .slide_8{ 
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../japan.jpg);
@@ -544,8 +544,98 @@ section#welcome-text p{
 .image-section img{
     width: 100%;
     height: auto;
-
+}}
+/*book now*/
+#book{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../home/images/iceland1.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0px;
+    color: #fff;
+}
+.book-content-par{
+    display: flex;
+}
+.book-counter{
+    flex: 1;
+}
+.book-form{
+    flex: 1;
+}
+.book-counter h3{
+    font-size: 100px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+div#clockdiv{
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    display: inline-block;
+}
+div#clockdiv > div{
+    display: inline-block;/*display pour mettre les 4 div du temps sur la meme ligne */
+    background-color:#D9AB73;
+    padding:10px;
+    border-radius: 45%;
+   
+    box-shadow: 2px 2px 30px #fff ;
+    margin-right: 20px;
+}
+.smalltext{
+    font-size: 20px;
+    padding-top: 5px;
+}
+div#clockdiv span{
+    padding:15px;
+    border-radius: 3px;
+    display: inline-block;
+}
+input[type="text"]:focus, select:focus, textarea:focus{
+    border:2px solid #00a8b4;
+    outline: none;
+}
+input[type="text"], select, textarea{
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: #00a8c5;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+input[type="submit"]:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+input[type="submit"]{
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    width: 100%;
+    border: 1px solid #fff;
+    padding:12px 0px;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>think travel</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
+    <link type="text/css" rel="stylesheet" href="../fragments/footer css.css">  
     <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
 
 
 </head>
@@ -20,6 +27,10 @@
     <?php
     include_once '../fragments/barre.php'
     ?>
+      <?php
+    include_once '../fragments/footer.php'
+    ?>
+
 
     <header id="head">
         <div class="container">
@@ -63,6 +74,49 @@
         </div>
     </div>
     <!--------about section ends-->
+    <!--------book now starts----->
+    <section id="book">
+        <div class="container">
+            <div class="book-content-par">
+                <div class="book-counter">
+                    <h3>Book Now</h3>
+                    <div id="clockdiv">
+                        <div>
+                            <span class="days"></span>
+                            <div class="smalltext">Days</div>
+
+                        </div>
+                        <div>
+                            <span class="hours"></span>
+                            <div class="smalltext">Hours</div>
+
+                        </div>
+                        <div>
+                            <span class="minutes"></span>
+                            <div class="smalltext">Minutes</div>
+
+                        </div>
+                        <div>
+                            <span class="seconds"></span>
+                            <div class="smalltext">Seconds</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="book-form">
+                    <form>
+                        <input type="text" id="fname" name="firstname" placeholder="Your Name...">
+                        <input type="text" id="lname" name="lastname" placeholder="Your Last Name...">
+                        <input type="text" id="pname" name="pays" placeholder="Your country...">
+                        <textarea name="subject" id="subject" placeholder="Write something..."
+                            style="height: 200px;"></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------book now section ends------->
 
     <!----------meet us-------->
     <div class="responsive-container-block outer-container">
@@ -224,7 +278,7 @@
         <section id="slides-par">
             <div class="container">
                 <div class="slides">
-                    <img id="image1" src="sticker2.jpg" width="200px" height="200px">
+                    <img id="image1" src="..\travelagency\home\images\sticker2.jpg" width="200px" height="200px">
                     <div class="slide_1 slide_2">
                         <div class="slide-info">
                             <p>italie</p>
@@ -264,7 +318,7 @@
                             <p>Japan</p>
                         </div>
                     </div>
-                    <img id="image2" src="sticker3.jpg" width="200px" height="200px">
+                    <img id="image2" src="..\travelagency\home\images\sticker3.jpg" width="200px" height="200px">
                 </div>
             </div>
         </section>
