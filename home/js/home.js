@@ -113,4 +113,14 @@ var swiper = new Swiper(".team-swiper", {
     }
 });
 
+//partie admin
 
+let add=document.getElementById("btnadd");
+let supprime=document.getElementById("btndelete");
+let country=document.getElementById("country");
+let photo=document.getElementById("photo");
+
+function affichage(){
+
+
+}
