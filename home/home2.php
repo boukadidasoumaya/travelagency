@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
+    <link type="text/css" rel="stylesheet" href="../fragments/footer.css">
 
     <link rel="stylesheet" href="css/home.css">
 
@@ -322,7 +323,9 @@
         </div>
     </section>
     <!--------book now section ends------->
-
+    <footer>
+        <?php include_once '../fragments/footer.php' ?>
+    </footer>
 
     <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
     <script src="../fragments/js/barre.js"></script>

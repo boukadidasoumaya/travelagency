@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container2">
         <div class="links">
             <p class="text">Useful links:</p>
             <br>
@@ -44,11 +44,6 @@
                 <!--la classe "fab fa-twitter" est une classe css fournie par la bibliotheque de polices d'icones Font Awesome pour l'icone du twitter-->
                 <a href="https://twitter.com/home" class="fab fa-twitter"></a>
             </div>
-        </div>
-        <div class="video">
-            <video id="video" autoplay loop muted>
-                <source src="homevideo.mp4" type="video/mp4" />
-            </video>
         </div>
     </div>
 
