@@ -1,5 +1,5 @@
-
 </head>
+
 <body>
     <nav>
         <div class="container">
@@ -12,9 +12,9 @@
                 <div class="nav">
                     <ul>
                         <li><a class="menu-hover" href="#head">Home</a></li>
-                        <li><a class="menu-hover" href="index.html">About</a></li>
-                        <li><a class="menu-hover" href="index.html">Book Now</a></li>
-                        <li><a class="menu-hover" href="index.html">Our Trips</a></li>
+                        <li><a class="menu-hover" href="#about">About</a></li>
+                        <li><a class="menu-hover" href="#book">Book Now</a></li>
+                        <li><a class="menu-hover" href="#welcome">Our Trips</a></li>
                         <li><a class="menu-hover" href="index.html">Register/Login</a></li>
 
                     </ul>
@@ -25,10 +25,3 @@
             </div>
         </div>
     </nav>
-
-
-    
-
-
-
-
