@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>footer-home</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="footer.css">
 
 
-</head>
-
-<body>
     <div class="container2">
         <div class="links">
             <p class="text">Useful links:</p>
@@ -48,8 +33,9 @@
     </div>
 
 
-
-
+<script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
+    <script src="../fragments/js/barre.js"></script>
+    <script src="js/home.js"></script>
 
 </body>
 

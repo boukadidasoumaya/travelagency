@@ -489,6 +489,9 @@ $has_comments = (count($comments) > 0);
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet -->
+  <script src="../fragments/js/barre.js"></script>
  
 </body>
 

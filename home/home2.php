@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<?php include_once '../fragments/barrehead.php' ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;0,600;1,300&display=swap" rel="stylesheet">
+   
     <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
     <link type="text/css" rel="stylesheet" href="../fragments/footer.css">
 
     <link rel="stylesheet" href="css/home.css">
 
 
-</head>
 
-<body>
     <div id="arrow">
         <i class="fa fa-arrow-up"></i>
     </div>
@@ -327,9 +325,4 @@
         <?php include_once '../fragments/footer.php' ?>
     </footer>
 
-    <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
-    <script src="../fragments/js/barre.js"></script>
-    <script src="js/home.js"></script>
-</body>
-
-</html>
+ 
