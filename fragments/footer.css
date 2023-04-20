@@ -77,6 +77,10 @@ footer form{
   margin-bottom: 50px;
 
 }
+footer form button{
+  background: transparent;
+  border: 0;
+}
 footer form input{
   width: 100%;
   background: transparent;
