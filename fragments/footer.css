@@ -1,15 +1,7 @@
-*{
-  margin:0;
-  padding:0;
-  font-family:'poppins',sans-serif;
-  box-sizing: border-box;
-  color:black;
- 
 
-}
 footer{
   width: 100%;
-  position:absolute;
+  /*position:absolute;*/
   bottom:0;
   background-color:#fff;
   color:#fff;
@@ -17,8 +9,9 @@ footer{
   border-top-left-radius: 125px; 
   font-size: 13px;
   line-height :0px;
+  color: #000;
 }
-.row{
+footer .row{
   width:85%;
   margin:auto;
    display: flex;
@@ -26,7 +19,7 @@ footer{
    align-items: flex-start;
    justify-content: space-between;
 }
-.col{
+footer .col{
   flex-basis:25% ;
   padding:10px ;
 }
@@ -38,14 +31,15 @@ footer{
 
 
 
-.logo{
+footer.logo{
   width: 80px;
   margin-bottom: 30px;
 }
-.txt{
+footer .txt{
   margin-top: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-.col h3{
+footer .col h3{
   width: fit-content;
   margin-bottom: 40px;
   position:relative;
@@ -53,25 +47,25 @@ footer{
   color:#40E0D0;
 
 }
-.email{
+footer .email{
   width: fit-content;
   border-bottom: 1px solid #ccc;
   margin:20px 0;
 }
-ul li{
+footer ul li{
   list-style:none;
   margin-bottom: 12px;
 } 
-.link{
+footer .link{
   line-height: 1.5;
 
 }
-ul li a{
+footer ul li a{
 
 text-decoration:none;
 
 }
-form{
+footer form{
   padding-bottom: 15px;
   display:flex;
   align-items: center;
@@ -80,14 +74,14 @@ form{
   margin-bottom: 50px;
 
 }
-form input{
+footer form input{
   width: 100%;
   background: transparent;
   color:#ccc;
   border:0;
   outline: none;
 }
-.contact .fab{
+footer .contact .fab{
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -99,14 +93,16 @@ form input{
   margin-right: 15px;
   cursor: pointer;
 }
-hr{
+ hr{
   width: 90%;
   border: 0;
   border-bottom: 1px solid;
   /*margin:to specify the place between an element's border and the adjacent elements' content*/
   margin:20px auto;
+  color: #000;
 }
 .copyright{
   text-align: center;
+  color: #000;
 
 }
