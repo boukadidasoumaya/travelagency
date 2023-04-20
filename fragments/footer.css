@@ -3,13 +3,14 @@ footer{
   width: 100%;
   /*position:absolute;*/
   bottom:0;
-  background-color:#fff;
+  background-color:#f6f6f6;
   color:#fff;
   padding:100px 0 30px;
-  border-top-left-radius: 125px; 
   font-size: 13px;
   line-height :0px;
   color: #000;
+  padding-top:30px;
+  padding-bottom: 10px;
 }
 footer .row{
   width:85%;
@@ -49,7 +50,9 @@ footer .col h3{
 }
 footer .email{
   width: fit-content;
-  border-bottom: 1px solid #ccc;
+  border-bottom: #ccc;
+  text-decoration: underline;
+
   margin:20px 0;
 }
 footer ul li{
@@ -92,6 +95,9 @@ footer .contact .fab{
   background:#fff;
   margin-right: 15px;
   cursor: pointer;
+}
+footer .button{
+  
 }
  hr{
   width: 90%;
