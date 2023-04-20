@@ -35,8 +35,14 @@ include_once '../fragments/barre.php'
                 <source src="homevideo.mp4" type="video/mp4" />
             </video>
         </div>
-    </div>
-    <!------navbar section ends ---->
+
+        <body>
+
+            <div id="arrow">
+                <i class="fa fa-arrow-up"></i>
+
+            </div>
+            <!------navbar section ends ---->
 </header>
 <!------about section starts----->
 <div class="about" id="about">
@@ -329,6 +335,7 @@ include_once '../fragments/barre.php'
 <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
 <script src="../fragments/js/barre.js"></script>
 <script src="js/home.js"></script>
+<script src="js/owl.carousel.min.js"></script>
 
 </body>
 

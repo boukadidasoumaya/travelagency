@@ -1,46 +1,35 @@
-.container2 {
-    display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
-    background-color:#00a8b4;
-    border: 2px solid black;
-    bottom: 0;
-    left: 0;
-    right: 0;
-   
-   
-  }
- 
- 
-  .links{
-    /*background-color: blue;*/
-    text-align: center;
-    width: 40%;
-    padding: 10px;
-    padding-left: 65px;
-  }
-  .follow{
-    text-align:center;
-   /* background-color: #E1306C;
-    */width:40%;
-    padding-right: 100px;
-    line-height: 1.5px;
 
-    }  
-    .mail{
-        width:40%;
-        text-align:center;
-        bottom: 0;
-        /*background-color: yellow;*/
-    }
-   
-    .sc{
-        padding-left: 30px;
-        padding-right: 40px;
-        line-height: 2 px;
-        font-size:30px;
+footer{
+  width: 100%;
+  /*position:absolute;*/
+  bottom:0;
+  background-color:#f6f6f6;
+  color:#fff;
+  padding:100px 0 30px;
+  font-size: 13px;
+  line-height :0px;
+  color: #000;
+  padding-top:30px;
+  padding-bottom: 10px;
+}
+footer .row{
+  width:85%;
+  margin:auto;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   justify-content: space-between;
+}
+footer .col{
+  flex-basis:25% ;
+  padding:10px ;
+}
+/*to set the initial size of the column two and three to 15%:devide the row to equal parts */
+.col:nth-child(2),.col:nth-child(3){
+  flex-basis: 15%;
+}
 
-    }
+    
     .home{
       padding-left: 20px;
       font-size: 20px;
@@ -59,21 +48,68 @@
   background: linear-gradient(to bottom, #FFFFFF, #ECECEC);
 
 }
-.text{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    font-size: large;
-    display: inline-block;
+footer .email{
+  width: fit-content;
+  border-bottom: #ccc;
+  text-decoration: underline;
+
+  margin:20px 0;
 }
-  
-  i.fab.fa-facebook {
-    font-size: 24px;
-    color: blue;
-  }
-  i.fab.fa-instagram {
-    color: #E1306C;
-  }
-  i.fab.fa-twitter {
-    color: #1DA1F2;
-  }
-  
+footer ul li{
+  list-style:none;
+  margin-bottom: 12px;
+} 
+footer .link{
+  line-height: 1.5;
+
+}
+footer ul li a{
+
+text-decoration:none;
+
+}
+footer form{
+  padding-bottom: 15px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+
+}
+footer form input{
+  width: 100%;
+  background: transparent;
+  color:#ccc;
+  border:0;
+  outline: none;
+}
+footer form button{
+  background: transparent;
+  border: 0;
+}
+footer .contact .fab{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color:#000;
+  background:#fff;
+  margin-right: 15px;
+  cursor: pointer;
+}
+ hr{
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid;
+  /*margin:to specify the place between an element's border and the adjacent elements' content*/
+  margin:20px auto;
+  color: #000;
+}
+.copyright{
+  text-align: center;
+  color: #000;
+
+}
