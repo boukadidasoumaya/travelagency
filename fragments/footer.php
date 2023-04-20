@@ -16,7 +16,7 @@
                 <li>think travel</li>
                 <li>tunis,tunisie</li>
                 <li>Centre Urbain Nord</li>
-                <li class="email">thinktravel@gmail.com</li>
+                <li class="email"><a href="#">thinktravel@gmail.com</a></li>
                 <li>
                     <h4>- 01234567</h4>
                 </li>
@@ -39,7 +39,7 @@
             <h3>Follow us</h3>
             <form>
                 <input type="email" placeholder="connect with your email" required>
-                <button type="submit">send</button>
+                <button class="button" type="submit">send</button>
             </form>
             <div class="contact">
                 <a class="fab fa-facebook" href="https://fr-fr.facebook.com/login/"></a>

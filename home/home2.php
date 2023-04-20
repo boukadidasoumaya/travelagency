@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
-<link type="text/css" rel="stylesheet" href="../fragments/footer/footer.css">
-
+<link rel="stylesheet" href="../fragments/footer.css">
+<script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
 <link rel="stylesheet" href="css/home.css">
 
 
@@ -328,8 +328,8 @@ include_once '../fragments/barre.php'
 </section>
 <!--------book now section ends------->
 
-<?php include_once '../fragments/footer/footer.php' ?>
-</footer>
+<?php include_once '../fragments/footer.php' ?>
+
 
 
 <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->

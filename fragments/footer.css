@@ -29,23 +29,23 @@ footer .col{
   flex-basis: 15%;
 }
 
-    
-    .home{
-      padding-left: 20px;
-      font-size: 20px;
-      font-family: "Changa", sans-serif;
 
-    }
-  .email{
-    width: 300px;
-  padding-left: 10px;
-  background: linear-gradient(to bottom, #FFFFFF, #ECECEC);
-}  
-.msg{
-    width: 300px;
-  height: 50px;
-  padding-left: 10px;
-  background: linear-gradient(to bottom, #FFFFFF, #ECECEC);
+
+
+footer.logo{
+  width: 80px;
+  margin-bottom: 30px;
+}
+footer .txt{
+  margin-top: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+footer .col h3{
+  width: fit-content;
+  margin-bottom: 40px;
+  position:relative;
+  text-decoration:underline;
+  color:#40E0D0;
 
 }
 footer .email{
@@ -84,10 +84,6 @@ footer form input{
   border:0;
   outline: none;
 }
-footer form button{
-  background: transparent;
-  border: 0;
-}
 footer .contact .fab{
   width: 40px;
   height: 40px;
@@ -99,6 +95,9 @@ footer .contact .fab{
   background:#fff;
   margin-right: 15px;
   cursor: pointer;
+}
+footer .button{
+  
 }
  hr{
   width: 90%;
