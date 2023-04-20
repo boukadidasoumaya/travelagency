@@ -39,7 +39,7 @@
             <h3>Follow us</h3>
             <form>
                 <input type="email" placeholder="connect with your email" required>
-                <button class="button" type="submit">send</button>
+                <button class="button" type="submit"><i class="fa-sharp fa-solid fa-paper-plane"></i></button>
             </form>
             <div class="contact">
                 <a class="fab fa-facebook" href="https://fr-fr.facebook.com/login/"></a>

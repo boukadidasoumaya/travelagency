@@ -84,6 +84,10 @@ footer form input{
   border:0;
   outline: none;
 }
+footer form button{
+  background: transparent;
+  border: 0;
+}
 footer .contact .fab{
   width: 40px;
   height: 40px;
@@ -95,9 +99,6 @@ footer .contact .fab{
   background:#fff;
   margin-right: 15px;
   cursor: pointer;
-}
-footer .button{
-  
 }
  hr{
   width: 90%;
