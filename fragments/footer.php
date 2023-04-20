@@ -5,7 +5,7 @@
         <div class="home">
             <a href="C:\Users\DELL\Documents\travelagency\home\home2.php">Home</a><br>
             <a href="#about">About us</a><br>
-            <a href="C:\Users\DELL\Documents\travelagency\home\home2.php#book now">Book now</a><br>
+            <a href="C:\Users\DELL\Documents\travelagency\home\home2.php#book">Book now</a><br>
             <a href="C:\Users\DELL\Documents\travelagency\home\home2.php#slides-par"> Our trips</a><br>
             <a href="C:\Users\DELL\Documents\travelagency\login.html">Login</a><br>
         </div>
