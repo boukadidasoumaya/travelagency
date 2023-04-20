@@ -2,10 +2,11 @@
     { 
         session_start(); 
     }  ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+
+  <?php include_once '../fragments/barrehead.php' ?>
+
+  <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -44,80 +45,10 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent">
-    <div class="container d-flex align-items-center justify-content-between position-relative">
-
-      <div class="logo">
-        <h1 class="text-light"><a href="index.html"><span>Squadfree</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li>
-                <strong>Column 1</strong>
-                <a href="#">Column 1 link 1</a>
-                <a href="#">Column 1 link 2</a>
-                <a href="#">Column 1 link 3</a>
-              </li>
-              <li>
-                <strong>Column 2</strong>
-                <a href="#">Column 2 link 1</a>
-                <a href="#">Column 2 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <strong>Column 3</strong>
-                <a href="#">Column 3 link 1</a>
-                <a href="#">Column 3 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <strong>Column 4</strong>
-                <a href="#">Column 4 link 1</a>
-                <a href="#">Column 4 link 2</a>
-                <a href="#">Column 4 link 3</a>
-              </li>
-              <li>
-                <strong>Column 5</strong>
-                <a href="#">Column 5 link 1</a>
-                <a href="#">Column 5 link 2</a>
-                <a href="#">Column 5 link 3</a>
-              </li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
+   <div class="head">
+    <?php include_once '../fragments/barre.php' ?>
+  </div>
+  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -285,87 +216,48 @@
     </section><!-- End Cta Section -->
 
     
-    <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container">
-
+      
         <div class="section-title" data-aos="fade-in" data-aos-delay="100">
           <h2>Testimonials</h2>
           <p>reviews of our loyal customers</p>
         </div>
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100" d="ddscomment">
-          <div class="swiper-wrapper" id="toaddcomment">
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper"><?php
+           require('Persistence.php');
+$comment_post_ID = 62;
+$db = new Persistence();
+$comments = $db->get_comments($comment_post_ID);
+$has_comments = (count($comments) > 0);
+  
+    foreach ($comments as $comment) {
+      ?>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <p>
+                <p id="comment_<?php echo($comment['com_id']); ?>">
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  [Bali is] a living postcard, an Indonesian paradise that feels like a fantasy,
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  <?php echo($comment['content']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <h3><?php echo($comment['comment_author'].' '.$comment['user_last_name']); ?></h3>
               </div>
             </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Wonderful memories of the wonderful service
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Perfect place for all                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Everything was amazing since the very first day                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  [Bali is] a living postcard, an Indonesian paradise that feels like a fantasy,
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div>
-            
-          
+            <?php };
+    
+    ?>
           </div>
+
           <div class="swiper-pagination"></div>
+
         </div>
 
       </div>
     </section><!-- End Testimonials Section -->
+
     
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
@@ -452,24 +344,58 @@
 
         <div class="row">
 
-          <div class="col-lg-6 ">
-            <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-          </div>
-          <div class="col-lg-6" id ="commentaire">
-    <!--<form action="C:\Users\sapph\OneDrive\Documents\GitHub\travelagency\countries\forms\contact.php" method="post"  class="comentaires">-->
-      
-      <div class="row">
-        <div class="col-md-6 form-group">
-         
-      <div class="form-group mt-3">
-        <textarea class="form-control" name="message" rows="5" placeholder="comment" required></textarea>
-      </div> 
-      <div class="text-center" id="combut"><button  id="tocoment">post comment</button></div>
-     
-    </form>
+        <!-- Wrapper container -->
+<div class="container py-4">
+
+  <!-- Bootstrap 5 starter form -->
+  <form  action="post_comment.php" method="post" role="form" class="commentform">
+
+
+    <!-- Name input -->
+    <div class="mb-3">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-control" name="comment_author" id="comment_author" type="text" placeholder="Name" data-sb-validations="required" />
+      <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+    </div>
+
+    <!-- Email address input -->
+    <div class="mb-3">
+      <label class="form-label" for="ln">last</label>
+      <input class="form-control" name="user_last_name" id="user_last_name" placeholder="last name" data-sb-validations="required, email" />
+      <div class="invalid-feedback" data-sb-feedback="emailAddress:required">last name is required.</div>
+      <div class="invalid-feedback" data-sb-feedback="emailAddress:email">last name is not valid.</div>
+    </div>
+
+    <!-- Message input -->
+    <div class="mb-3">
+      <label class="form-label" for="message">Message</label>
+      <textarea class="form-control" name="content" id="content"  type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+      <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+    </div>
+
+    <!-- Form submissions success message -->
+    <div class="d-none" id="submitSuccessMessage">
+      <div class="text-center mb-3">Form submission successful!</div>
+    </div>
+
+    <!-- Form submissions error message -->
+    <div class="d-none" id="submitErrorMessage">
+      <div class="text-center text-danger mb-3">Error sending message!</div>
+    </div>
+<!-- comment_post_ID value hard-coded as 1 -->
+    <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
+    <!-- Form submit button -->
+    <div class="d-grid">
+
+      <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+    </div>
+
+  </form>
+<
   </div>
+        </div>
 </div>
-</div>';
+</div>;
 
           </div>
         </div>
@@ -568,14 +494,16 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
-                document.getElementById("tocoment").addEventListener("click",fun);
-                function fun(event){
-                  alert("kj")
-                    document.getElementById("toaddcomment").innerHTML='<div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100" d="ddscomment"><div class="swiper-wrapper" id="toaddcomment"><div class="swiper-slide"><div class="testimonial-item"><p><i class="bx bxs-quote-alt-left quote-icon-left"></i>[Bali is] a living postcard, an Indonesian paradise that feels like a fantasy,<i class="bx bxs-quote-alt-right quote-icon-right"></i></p><img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""><h3>Saul Goodman</h3><h4>Ceo &amp; Founder</h4></div></div><!-- End testimonial item --><div class="swiper-slide"><div class="testimonial-item"><p><i class="bx bxs-quote-alt-left quote-icon-left"></i>Wonderful memories of the wonderful service<i class="bx bxs-quote-alt-right quote-icon-right"></i></p><img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""><h3>Sara Wilsson</h3><h4>Designer</h4></div></div><!-- End testimonial item --><div class="swiper-slide"><div class="testimonial-item"><p><i class="bx bxs-quote-alt-left quote-icon-left"></i>Perfect place for all                  <i class="bx bxs-quote-alt-right quote-icon-right"></i><img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt=""><h3>Jena Karlis</h3><h4>Store Owner</h4></div></div><!-- End testimonial item --><div class="swiper-slide"><div class="testimonial-item"><p><i class="bx bxs-quote-alt-left quote-icon-left"></i>Perfect place for all                  <i class="bx bxs-quote-alt-right quote-icon-right"></i></p><img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt=""><h3>Jena Karlis</h3><h4>Store Owner</h4></div><div class="swiper-slide"><div class="testimonial-item"><p><i class="bx bxs-quote-alt-left quote-icon-left"></i>Everything was amazing since the very first day                  <i class="bx bxs-quote-alt-right quote-icon-right"></i></p><img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt=""><h3>Matt Brandon</h3><h4>Freelancer</h4></div></div><!-- End testimonial item --><div class="swiper-slide"><div class="testimonial-item"><p><i class="bx bxs-quote-alt-left quote-icon-left"></i>[Bali is] a living postcard, an Indonesian paradise that feels like a fantasy,<i class="bx bxs-quote-alt-right quote-icon-right"></i></p><img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""><h3>Saul Goodman</h3><h4>Ceo &amp; Founder</h4></div></div></div><div class="swiper-pagination"></div></div>'
+ 
 
-                    console.log(document.getElementById("toaddcomment").innerHTML);}
-</script>
+
+
+ 
+<footer>
+        <?php include_once '../fragments/footer.php' ?>
+    </footer>
+
+
 </body>
 
 </html>
