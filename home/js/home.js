@@ -85,7 +85,7 @@ $(document).ready(function () {
 
 });
 //meet us 
-var swiper = new Swiper(".team-swiper", {
+/*var swiper = new Swiper(".team-swiper", {
     slidesPerView: 3,
     spaceBetween: 30,
     pagination: {
@@ -111,16 +111,86 @@ var swiper = new Swiper(".team-swiper", {
             spaceBetween: 30
         },
     }
-});
+});*/
 
 //partie admin
 
-let add=document.getElementById("btnadd");
-let supprime=document.getElementById("btndelete");
-let country=document.getElementById("country");
-let photo=document.getElementById("photo");
+// Récupérer le bouton et le conteneur où ajouter les éléments
+var button = document.getElementById("btnadd");
+var container = document.getElementById("slides");
+var country = document.getElementById("country");
+var fichierImage=document.getElementById("photo").files[0];
 
-function affichage(){
+var num_slide = 9;
+var url;
 
+// Fonction à exécuter lors du clic sur le bouton
+function ajouterElement() {
 
+    if (country.value /*&& saisie_image()*/)
+ { 
+    var nouvelElement = document.createElement("div");
+  nouvelElement.classList.add("slide_1");
+  nouvelElement.classList.add(`slide_${num_slide}`);
+
+  var reader = new FileReader();
+  reader.readAsDataURL(fichierImage);
+  reader.onload = function(event) {
+   
+    nouvelElement.style.backgroundImage = "url('" + event.target.result + "')";
+
+    var nouvelEnfant = document.createElement("p");
+    nouvelEnfant.textContent = country.value;
+    nouvelElement.appendChild(nouvelEnfant);
+
+    // Ajouter le nouvel élément au conteneur
+    conteneur.appendChild(nouvelElement);
+    }
+  }
 }
+
+
+// Ajouter un écouteur d'événements au bouton pour détecter les clics
+button.addEventListener("click", ajouterElement);
+
+function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+    };
+}
+
+function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+
+    function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+        }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+}
+
+var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+initializeClock('clockdiv', deadline);

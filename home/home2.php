@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
-<link type="text/css" rel="stylesheet" href="../fragments/footer/footer.css">
-
+<link rel="stylesheet" href="../fragments/footer.css">
+<script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
 <link rel="stylesheet" href="css/home.css">
 
 
@@ -35,8 +35,14 @@ include_once '../fragments/barre.php'
                 <source src="homevideo.mp4" type="video/mp4" />
             </video>
         </div>
-    </div>
-    <!------navbar section ends ---->
+
+        <body>
+
+            <div id="arrow">
+                <i class="fa fa-arrow-up"></i>
+
+            </div>
+            <!------navbar section ends ---->
 </header>
 <!------about section starts----->
 <div class="about" id="about">
@@ -322,13 +328,14 @@ include_once '../fragments/barre.php'
 </section>
 <!--------book now section ends------->
 
-<?php include_once '../fragments/footer/footer.php' ?>
-</footer>
+<?php include_once '../fragments/footer.php' ?>
+
 
 
 <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
 <script src="../fragments/js/barre.js"></script>
 <script src="js/home.js"></script>
+<script src="js/owl.carousel.min.js"></script>
 
 </body>
 
