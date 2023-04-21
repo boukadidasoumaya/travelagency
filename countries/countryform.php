@@ -1,3 +1,7 @@
+<?php  if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -228,8 +232,8 @@ cursor: pointer;
             <input id="population" name="population" />
           </div>
   <div class="item">
-            <label for="climate"> climate<span>*</span></label>
-            <input id="climate" type="text" name="climate" />
+            <label for="climat"> climate<span>*</span></label>
+            <input id="climat" type="text" name="climat" />
           </div>
           <div class="item">
             <label for="activity">currency #<span>*</span></label>
@@ -237,16 +241,18 @@ cursor: pointer;
           </div>
           <div class="item">
             <label for="history">history<span>*</span></label>
-            <input id="history" type="number" name="history" />
+            <input id="history"  name="history" />
           </div>
                    <div class="item">
             <label for="bdate">Price car <span>*</span></label>
-            <input id="Price car"  name="Price car" />
+            <input id="price_car"  name="price_car" />
           </div>
-
-  <div class="item">
+          <div class="item">
             <label for="fname"> pricetrip<span>*</span></label>
-            <input id="pricetrip"  name="pricetrip" />
+            <input id="pricetip"  name="pricetrip" />
+  <div class="item">
+            <label for="fname"> pricetourguide<span>*</span></label>
+            <input id="pricetg"  name="pricetg" />
           </div>
                           </fieldset>
         <div class="btn-block">

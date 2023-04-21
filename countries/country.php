@@ -13,23 +13,26 @@ private $name ,$expectation,
 $population ,$climat ,$currency
 ,$history,$country_id,$price_car
 ,$pricetg,$pricetrip,$imgfolder;
-function country($vars){
+public function __construct($vars){
 
-    $name=$vars['countryname'] ;
-    $expectation=$vars['expectation'] ;
-$population =$vars['population'];
-$climat =$vars['climat'];
-$currency=$vars['currency'];
-$history=$vars['history'];
-$country_id=$vars['country_id'];
-$price_car=$vars['price_car'];
-$pricetg=$vars['pricetg'];
-$pricetrip=$vars['pricetrip'];
-$imgfolder='';
+$this->name=$vars['countryname'] ;
+$this->expectation=$vars['expectation'] ;
+$this->population =$vars['population'];
+$this->climat =$vars['climat'];
+$this->currency=$vars['currency'];
+$this->history=$vars['history'];
+$this->country_id=$vars['country_id'];
+$this->price_car=$vars['price_car'];
+$this->pricetg=$vars['pricetg'];
+$this->pricetrip=$vars['pricetrip'];
+$this->imgfolder='';
 $cnx=CBD::getInstance();
 
-$query="INSERT INTO `country` (`name`, `country_id`, `pricetg`, `price_car`) VALUES ('$name', '$country_id', '$pricetg','$price_car');";
+$query="INSERT INTO `country` (`name`, `country_id`, `pricetg`, `price_car`) VALUES ('$this->name', '$this->country_id', '$this->pricetg','$this->price_car');";
 $response=$cnx->query($query);
+}
+function tellme(){
+  return $this->country_id;
 }
 function addcountry(){
 
@@ -277,7 +280,7 @@ function addcountry(){
           <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper"><?php
              require(\'Persistence.php\');
-  $comment_post_ID = 62;
+  $comment_post_ID = '.$this->country_id.';
   $db = new Persistence();
   $comments = $db->get_comments($comment_post_ID);
   $has_comments = (count($comments) > 0);
