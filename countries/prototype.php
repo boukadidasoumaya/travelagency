@@ -5,6 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title><?= $city_name ?></title>
+
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -30,7 +31,7 @@
         #hero {
             width: 100%;
             height: 100vh;
-            background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("img/img/bali/balih6.jpg") top center;
+            background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url(<?= $hero_src ?>) top center;
             background-size: cover;
             position: relative;
             margin-bottom: -90px;
@@ -38,14 +39,14 @@
 
 
         .about {
-            background: url("img/img/bali/balih.jpg") center center no-repeat;
+            background: url(<?= $about_src ?>) center center no-repeat;
             background-size: cover;
             padding: 60px 0;
             position: relative;
         }
 
         .services {
-            background: url("img/img/bali/balih3.jpg") center center no-repeat;
+            background: url(<?= $services_src ?>) center center no-repeat;
             background-size: cover;
             padding: 60px 0;
             position: relative;
@@ -53,11 +54,11 @@
 
         .contact {
             padding-bottom: 80px;
-            background: url("img/img/bali/balih5.jpg");
+            background: url(<?= $contact_src ?>);
         }
 
         .cta {
-            background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url("img/img/bali/balih2.jpg") fixed center center;
+            background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url(<?= $cta_src ?>) fixed center center;
             background-size: cover;
             padding: 60px 0;
         }
@@ -177,8 +178,8 @@
                     <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                         <div class="content">
                             <h3>What to expect ?</h3>
-                            <p>
-                                The mere mention of Bali evokes thoughts of a paradise. It's
+                            <p style="color:#ffff">
+                                The mere mention of <?= $city_name ?> evokes thoughts of a paradise. It's
                                 more than a place; it's a mood, an aspiration, a tropical
                                 state of mind.
                             </p>
@@ -192,31 +193,27 @@
                                     <i class="bi bi-people"></i>
                                     <h4>population count</h4>
 
-                                    <p>upto 4.362 million (2019) person lives in</p>
+                                    <p>upto <?= $population ?> million (2019) person lives in</p>
                                 </div>
                                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                     <i class="bi bi-cloud"></i>
                                     <h4>climate</h4>
                                     <p>
-                                        The climate in Bali, Indonesia is tropical, characterized
-                                        by high temperatures and high humidity throughout the year
+                                        <?= $climat ?>
                                     </p>
                                 </div>
                                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                     <i class="bi bi-cash"></i>
                                     <h4>local currency</h4>
                                     <p>
-                                        The currency used on the island of Bali is the Indonesian
-                                        Rupiah.
+                                        <?= $local_currency ?>
                                     </p>
                                 </div>
                                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                     <i class="bi bi-clock-history"></i>
                                     <h4>preview of the history</h4>
                                     <p>
-                                        Bali came under the rule of the Majapahit empire of
-                                        eastern Java in 1343 and continued under the Majapahits
-                                        until the empire was overthrown in 1478 by Muslims.
+                                        <?= $history ?>
                                     </p>
                                 </div>
                             </div>
