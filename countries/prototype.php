@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include_once '../fragments/barrehead.php' ?>
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title><?= $country_name ?></title>
-
+    <title><?= $city_name ?></title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -26,6 +24,44 @@
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
+
+
+    <style>
+        #hero {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("img/img/bali/balih6.jpg") top center;
+            background-size: cover;
+            position: relative;
+            margin-bottom: -90px;
+        }
+
+
+        .about {
+            background: url("img/img/bali/balih.jpg") center center no-repeat;
+            background-size: cover;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .services {
+            background: url("img/img/bali/balih3.jpg") center center no-repeat;
+            background-size: cover;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .contact {
+            padding-bottom: 80px;
+            background: url("img/img/bali/balih5.jpg");
+        }
+
+        .cta {
+            background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url("img/img/bali/balih2.jpg") fixed center center;
+            background-size: cover;
+            padding: 60px 0;
+        }
+    </style>
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
 
@@ -126,8 +162,8 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container" data-aos="fade-up">
-            <h1>Explore Bali</h1>
-            <h2>The Pearl Of Indonisia</h2>
+            <h1>Explore <?= $city_name ?></h1>
+            <h2>The Pearl Of <?= $country ?></h2>
             <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
         </div>
     </section>
@@ -243,11 +279,8 @@
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                             <div class="icon"><i class="bi bi-currency-dollar"></i></div>
                             <h4 class="title"><a href="">Cancellation policy </a></h4>
-                            <!--<p class="description">
-                  insuring our customers' satisfaction,we offer refund upon
-                  cancelation that is atleast 3 days prior to the set date
-                </p>-->
-                            <ul class="list-unstyled fa-ul">
+
+                            <ul class="description">
                                 <li>
                                     <app-icon-text _ngcontent-gis-c165="" _nghost-gis-c134="" ng-reflect-icon="tick" ng-reflect-text="Refundable">
                                         <p _ngcontent-gis-c134="" class="mb-0">
@@ -255,11 +288,7 @@
                                                     <g id="ok" _ngcontent-gis-c134="">
                                                         <path id="Path" d="M4 13L9 18L20 7" stroke="#90CB83" stroke-width="1.5" stroke-linecap="round" _ngcontent-gis-c134=""></path>
                                                     </g>
-                                                </svg></svg-icon><!--bindings={
-  "ng-reflect-ng-if": "tick"
-}--><!--ng-container--><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><span _ngcontent-gis-c134="" ng-reflect-ng-style="[object Object]" style="width: max-content">
+                                                </svg></svg-icon><span _ngcontent-gis-c134="" ng-reflect-ng-style="[object Object]" style="width: max-content">
                                                 Spot pending (< 40days)</span>
                                         </p>
                                     </app-icon-text>
@@ -271,11 +300,7 @@
                                                     <g id="ok" _ngcontent-gis-c134="">
                                                         <path id="Path" d="M4 13L9 18L20 7" stroke="#90CB83" stroke-width="1.5" stroke-linecap="round" _ngcontent-gis-c134=""></path>
                                                     </g>
-                                                </svg></svg-icon><!--bindings={
-  "ng-reflect-ng-if": "tick"
-}--><!--ng-container--><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><span _ngcontent-gis-c134="" ng-reflect-ng-style="[object Object]" style="width: max-content">
+                                                </svg></svg-icon><span _ngcontent-gis-c134="" ng-reflect-ng-style="[object Object]" style="width: max-content">
                                                 Spot confirmed : voucher</span>
                                         </p>
                                     </app-icon-text>
@@ -288,11 +313,7 @@
                                                         <path d="M23.5425 23.5425L8.45758 8.45753" stroke="#EF5F8E" stroke-width="2" stroke-linecap="round" _ngcontent-gis-c134=""></path>
                                                         <path d="M23.5424 8.45753L8.45747 23.5425" stroke="#EF5F8E" stroke-width="2" stroke-linecap="round" _ngcontent-gis-c134=""></path>
                                                     </g>
-                                                </svg></svg-icon><!--bindings={
-  "ng-reflect-ng-if": "close-red"
-}--><!--ng-container--><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><span _ngcontent-gis-c134="" ng-reflect-ng-style="[object Object]" style="width: max-content">
+                                                </svg></svg-icon><span _ngcontent-gis-c134="" ng-reflect-ng-style="[object Object]" style="width: max-content">
                                                 40 days pre-trip</span>
                                         </p>
                                     </app-icon-text>
@@ -306,7 +327,7 @@
         <!-- End Services Section -->
 
         <!-- ======= Counts Section ======= -->
-        <section id="counts" class="counts section-bg">
+        <!--<section id="counts" class="counts section-bg">
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
@@ -342,7 +363,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- End Counts Section -->
 
         <!-- ======= Cta Section ======= -->
@@ -449,21 +470,21 @@
         <!-- End Testimonials Section -->
 
         <!-- ======= Team Section ======= -->
-        <section id="team" class="team">
+        <section id="team" class="team section-bg1">
             <div class="container">
                 <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                    <h2>Local Guides</h2>
+                    <h2>Discover <?= $city_name ?></h2>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up">
                             <div class="pic">
-                                <img src="<?= $guide1 ?>" class="img-fluid" alt="" />
+                                <img src="<?= $pic1 ?>" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
-                                <h4><?= $guide1_name ?></h4>
-                                <span><?= $guide1_place ?></span>
+                                <h4><?= $pic1_name ?></h4>
+                                <span><?= $pic1_place ?></span>
                             </div>
                         </div>
                     </div>
@@ -471,11 +492,11 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="150">
                             <div class="pic">
-                                <img src="<?= $guide2 ?>" class="img-fluid" alt="" />
+                                <img src="<?= $pic2 ?>" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
-                                <h4><?= $guide2_name ?></h4>
-                                <span><?= $guide2_place ?></span>
+                                <h4><?= $pic2_name ?></h4>
+                                <span><?= $pic2_place ?></span>
                             </div>
                         </div>
                     </div>
@@ -483,11 +504,11 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="pic">
-                                <img src="<?= $guide3 ?>" class="img-fluid" alt="" />
+                                <img src="<?= $pic3 ?>" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
-                                <h4><?= $guide3_name ?></h4>
-                                <span><?= $guide3_place ?></span>
+                                <h4><?= $pic3_name ?></h4>
+                                <span><?= $pic3_place ?></span>
                             </div>
                         </div>
                     </div>
