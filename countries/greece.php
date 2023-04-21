@@ -25,7 +25,7 @@ $history = "Santorini, formed by a volcanic eruption 3,600 years ago, was ruled 
 $hero_src = "img/img/greece/greeceh1.jpg";
 $about_src = "img/img/greece/greeceh2.jpg";
 $services_src = "img/img/greece/greeceh4.jpg";
-$contact_src = "img/img/greece/greeceh3.jpg";
+$contact_src = "img/img/greece/greeceh5.jpg";
 $cta_src = "img/img/greece/athenes.jpg";
 
 include_once('prototype.php');

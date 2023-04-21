@@ -54,7 +54,10 @@
 
         .contact {
             padding-bottom: 80px;
-            background: url(<?= $contact_src ?>);
+            background: url(<?= $contact_src ?>)no-repeat;
+            background-size: cover;
+            padding: 60px 0;
+            position: relative;
         }
 
         .cta {
@@ -230,12 +233,7 @@
             <div class="container">
                 <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                     <h2>Our Services</h2>
-                    <p>
-                        public service that provides travel and tourism-related services
-                        to the general public on behalf of accommodation or travel
-                        suppliers to offer different kinds of travelling packages for each
-                        destination.
-                    </p>
+
                 </div>
 
                 <div class="row">

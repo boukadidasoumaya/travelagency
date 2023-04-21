@@ -30,7 +30,7 @@ $history = "Bali came under the rule of the Majapahit empire of
 $hero_src = "img/img/bali/balih6.jpg";
 $about_src = "img/img/bali/balih.jpg";
 $services_src = "img/img/bali/balih3.jpg";
-$contact_src = "img/img/bali/balih5.jpg";
+$contact_src = "img/img/bali/balih7.jpg";
 $cta_src = "img/img/bali/balih2.jpg";
 
 include_once('prototype.php');
