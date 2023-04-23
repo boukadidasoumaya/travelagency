@@ -320,9 +320,23 @@
             </div>
         </section>
         <!-- End Services Section -->
-
+        <!-- ======= Cta Section ======= -->
+        <section id="cta" class="cta">
+            <div class="container" data-aos="zoom-in">
+                <div class="text-center">
+                    <h3>Leave us a review !</h3>
+                    <p>
+                        we are an agency that greatly values our customers' review
+                        ,insuring a satisfactory service.to helps us improve leave us a
+                        feedback
+                    </p>
+                    <a class="cta-btn" href="#comment">jump to reviews</a>
+                </div>
+            </div>
+        </section>
+        <!-- End Cta Section -->
         <!-- ======= Counts Section ======= -->
-        <!--<section id="counts" class="counts section-bg">
+        <section id="counts" class="counts section-bg">
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
@@ -358,24 +372,10 @@
                     </div>
                 </div>
             </div>
-        </section>-->
+        </section>
         <!-- End Counts Section -->
 
-        <!-- ======= Cta Section ======= -->
-        <section id="cta" class="cta">
-            <div class="container" data-aos="zoom-in">
-                <div class="text-center">
-                    <h3>Leave us a review !</h3>
-                    <p>
-                        we are an agency that greatly values our customers' review
-                        ,insuring a satisfactory service.to helps us improve leave us a
-                        feedback
-                    </p>
-                    <a class="cta-btn" href="#comment">jump to reviews</a>
-                </div>
-            </div>
-        </section>
-        <!-- End Cta Section -->
+
 
         <!-- ======= Testimonials Section ======= -->
         <section id="testimonials" class="testimonials section-bg">
