@@ -56,8 +56,13 @@ include_once '../fragments/barre.php'
 
 
                 </h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque mollitia, in consequuntur sunt voluptas enim officia cupiditate rem fugit, veritatis neque, doloremque aspernatur at esse non suscipit dicta magnam?
-
+                <p>At Think Travel, we're passionate about travel and believe that exploring the world is one of life's greatest joys.
+                    That's why we're dedicated to creating unforgettable travel experiences for our clients.
+                    We specialize in customizing trips that cater to each individual's unique interests and preferences,
+                    so you can be sure that your travel experience will be tailored just for you.
+                    Our team of travel experts is made up of seasoned professionals who are passionate about travel and have first-hand knowledge of the destinations we offer.
+                    Whether you're looking for a romantic getaway, a family vacation, or a solo adventure, we have the expertise to create a trip that exceeds your expectations.
+                </p>
 
                 </p>
                 <a href="" class="button">Let us introduce ourselves</a>
@@ -225,6 +230,14 @@ include_once '../fragments/barre.php'
             <h2>The Official Travel Site of the Think travel agency</h2>
             <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
         </div>
+        <?php
+        require('home_countries.php');
+        $db = new home_countries();
+        $countries = $db->get_countries(1);
+
+        ?>
+
+
     </section>
     <!-- Slides Section Start-->
     <section id="slides-par">
@@ -235,15 +248,22 @@ include_once '../fragments/barre.php'
                         <p>italie</p>
                     </div>
                 </div>
-                <a href="../countries/indexbarre.php">
-                    <div class="slide_1 slide_3">
+                <?php
+                require('home_countries.php');
+                $db = new home_countries();
+                $countries = $db->get_countries(1);
 
-                        <div class="slide-info">
-                            <p>bali</p>
+                foreach ($countries as $c) : ?>
+                    <a href="../countries/indexbarre.php">
+                        <div class="slide_1">
+                            <img class="slide_1" src=<?php echo $countries['countries_photo']; ?>>
+                            <div class="slide-info">
+                                <p><?php echo $countries['countries_name']; ?></p>
 
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                <?php endforeach; ?>
                 <div class="slide_1 slide_4">
                     <div class="slide-info">
                         <p>Greece</p>
@@ -336,6 +356,7 @@ include_once '../fragments/barre.php'
 <script src="../fragments/js/barre.js"></script>
 <script src="js/home.js"></script>
 <script src="js/owl.carousel.min.js"></script>
+
 
 </body>
 
