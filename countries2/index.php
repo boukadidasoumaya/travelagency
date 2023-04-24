@@ -415,7 +415,7 @@
 
             <!-- Bootstrap 5 starter form -->
             <form action="post_comment.php" method="post" role="form" class="">
-              >
+              
 
               <!-- Name input -->
               <div class="mb-3">

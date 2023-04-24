@@ -6,7 +6,7 @@ require 'bdd.php';
         session_start(); 
     } 
 
-class Persistence {
+class Persistence {//comeents
   private $data = array();
   
   function __construct() {
@@ -67,7 +67,7 @@ $cnx= CBD::getInstance();
      $response=$cnx->query($query);
      
       
-      $this->sync();
+      $this->sync(); //pour l'afficher sur l'ecran 
       
       
     
