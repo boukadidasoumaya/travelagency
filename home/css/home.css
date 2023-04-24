@@ -367,7 +367,7 @@ section#welcome-text p{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 60px;
+    width: 90px;
     min-width: 60px;
     height: 300px;
     border-radius: 40px;
@@ -384,6 +384,7 @@ section#welcome-text p{
     left: 20px;
     bottom: 20px;
 }
+
 .slide-info{
     position: absolute;
     bottom: 50px;
