@@ -233,16 +233,7 @@ include_once '../fragments/barre.php'
         <?php
         require('home_countries.php');
         $db = new home_countries();
-        $countries = $db->get_countries(1);
-        $data = array(
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
-            'phone' => '555-1234'
-        );
-
-        foreach ($data as $key => $value) {
-            echo "$key: $value<br>";
-        }
+        $countries = $db->get_countries();
         ?>
 
 
@@ -251,46 +242,29 @@ include_once '../fragments/barre.php'
     <section id="slides-par">
         <div class="container">
             <div class="slides">
-                <div class="slide_1 slide_2 output">
-                    <div class="slide-info">
-                        <p>italie</p>
-                    </div>
-                </div>
+                <?php
 
-                <div class="slide_1 slide_4">
-                    <div class="slide-info">
-                        <p>Greece</p>
-                    </div>
-                </div>
-                <div class="slide_1 slide_5">
-                    <div class="slide-info">
-                        <p>Suisse</p>
-                    </div>
-                </div>
-                <div class="slide_1 slide_6">
-                    <div class="slide-info">
-                        <p>Iceland</p>
-                    </div>
-                </div>
-                <div class="slide_1 slide_7">
-                    <div class="slide-info">
-                        <p>Tunisia</p>
-                    </div>
-                </div>
-                <div class="slide_1 slide_8">
-                    <div class="slide-info">
-                        <p>Japan </p>
-                    </div>
-                </div>
+                foreach ($countries as $c) :
+                    $id = $c['countries_id']
+                ?>
+                    <a href="../countries/indexbarre.php">
+                        <div class="slide_1 slide_0 ">
+                            <img class="slide_1 " src="<?php echo $c['countries_photo']; ?>">
+
+
+                            <div class="slide-info">
+                                <p><?php echo $c['countries_name']; ?></p>
+
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+
 
             </div>
             <div class="adddelete">
-                <button id="btnadd" class="btnadd">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
-                <form>
-                    <input type="text" id="country" placeholder="Enter country" onclick="this.value=''" />
+                <button id="btnadd" class="btnadd" onclick="window.location.href='../countries/countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
 
-                    <input type="file" id="photo" accept="image/png">
-                </form>
                 <button id="btndelete" class="btndelete">Delete a trip <i class="fa-solid fa-trash fa-bounce"></i></button>
             </div>
         </div>
@@ -349,22 +323,7 @@ include_once '../fragments/barre.php'
 <script src="../fragments/js/barre.js"></script>
 <script src="js/home.js"></script>
 <script src="js/owl.carousel.min.js"></script>
-<!--  <?php
-        require('home_countries.php');
-        $db = new home_countries();
-        $countries = $db->get_countries(1);
-
-        foreach ($countries as $c) : ?>
-                    <a href="../countries/indexbarre.php">
-                        <div class="slide_1">
-                            <img class="slide_1" src=<?php echo $countries['countries_photo']; ?>>
-                            <div class="slide-info">
-                                <p><?php echo $countries['countries_name']; ?></p>
-
-                            </div>
-                        </div>
-                    </a>
-                <?php endforeach; ?> -->
+<!--  -->
 
 </body>
 

@@ -9,6 +9,7 @@ class home_countries
 
     function __construct()
     {
+
         $cnx = CBD::getInstance();
 
         $query = "select * from `countries_home`";
@@ -18,12 +19,12 @@ class home_countries
 
 
 
-    function get_countries($c_id)
+    function get_countries()
     {
         $countries = array();
         $cnx = CBD::getInstance();
 
-        $query = "select * from `countries_home` WHERE countries_id=$c_id;";
+        $query = "select * from `countries_home` ;";
         $response = $cnx->query($query);
         $countries = $response->fetchAll(\PDO::FETCH_ASSOC);
         return $countries;
