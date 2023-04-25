@@ -1,0 +1,86 @@
+body{
+    background-image: url("images/bg login.png");
+}
+main{
+    min-height: 100vh;
+    /*background: linear-gradient(#ffb26c,#ffbd81);*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.glass{
+    
+    min-height: 80vh;
+    width: 30%;
+    background: linear-gradient(
+        to right bottom, rgba(255,255,255,0.7),
+        rgba(255,255,255,0.3));
+    border-radius: 3rem;
+    z-index: 10;
+    backdrop-filter: blur(2rem);
+}
+
+
+h1{
+
+    padding-bottom: 5%;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    color: #C0DEFF;
+    text-align: center;
+}
+.form-control{
+    padding-left: 5%;
+    width: 80%;
+    height: 2rem;
+    border-radius: 1rem;
+    border: transparent;
+    background: linear-gradient(
+        to right bottom, rgba(255,255,255,0.8),
+        rgba(255,255,255,0.3)
+        );
+    
+}
+.form-outline{
+    padding-left: 15%;
+    padding-bottom: 5%;
+    
+}
+.buton{
+    margin-left: 15%;
+    text-align: center;
+    width: 70.5%;
+    border-radius: 1rem;
+    height:40px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    background-color:#ADA2FF;
+    border-color: #ADA2FF;
+    color: white;
+}
+.buton:hover{
+    background-color:#432aff;
+    border-color: #432aff;
+    color: white;
+}
+.wb
+{
+    width: 90%;
+    color:#ADA2FF;
+    font-size: 3rem;
+    font-family: 'Oleo Script', cursive;
+    padding-left: 5%;
+    padding-top: 20%;
+    margin: 0%;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: #845EC2;
+}
+a:hover{
+  color: #1a3d7a;  
+}
