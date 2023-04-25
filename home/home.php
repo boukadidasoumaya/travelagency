@@ -32,7 +32,7 @@ include_once '../fragments/barre.php'
         </div>
         <div class="video">
             <video id="video" autoplay loop muted>
-                <source src="homevideo.mp4" type="video/mp4" />
+                <source src="images/homevideo.mp4" type="video/mp4" />
             </video>
         </div>
 
@@ -276,7 +276,7 @@ include_once '../fragments/barre.php'
             <div class="adddelete">
                 <button id="btnadd" class="btnadd" onclick="window.location.href='countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
                 <input type="hidden" name="id" value="">
-                <button id="btndelete" class="btndelete">Update a trip <i class="fa-solid fa-trash fa-bounce"></i></button>
+                <button id="btndelete" class="btndelete" onclick="window.location.href='update_country.php'">Update a trip <i class="fa-solid fa-trash fa-bounce"></i></button>
             </div>
         </div>
     </section>
