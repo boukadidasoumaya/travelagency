@@ -242,29 +242,40 @@ include_once '../fragments/barre.php'
     <section id="slides-par">
         <div class="container">
             <div class="slides">
+
                 <?php
 
                 foreach ($countries as $c) :
-                    $id = $c['countries_id']
+                    $id = $c['country_id']
                 ?>
-                    <a href="../countries/indexbarre.php">
-                        <div class="slide_1 slide_0 ">
-                            <img class="slide_1 " src="<?php echo $c['countries_photo']; ?>">
 
 
-                            <div class="slide-info">
-                                <p><?php echo $c['countries_name']; ?></p>
+                    <div class="slide_1 slide_0 " id="id" name="id">
+                        <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>">
 
-                            </div>
+
+                        <div class="slide-info">
+                            <p><?php echo $c['country_name']; ?>
+
+                                <a href="delete_country.php?id=<?= $c['country_id'] ?>" class="deletebtn"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></a>
+
+
+
+                            </p>
+
                         </div>
-                    </a>
+
+                    </div>
+
                 <?php endforeach; ?>
+
+
 
 
             </div>
             <div class="adddelete">
-                <button id="btnadd" class="btnadd" onclick="window.location.href='../countries/countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
-
+                <button id="btnadd" class="btnadd" onclick="window.location.href='countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
+                <input type="hidden" name="id" value="">
                 <button id="btndelete" class="btndelete">Delete a trip <i class="fa-solid fa-trash fa-bounce"></i></button>
             </div>
         </div>
@@ -319,7 +330,7 @@ include_once '../fragments/barre.php'
 
 
 
-<script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
+<script src="../fragments/js/jquery-3.1.1.min.js"></script>
 <script src="../fragments/js/barre.js"></script>
 <script src="js/home.js"></script>
 <script src="js/owl.carousel.min.js"></script>

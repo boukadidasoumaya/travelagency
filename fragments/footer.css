@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,600;0,900;1,100;1,300&display=swap');
 footer{
   width: 100%;
   /*position:absolute;*/
@@ -38,7 +38,6 @@ footer.logo{
 }
 footer .txt{
   margin-top: 20px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 footer .col h3{
   width: fit-content;

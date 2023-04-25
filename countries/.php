@@ -1,89 +1,12 @@
-
-
-
-<?php
-require('../countries/bdd.php');
-$cnx = CBD::getInstance();
-
-class home_countries
-{
-  protected $cnx;
-  private  $country_id, $name, $expectation,
-    $population, $climate, $currency, $history, $price_car, $pricetg, $pricetrip, $imgfolder;
-
-  public function __construct()
-  {
-    $this->cnx = CBD::getInstance();
-    /*  $query = "INSERT INTO `country` (`country_id`, `country_name`, `expectation`, `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`) VALUES ('$this->country_id','$this->name', '$this->expectation', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip','$this->pricetg','$this->imgfolder');";
-        $response = $cnx->query($query); */
-  }
-
-
-
-
-  function get_countries()
-  {
-    $countries = array();
-    /*  $cnx = CBD::getInstance(); */
-
-    $query = "select * from `country` ;";
-    $response = $this->cnx->prepare($query);
-    $response->execute([]);
-    $countries = $response->fetchAll(\PDO::FETCH_ASSOC);
-    return $countries;
-  }
-
-
-
-  function tellme()
-  {
-    return $this->country_id;
-  }
-
-
-  function findById($id)
-  {
-    $query = "select * from `country` where id= ? ;";
-    $response = $this->cnx->prepare($query);
-    $response->execute([$id]);
-    return $response->fetch(PDO::FETCH_OBJ);
-  }
-  function delete_country($country_id)
-  {
-
-    $delete_query = "delete from country where country_id= ?";
-    $response = $this->cnx->prepare($delete_query);
-    $response->execute([$country_id]);
-  }
-
-
-  function addcountry($vars)
-  {
-    $this->country_id = $vars['country_id'];
-    $this->name = $vars['countryname'];
-    $this->expectation = $vars['expectation'];
-    $this->population = $vars['population'];
-    $this->climate = $vars['climate'];
-    $this->currency = $vars['currency'];
-    $this->history = $vars['history'];
-    $this->price_car = $vars['price_car'];
-    $this->pricetg = $vars['pricetg'];
-    $this->pricetrip = $vars['pricetrip'];
-    $this->imgfolder = $vars['imgfolder'];
-    $cnx = CBD::getInstance();
-
-    $cnx = CBD::getInstance();
-    $query = "INSERT INTO `country` (`country_id`, `country_name`, `expectation`, `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`) VALUES ('$this->country_id','$this->name', '$this->expectation', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip','$this->pricetg','$this->imgfolder');";
-    $response = $cnx->query($query);
-    $txt = '<?php 
+<?php 
   if(!isset($_SESSION)) 
   { 
       session_start(); 
   } 
-  $_SESSION[\'username\']="mabahej";
-  $_SESSION[\'lastname\']="benh";
-  $_SESSION[\'photo\']="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1200px-Grosser_Panda.JPG";
-  $_SESSION[\'authorized\']=false;
+  $_SESSION['username']="mabahej";
+  $_SESSION['lastname']="benh";
+  $_SESSION['photo']="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1200px-Grosser_Panda.JPG";
+  $_SESSION['authorized']=false;
   
   
   ?>
@@ -106,7 +29,7 @@ class home_countries
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   
     <!-- Vendor CSS Files -->
-    <script src=\'https://kit.fontawesome.com/a076d05399.js\' crossorigin=\'anonymous\'></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -145,7 +68,7 @@ class home_countries
     <!-- ======= Hero Section ======= -->
     <section id="hero">
       <div class="hero-container" data-aos="fade-up">
-        <h1>Explore ' . $this->name . '</h1>
+        <h1>Explore </h1>
         <h2>The Pearl Of Indonisia</h2>
         <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
       </div>
@@ -162,7 +85,7 @@ class home_countries
               <div class="content">
                 <h3>What to expect ?</h3>
                 <p>
-                ' . $this->expectation . '                </p>
+                                </p>
                 <a href="#" class="about-btn">Book now <i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
@@ -173,23 +96,23 @@ class home_countries
                     <i class="bi bi-people"></i>
                     <h4>population count</h4>
                     
-                    <p>' . $this->population . '</p>
+                    <p></p>
                   
                   </div>
                   <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                     <i class="bi bi-cloud"></i>
                     <h4>climate</h4>
-                    <p>' . $this->climate . '</p>
+                    <p></p>
                   </div>
                   <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                     <i class="bi bi-cash"></i>
                     <h4>local currency </h4>
-                    <p>' . $this->currency . '</p>
+                    <p></p>
                   </div>
                   <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                     <i class="bi bi-clock-history"></i>
                     <h4>preview of the history</h4>
-                    <p>' . $this->history . '</p>
+                    <p></p>
                   </div>
                 </div>
               </div><!-- End .content-->
@@ -231,8 +154,8 @@ class home_countries
               <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon"><i class="bi bi-person"></i>
                 </div>
-                <h4 class="title"><a href="">tourist\'s guide</a></h4>
-                <p class="description">we provide a fully trained crew of tourists \'guide ,that helps elevate your experience</p>
+                <h4 class="title"><a href="">tourist's guide</a></h4>
+                <p class="description">we provide a fully trained crew of tourists 'guide ,that helps elevate your experience</p>
               </div>
             </div>
   
@@ -241,7 +164,7 @@ class home_countries
                 <div class="icon"><i class="bi bi-currency-dollar"></i>
                 </div>
                 <h4 class="title"><a href="">refunds </a></h4>
-                <p class="description">insuring our customers\' satisfaction,we offer refund upon cancelation that is atleast 3 days prior to the set date</p>
+                <p class="description">insuring our customers' satisfaction,we offer refund upon cancelation that is atleast 3 days prior to the set date</p>
               </div>
             </div>
   
@@ -299,7 +222,7 @@ class home_countries
   
           <div class="text-center">
             <h3>Leave us a review !</h3>
-            <p> we are an agency that greatly values our customers\' review ,insuring a satisfactory service.to helps us improve leave us a feedback</p>
+            <p> we are an agency that greatly values our customers' review ,insuring a satisfactory service.to helps us improve leave us a feedback</p>
             <a class="cta-btn" href="#comment">jump to reviews</a>
           </div>
   
@@ -318,8 +241,8 @@ class home_countries
   
           <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper"><?php
-             require(\'Persistence.php\');
-  $comment_post_ID = ' . $this->country_id . ';
+             require('Persistence.php');
+  $comment_post_ID = ;
   $db = new Persistence();
   $comments = $db->get_comments($comment_post_ID);
   $has_comments = (count($comments) > 0);
@@ -329,12 +252,12 @@ class home_countries
   
               <div class="swiper-slide">
                 <div class="testimonial-item">
-                  <p id="comment_<?php echo($comment[\'com_id\']); ?>">
+                  <p id="comment_<?php echo($comment['com_id']); ?>">
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    <?php echo($comment[\'content\']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    <?php echo($comment['content']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                   <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3><?php echo($comment[\'comment_author\'].\' \'.$comment[\'user_last_name\']); ?></h3>
+                  <h3><?php echo($comment['comment_author'].' '.$comment['user_last_name']); ?></h3>
                 </div>
               </div><!-- End testimonial item -->
   
@@ -474,14 +397,14 @@ class home_countries
       </div>
       
   <!-- comment_post_ID value hard-coded as 1 --> 
-      <input type="hidden" name="comment_post_ID" value="' . $this->country_id . '" id="comment_post_ID" />
+      <input type="hidden" name="comment_post_ID" value="" id="comment_post_ID" />
       <!-- Form submit button -->
       
       <div class="d-grid">
   
-        <button <?php if (!$_SESSION[\'authorized\']){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
+        <button <?php if (!$_SESSION['authorized']){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
       </div>
-      <?php if (!$_SESSION[\'authorized\']){ ?><div class="alert alert-danger" role="alert">
+      <?php if (!$_SESSION['authorized']){ ?><div class="alert alert-danger" role="alert">
     please sign-up first <a href="C:\Users\sapph\OneDrive\Documents\GitHub\travelagency\login"> here </a><?php } ?> 
   </div>
   
@@ -583,10 +506,4 @@ class home_countries
   
   </body>
   
-  </html>';
-    return $txt;
-  }
-}
-?>
-
-   
+  </html>
