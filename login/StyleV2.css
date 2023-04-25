@@ -1,17 +1,9 @@
 @-webkit-keyframes changeBg
 {
-   0%   {background: url("images/1.png")no-repeat;
-         background-size: cover;
-         position: relative;}
-   25%  {background: url("images/2.png")no-repeat;
-      background-size: cover;
-      position: relative;}
-   50%  {background: url("images/3.png")no-repeat;
-      background-size: cover;
-      position: relative;}
-   100% {background: url("images/4.png")no-repeat;
-      background-size: cover;
-      position: relative;}
+   0%   {background-image: url("images/1.png");}
+   25%  {background-image: url("images/2.png");}
+   50%  {background-image: url("images/3.png");}
+   100% {background-image: url("images/4.png");}
 }
  
 body
@@ -51,9 +43,6 @@ h2{
    display: flex;
 }
 
-.eye{
-   padding: 2.5%;
-}
 .verify-password{
    padding:2%;
    padding-top: 0%;
@@ -72,6 +61,9 @@ h2{
 .p{
    padding-left: 3%;
 }
+.passport{
+   padding-left: 3.5%;
+}
 .buton{
   margin: 0% 35%;
   height:60px!important;
@@ -80,14 +72,22 @@ h2{
    
   color: whitesmoke!important;
 }
-.buton:hover{
-   
-}
+
 .signinlink{
    text-align: center;
    text-decoration: none;
 }
 
+
 .start{
    height: 10%;
 }
+
+.fa-check-circle {
+   color: green;
+   padding: 1.5%;
+ }
+.fa-times-circle {
+   color: red;
+   padding: 1.5%;
+ }
