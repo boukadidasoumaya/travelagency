@@ -64,7 +64,7 @@
 
                 <!--passport-->
                 <div class="row passport">
-                    <input type="text" id="passport" onkeypress="return /[A-Z]/i.test(event.key) || /[0-9]/.test(event.key)" oninput="validatePassport()" maxlength="8"  placeholder="Passport" class="p input  col-lg-11 col-md-11 col-sm-11" required>
+                    <input type="text" id="passport" onkeypress="return /[A-Z]/i.test(event.key) || /[0-9]/.test(event.key)"  maxlength="8"  placeholder="Passport" class="p input  col-lg-11 col-md-11 col-sm-11" required>
                     <i class="icon col-lg-1 col-md-1 col-sm-1" id="passportValidationIcon"></i>
                 </div>
                 <!-- Email input -->
