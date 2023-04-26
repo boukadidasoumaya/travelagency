@@ -64,8 +64,17 @@ function validatePassport() {
     
     if (passportRegex.test(passportInput.value)) {
       passportValidationIcon.className = 'fas fa-check-circle col-lg-1 col-md-1 col-sm-1';
+      boutonAjouter.disabled = false;
     } else {
       passportValidationIcon.className = 'fas fa-times-circle col-lg-1 col-md-1 col-sm-1';
+      boutonAjouter.disabled = true;
     }
   }
   
+  passwordv.addEventListener("keyup", function() {
+    if (password.value == passwordv.value) {
+      boutonAjouter.disabled = false;
+    } else {
+      boutonAjouter.disabled = true;
+    }
+  });
