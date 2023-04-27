@@ -61,7 +61,7 @@ include_once '../fragments/barre.php'
                     We specialize in customizing trips that cater to each individual's unique interests and preferences,
                     so you can be sure that your travel experience will be tailored just for you.
                     Our team of travel experts is made up of seasoned professionals who are passionate about travel and have first-hand knowledge of the destinations we offer.
-                    Whether you're looking for a romantic getaway, a family vacation, or a solo adventure, we have the expertise to create a trip that exceeds your expectations.
+
                 </p>
 
                 </p>
@@ -231,8 +231,8 @@ include_once '../fragments/barre.php'
             <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
         </div>
         <?php
-        require('home_countries.php');
-        $db = new home_countries();
+        require('../countriesfinal/countries.php');
+        $db = new countries();
         $countries = $db->get_countries();
         ?>
 
@@ -274,7 +274,7 @@ include_once '../fragments/barre.php'
 
             </div>
             <div class="addedit">
-                <button id="btnadd" class="btnadd" onclick="window.location.href='countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
+                <button id="btnadd" class="btnadd" onclick="window.location.href='../countriesfinal/countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
                 <input type="hidden" name="id" value="">
                 <button id="btnedit" class="btnedit" onclick="window.location.href='table_edit.php'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>
             </div>
