@@ -116,8 +116,11 @@ $(document).ready(function () {
 //partie admin
 
 
+<<<<<<< Updated upstream
 // Ajouter un écouteur d'événements au bouton pour détecter les clics
 
+=======
+>>>>>>> Stashed changes
 
 function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());

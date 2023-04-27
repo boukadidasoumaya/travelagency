@@ -5,6 +5,7 @@ if (!isset($_SESSION)) {
 }
 $db = new countries();
 header('Location: ../home/home.php');
+$myfile = fopen("img/" . $_POST['countryname'] , "w");
 
 $myfile = fopen("" . $_POST['countryname'] . ".php", "w");
 sleep(1);
