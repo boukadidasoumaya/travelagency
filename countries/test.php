@@ -3,6 +3,9 @@
 <?php
 require 'Persistence.php';
 $cnx=CBD::getInstance();
+$query = "select * from `comments` ;";
+$response=$cnx->query($query);
+echo $response;
 /* $query ="INSERT INTO `comments` (`comment_author`, `user_last_name`, `content`, `comment_post_ID`, `date`) VALUES ('mabahej', 'benhassine', 'wow ', '62', '4/17/2023');";
             $response=$cnx->query($query);
             $query ="INSERT INTO `comments` (`comment_author`, `user_last_name`, `content`, `comment_post_ID`, `date`) VALUES ('soumaya', 'boukadida', 'its fun ', '62', '4/18/2023');";
@@ -10,7 +13,7 @@ $cnx=CBD::getInstance();
             $response=$cnx->query($query);
             $query ="INSERT INTO `comments` (`comment_author`, `user_last_name`, `content`, `comment_post_ID`, `date`) VALUES ('maj', 'besine', 'truly amazing ', '62', '4/17/2023');";
             $response=$cnx->query($query);
- */$query="SELECT * from `comments` WHERE comment_author='soumaya' ;";
+ *//* $query="SELECT * from `comments` WHERE comment_author='soumaya' ;";
 $response=$cnx->query($query);
 $data=$response->fetch(PDO::FETCH_ASSOC);?>
 <ol id="posts-list" class="hfeed">
@@ -36,7 +39,7 @@ $has_comments = (count($comments) > 0);
           <p><?php echo($comment['content']); ?></p>
         </div>
       </article></li>
-      <?php };
+      <?php }; */
     
   ?>
 </ol>

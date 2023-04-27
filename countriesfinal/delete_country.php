@@ -1,0 +1,9 @@
+<?php
+require('countries.php');
+if (!isset($_SESSION)) {
+    session_start();
+}
+$db = new countries();
+$id = htmlspecialchars($_GET['id']);
+$db->delete_country($id);
+header('Location: ../home/home.php');

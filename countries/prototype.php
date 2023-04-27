@@ -464,7 +464,7 @@
         </section>
         <!-- End Testimonials Section -->
 
-        <!-- ======= Team Section ======= -->
+        <!-- ======= photo Section ======= -->
         <section id="team" class="team section-bg1">
             <div class="container">
                 <div class="section-title" data-aos="fade-in" data-aos-delay="100">
