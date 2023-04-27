@@ -115,43 +115,9 @@ $(document).ready(function () {
 
 //partie admin
 
-// Récupérer le bouton et le conteneur où ajouter les éléments
-var button = document.getElementById("btnadd");
-var container = document.getElementById("slides");
-var country = document.getElementById("country");
-var fichierImage=document.getElementById("photo").files[0];
-
-var num_slide = 9;
-var url;
-
-// Fonction à exécuter lors du clic sur le bouton
-function ajouterElement() {
-
-    if (country.value /*&& saisie_image()*/)
- { 
-    var nouvelElement = document.createElement("div");
-  nouvelElement.classList.add("slide_1");
-  nouvelElement.classList.add(`slide_${num_slide}`);
-
-  var reader = new FileReader();
-  reader.readAsDataURL(fichierImage);
-  reader.onload = function(event) {
-   
-    nouvelElement.style.backgroundImage = "url('" + event.target.result + "')";
-
-    var nouvelEnfant = document.createElement("p");
-    nouvelEnfant.textContent = country.value;
-    nouvelElement.appendChild(nouvelEnfant);
-
-    // Ajouter le nouvel élément au conteneur
-    conteneur.appendChild(nouvelElement);
-    }
-  }
-}
-
 
 // Ajouter un écouteur d'événements au bouton pour détecter les clics
-button.addEventListener("click", ajouterElement);
+
 
 function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());

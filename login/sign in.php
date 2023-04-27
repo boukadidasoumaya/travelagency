@@ -34,15 +34,18 @@
       <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
         Sign In
       </button>
-
+      <div><a href="signup.php">
+          <h4>Create an account</h4>
+        </a></div>
       <div><a href="">
           <h4>Forget password?</h4>
         </a></div>
 
     </section>
   </main>
-  <?php include_once '../fragments/footer.php' ?>
-
+  <footer>
+    <?php include_once '../fragments/footer.php' ?>
+  </footer>
 
   <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
   <script src="../fragments/js/barre.js"></script>

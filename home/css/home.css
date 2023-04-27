@@ -396,29 +396,8 @@ section#welcome-text p{
     transition: all 0.5s ease;
 }
 
-.slide_2{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/italie.jpg);
-}
-.slide_3{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/bali.jpg);
-}
-.slide_4{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/greece.jpg);
-}
-.slide_5{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/suisse.jpg);
-}
-.slide_6{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/iceland.jpg);
-}
-.slide_7{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/tunisie.jpg);
-}
-.slide_8{ 
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/japan.jpg);
-}
 
-.adddelete{
+.addedit{
     display: flex;
   justify-content: center;
   align-items: center;
@@ -426,7 +405,7 @@ section#welcome-text p{
   margin-top:-30px ;
   padding-bottom: 30px;
 }
-.adddelete .btnadd, .btndelete{
+.addedit .btnadd, .btnedit{
     font-size: 22px;
     text-decoration: none;
     display: inline-block;

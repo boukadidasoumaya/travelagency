@@ -43,10 +43,10 @@ class home_countries
 
   function findById($id)
   {
-    $query = "select * from `country` where id= ? ;";
+    $query = "select * from `country` where country_id= ? ;";
     $response = $this->cnx->prepare($query);
     $response->execute([$id]);
-    return $response->fetch(PDO::FETCH_OBJ);
+    return $response->fetch(PDO::FETCH_ASSOC);
   }
   function delete_country($country_id)
   {
@@ -70,7 +70,7 @@ class home_countries
     $this->pricetg = $vars['pricetg'];
     $this->pricetrip = $vars['pricetrip'];
     $this->imgfolder = $vars['imgfolder'];
-    $cnx = CBD::getInstance();
+
 
     $cnx = CBD::getInstance();
     $query = "INSERT INTO `country` (`country_id`, `country_name`, `expectation`, `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`) VALUES ('$this->country_id','$this->name', '$this->expectation', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip','$this->pricetg','$this->imgfolder');";
@@ -78,6 +78,27 @@ class home_countries
     $file = new generate_country_file($this->country_id, $this->name,  $this->population, $this->climate, $this->currency, $this->history, $this->expectation);
     $txt = $file->get_file();
     return $txt;
+  }
+
+
+  function updatecountry($vars)
+  {
+    $this->country_id = $vars['country_id'];
+    $this->name = $vars['countryname'];
+    $this->expectation = $vars['expectation'];
+    $this->population = $vars['population'];
+    $this->climate = $vars['climate'];
+    $this->currency = $vars['currency'];
+    $this->history = $vars['history'];
+    $this->price_car = $vars['price_car'];
+    $this->pricetg = $vars['pricetg'];
+    $this->pricetrip = $vars['pricetrip'];
+    $this->imgfolder = $vars['imgfolder'];
+
+
+    $cnx = CBD::getInstance();
+    $query = "UPDATE  `country` SET  `country_name`='$this->name', `expectation`='$this->expectation', `population`= '$this->population',`climate`='$this->climate',`currency`='$this->currency',`history`='$this->history',`price_car`='$this->price_car',`price_trip`='$this->pricetrip',`price_tour_guide`='$this->pricetrip',`photo_for_home`='$this->imgfolder' where country_id=$this->country_id ;";
+    $response = $cnx->query($query);
   }
 }
 ?>

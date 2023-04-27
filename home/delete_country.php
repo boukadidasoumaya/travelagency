@@ -6,4 +6,4 @@ if (!isset($_SESSION)) {
 $db = new home_countries();
 $id = htmlspecialchars($_GET['id']);
 $db->delete_country($_GET['id']);
-header('Location: home.php');
+header('Location: table_edit.php');

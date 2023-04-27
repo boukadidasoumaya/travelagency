@@ -11,11 +11,11 @@
                 </div>
                 <div class="nav">
                     <ul>
-                        <li><a class="menu-hover" href="#head">Home</a></li>
-                        <li><a class="menu-hover" href="#about">About</a></li>
-                        <li><a class="menu-hover" href="#book">Book Now</a></li>
-                        <li><a class="menu-hover" href="#welcome">Our Trips</a></li>
-                        <li><a class="menu-hover" href="index.html">Register/Login</a></li>
+                        <li><a class="menu-hover" href="../home/home.php">Home</a></li>
+                        <li><a class="menu-hover" href="../home/home.php#about">About</a></li>
+                        <li><a class="menu-hover" href="../home/home.php#book">Book Now</a></li>
+                        <li><a class="menu-hover" href="../home/home.php#welcome">Our Trips</a></li>
+                        <li><a class="menu-hover" href="../login/sign in.php">Register/Login</a></li>
 
                     </ul>
                 </div>
