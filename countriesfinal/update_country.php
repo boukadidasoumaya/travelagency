@@ -4,6 +4,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $db = new countries();
-$id = htmlspecialchars($_GET['id']);
-$db->delete_country($id);
+
+$db->updatecountry($_POST);
 header('Location: table_edit.php');

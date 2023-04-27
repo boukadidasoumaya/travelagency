@@ -257,11 +257,6 @@ include_once '../fragments/barre.php'
                         <div class="slide-info">
                             <p><?php echo $c['country_name']; ?>
 
-<<<<<<< Updated upstream
-
-=======
-                                <a href="../countriesfinal/delete_country.php?id=<?= $c['country_id'] ?>" class="deletebtn"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></a>
->>>>>>> Stashed changes
 
 
 
@@ -277,17 +272,10 @@ include_once '../fragments/barre.php'
 
 
             </div>
-<<<<<<< Updated upstream
             <div class="addedit">
                 <button id="btnadd" class="btnadd" onclick="window.location.href='../countriesfinal/countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
                 <input type="hidden" name="id" value="">
-                <button id="btnedit" class="btnedit" onclick="window.location.href='table_edit.php'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>
-=======
-            <div class="adddelete">
-                <button id="btnadd" class="btnadd" onclick="window.location.href='../countriesfinal/countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
-                <input type="hidden" name="id" value="">
-                <button id="btndelete" class="btndelete" onclick="window.location.href='../countriesfinal/update_country.php'">Update a trip <i class="fa-solid fa-trash fa-bounce"></i></button>
->>>>>>> Stashed changes
+                <button id="btnedit" class="btnedit" onclick="window.location.href='../countriesfinal/table_edit.php'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>
             </div>
         </div>
     </section>
@@ -344,11 +332,8 @@ include_once '../fragments/barre.php'
 <script src="../fragments/js/jquery-3.1.1.min.js"></script>
 <script src="../fragments/js/barre.js"></script>
 <script src="js/home.js"></script>
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
-<!--  -->
+
 
 </body>
 

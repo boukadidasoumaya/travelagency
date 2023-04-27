@@ -93,7 +93,7 @@ class countries
   {
     $this->country_id = $vars['country_id'];
     $this->country_name = $vars['countryname'];
-    $this->expectation = $vars['expectation'];
+
     $this->population = $vars['population'];
     $this->climate = $vars['climate'];
     $this->currency = $vars['currency'];
@@ -105,7 +105,7 @@ class countries
 
 
     $cnx = CBD::getInstance();
-    $query = "UPDATE  `country` SET `country_id`='$this->country_id', `country_name`='$this->country_name', `expectation`='$this->expectation', `population`= '$this->population',`climate`='$this->climate',`currency`='$this->currency',`history`='$this->history',`price_car`='$this->price_car',`price_trip`='$this->pricetrip',`price_tour_guide`='$this->pricetrip',`photo_for_home`='$this->imgfolder' where country_id=$this->country_id ;";
+    $query = "UPDATE  `country` SET `country_id`='$this->country_id', `country_name`='$this->country_name', `population`= '$this->population',`climate`='$this->climate',`currency`='$this->currency',`history`='$this->history',`price_car`='$this->price_car',`price_trip`='$this->pricetrip',`price_tour_guide`='$this->pricetrip',`photo_for_home`='$this->imgfolder' where country_id=$this->country_id ;";
     $response = $cnx->query($query);
   }
 }
