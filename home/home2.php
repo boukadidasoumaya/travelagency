@@ -32,7 +32,7 @@ include_once '../fragments/barre.php'
         </div>
         <div class="video">
             <video id="video" autoplay loop muted>
-                <source src="images/homevideo.mp4" type="video/mp4" />
+                <source src="homevideo.mp4" type="video/mp4" />
             </video>
         </div>
 
@@ -231,9 +231,16 @@ include_once '../fragments/barre.php'
             <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
         </div>
         <?php
-        require('../countriesfinal/countries.php');
-        $db = new countries();
-        $countries = $db->get_countries();
+      
+        $data = array(
+            'name' => 'John Doe',
+            'email' => 'john@example.com',
+            'phone' => '555-1234'
+        );
+
+        foreach ($data as $key => $value) {
+            echo "$key: $value<br>";
+        }
         ?>
 
 
@@ -242,52 +249,47 @@ include_once '../fragments/barre.php'
     <section id="slides-par">
         <div class="container">
             <div class="slides">
-
-                <?php
-
-                foreach ($countries as $c) :
-                    $id = $c['country_id']
-                ?>
-
-
-                    <div class="slide_1 slide_0 " id="id" name="id">
-                        <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>">
-
-
-                        <div class="slide-info">
-                            <p><?php echo $c['country_name']; ?>
-
-<<<<<<< Updated upstream
-
-=======
-                                <a href="../countriesfinal/delete_country.php?id=<?= $c['country_id'] ?>" class="deletebtn"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></a>
->>>>>>> Stashed changes
-
-
-
-                            </p>
-
-                        </div>
-
+                <div class="slide_1 slide_2 output">
+                    <div class="slide-info">
+                        <p>italie</p>
                     </div>
+                </div>
 
-                <?php endforeach; ?>
-
-
-
+                <div class="slide_1 slide_4">
+                    <div class="slide-info">
+                        <p>Greece</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_5">
+                    <div class="slide-info">
+                        <p>Suisse</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_6">
+                    <div class="slide-info">
+                        <p>Iceland</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_7">
+                    <div class="slide-info">
+                        <p>Tunisia</p>
+                    </div>
+                </div>
+                <div class="slide_1 slide_8">
+                    <div class="slide-info">
+                        <p>Japan </p>
+                    </div>
+                </div>
 
             </div>
-<<<<<<< Updated upstream
-            <div class="addedit">
-                <button id="btnadd" class="btnadd" onclick="window.location.href='countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
-                <input type="hidden" name="id" value="">
-                <button id="btnedit" class="btnedit" onclick="window.location.href='table_edit.php'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>
-=======
             <div class="adddelete">
-                <button id="btnadd" class="btnadd" onclick="window.location.href='../countriesfinal/countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
-                <input type="hidden" name="id" value="">
-                <button id="btndelete" class="btndelete" onclick="window.location.href='../countriesfinal/update_country.php'">Update a trip <i class="fa-solid fa-trash fa-bounce"></i></button>
->>>>>>> Stashed changes
+                <button id="btnadd" class="btnadd">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
+                <form>
+                    <input type="text" id="country" placeholder="Enter country" onclick="this.value=''" />
+
+                    <input type="file" id="photo" accept="image/png">
+                </form>
+                <button id="btndelete" class="btndelete">Delete a trip <i class="fa-solid fa-trash fa-bounce"></i></button>
             </div>
         </div>
     </section>
@@ -341,14 +343,26 @@ include_once '../fragments/barre.php'
 
 
 
-<script src="../fragments/js/jquery-3.1.1.min.js"></script>
+<script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
 <script src="../fragments/js/barre.js"></script>
 <script src="js/home.js"></script>
-<<<<<<< Updated upstream
+<script src="js/owl.carousel.min.js"></script>
+<!--  <?php
+        require('home_countries.php');
+        $db = new home_countries();
+        $countries = $db->get_countries(1);
 
-=======
->>>>>>> Stashed changes
-<!--  -->
+        foreach ($countries as $c) : ?>
+                    <a href="../countries/indexbarre.php">
+                        <div class="slide_1">
+                            <img class="slide_1" src=<?php echo $countries['countries_photo']; ?>>
+                            <div class="slide-info">
+                                <p><?php echo $countries['countries_name']; ?></p>
+
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?> -->
 
 </body>
 
