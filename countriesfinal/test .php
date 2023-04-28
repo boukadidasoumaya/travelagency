@@ -4,7 +4,7 @@
     #hero {
         width: 100%;
         height: 100vh;
-        background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url() top center;
+        background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url(test.php) top center;
         background-size: cover;
         position: relative;
         margin-bottom: -90px;
@@ -34,7 +34,7 @@
     }
 
     .cta {
-        background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url( ) fixed center center;
+        background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url(img1.jpg ) fixed center center;
         background-size: cover;
         padding: 60px 0;
     }
@@ -97,7 +97,7 @@
         <!-- ======= Hero Section ======= -->
         <section id="hero">
           <div class="hero-container" data-aos="fade-up">
-            <h1>Explore Tunisia</h1>
+            <h1>Explore test </h1>
             <h2>The Pearl Of Indonisia</h2>
             <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
           </div>
@@ -114,7 +114,7 @@
                   <div class="content">
                     <h3>What to expect ?</h3>
                     <p>
-                    The mere mention of Tunisia evokes thoughts of a paradise. It's
+                    The mere mention of test  evokes thoughts of a paradise. It's
                     more than a place; it's a mood, an aspiration, a tropical
                     state of mind.               </p>
                     <a href="#" class="about-btn">Book now <i class="bx bx-chevron-right"></i></a>
@@ -320,7 +320,7 @@
               <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper"><?php
                  require('Persistence.php');
-      $comment_post_ID = 80;
+      $comment_post_ID = 54;
       $db = new Persistence();
       $comments = $db->get_comments($comment_post_ID);
       $has_comments = (count($comments) > 0);
@@ -475,7 +475,7 @@
           </div>
           
       <!-- comment_post_ID value hard-coded as 1 --> 
-          <input type="hidden" name="comment_post_ID" value="80" id="comment_post_ID" />
+          <input type="hidden" name="comment_post_ID" value="54" id="comment_post_ID" />
           <!-- Form submit button -->
           
           <div class="d-grid">

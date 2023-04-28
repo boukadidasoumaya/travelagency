@@ -268,7 +268,7 @@
 
 <body>
   <div class="testbox">
-    <form action='post_country.php' method='post' role='form'>
+    <form action='post_country.php' method='post' role='form' enctype="multipart/form-data">
       <div class="banner">
         <h1>countryform</h1>
       </div>
@@ -324,7 +324,7 @@
           </div>
           <div>
             <label for="file">Choose file to upload for hero</label>
-            <input type="file" id="hero_src" name="hero_src" multiple>
+            <input type="file" id="hero_src" name="hero_src" >
           </div>
           <div>
             <label for="cta_src">Choose file to upload cta</label>
