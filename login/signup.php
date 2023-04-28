@@ -38,37 +38,17 @@
         </div>
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row username ">
-
-          <!--passport-->
-          <div class="row passport">
-            <input type="text" id="passport" onkeypress="return /[A-Z]/i.test(event.key) || /[0-9]/.test(event.key)" maxlength="8" placeholder="Passport" class="p input  col-lg-11 col-md-11 col-sm-11" required>
-            <i class="icon col-lg-1 col-md-1 col-sm-1" id="passportValidationIcon"></i>
-          </div>
-          <!-- Email input -->
-          <div class="email ">
-            <!--label class="form-label" for="form3Example3">Email Address*</label-->
-            <input type="email" id="email" class="input p" placeholder="Email" required>
-          </div>
-
-          <!-- Password input -->
-          <div class="password">
-            <div class="hide">
-              <input type="password" placeholder="Password" id="password" class="input p" required>
-              <!--i class="far fa-eye  eye" id="togglePassword"></i-->
-            </div>
-            <p class="rule">Password must at least 6 character. </p>
-          </div>
-
-
-          <div class="form-outline col-lg-6 col-md-6 col-sm-6">
-            <!-- <label class="form-label" for="form3Example1">Name*</label> -->
+        <div class="form-outline col-lg-6 col-md-6 col-sm-6">
+            <input type="text" id="name" onkeypress="return /[a-zA-Z]/i.test(event.key)" placeholder="Name" class="input" required>
+        </div>
+        <div class="form-outline col-lg-6 col-md-6 col-sm-6">
             <input type="text" id="lastname" onkeypress="return /[a-zA-Z]/i.test(event.key)" placeholder="Last name" class="input" required>
-          </div>
+        </div>
 
         </div>
 
-        <!--birthday-->
-        <div class="row birthday">
+         <!--birthday-->
+         <div class="row birthday">
           <label class="txtbirth col-lg-2 col-md-2 col-sm-2 " for="birthday">Birthday:</label>
           <input type="date" id="birthday" name="birthday" class="input b col-lg-4 col-md-4 col-sm-4" required>
         </div>
@@ -84,18 +64,17 @@
           </div>
 
         </div>
-
-        <!--passport-->
-        <div class="row passport">
-          <input type="text" id="passport" onkeypress="return /[A-Z]/i.test(event.key) || /[0-9]/.test(event.key)" oninput="validatePassport()" maxlength="8" placeholder="Passport" class="p input  col-lg-11 col-md-11 col-sm-11" required>
-          <i class="icon col-lg-1 col-md-1 col-sm-1" id="passportValidationIcon"></i>
-        </div>
-        <!-- Email input -->
-        <div class="email ">
-          <!--label class="form-label" for="form3Example3">Email Address*</label-->
-          <input type="email" id="email" class="input p" placeholder="Email" required>
-        </div>
-
+         
+          <!--passport-->
+          <div class="row passport">
+            <input type="text" id="passport" onkeypress="return /[A-Z]/i.test(event.key) || /[0-9]/.test(event.key)" maxlength="8" placeholder="Passport" class="p input  col-lg-11 col-md-11 col-sm-11" required>
+            <i class="icon col-lg-1 col-md-1 col-sm-1" id="passportValidationIcon"></i>
+          </div>
+          <!-- Email input -->
+          <div class="email ">
+            <!--label class="form-label" for="form3Example3">Email Address*</label-->
+            <input type="email" id="email" class="input p" placeholder="Email" required>
+          </div>
         <!-- Password input -->
         <div class="password">
           <div class="hide">
