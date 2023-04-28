@@ -1,8 +1,8 @@
 <?php class CBD
 {
     private static $_dbname = "clients";
-    private static $_user = "mabahej";
-    private static $_pwd = "insat2023";
+    private static $_user = "root";
+    private static $_pwd = "";
     private static $_host = "localhost";
     private static $_bdd = null;
 
