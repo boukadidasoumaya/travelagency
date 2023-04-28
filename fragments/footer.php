@@ -3,7 +3,7 @@
 
         <div class="col">
             <img src="../fragments/images/think travel1.png" width="200px">
-            <ul class="txt">
+            <ul class="txte">
                 <li>"Embark on an unforgettable adventure with us</li>
                 <li> and create memories that will last a lifetime.</li>
                 <li>We strive to provide exceptional</li>

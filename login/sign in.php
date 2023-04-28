@@ -24,16 +24,18 @@
       <div>
         <h1>Sign In</h1>
       </div>
-      <div class="form-outline ">
-        <input type="email" placeholder="Username or email" id="form3Example3" class="form-control" />
-      </div>
-      <div class="form-outline  ">
-        <input type="password" placeholder="Password" id="form3Example4" class="form-control" />
-      </div>
+      <form action="authenticated.php" method="post">
+        <div class="form-outline ">
+          <input type="email" placeholder="Username or email" id="form3Example3" class="form-control" />
+        </div>
+        <div class="form-outline  ">
+          <input type="password" placeholder="Password" id="form3Example4" class="form-control" />
+        </div>
 
-      <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
-        Sign In
-      </button>
+        <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
+          Sign In
+        </button>
+      </form>
       <div><a href="signup.php">
           <h4>Create an account</h4>
         </a></div>
@@ -47,7 +49,7 @@
     <?php include_once '../fragments/footer.php' ?>
   </footer>
 
-  <script src="../fragments/js/jquery-3.1.1.min.js"></script> <!--tkhali el barre tahbet-->
+  <script src="../fragments/js/jquery-3.1.1.min.js"></script>
   <script src="../fragments/js/barre.js"></script>
 </body>
 
