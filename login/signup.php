@@ -18,7 +18,7 @@
   include_once '../fragments/barre.php'
   ?>
 
-  <<div class="row  ">
+  <div class="row  ">
     <div class="slogan col-lg-5">
       <div class="txt">
         <p>Life is short</p>
@@ -31,7 +31,8 @@
       </div>
     </div>
     <div class="form col-lg-7 ">
-      <form>
+      
+      <form action="create_user_accountant.php " method='POST'>
 
         <div>
           <h2 class="acc">Create an Account</h2>
@@ -39,10 +40,10 @@
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row username ">
         <div class="form-outline col-lg-6 col-md-6 col-sm-6">
-            <input type="text" id="name" onkeypress="return /[a-zA-Z]/i.test(event.key)" placeholder="Name" class="input" required>
+            <input type="text" id="name" name="name" onkeypress="return /[a-zA-Z]/i.test(event.key)" placeholder="Name" class="input" required>
         </div>
         <div class="form-outline col-lg-6 col-md-6 col-sm-6">
-            <input type="text" id="lastname" onkeypress="return /[a-zA-Z]/i.test(event.key)" placeholder="Last name" class="input" required>
+            <input type="text" id="lastname" name="lastname" onkeypress="return /[a-zA-Z]/i.test(event.key)" placeholder="Last name" class="input" required>
         </div>
 
         </div>
@@ -50,13 +51,13 @@
          <!--birthday-->
          <div class="row birthday">
           <label class="txtbirth col-lg-2 col-md-2 col-sm-2 " for="birthday">Birthday:</label>
-          <input type="date" id="birthday" name="birthday" class="input b col-lg-4 col-md-4 col-sm-4" required>
+          <input type="date" id="birthday" name="birthday" name="birthday" class="input b col-lg-4 col-md-4 col-sm-4" required>
         </div>
         <!--City-->
         <div class="row location ">
 
           <div class="form-outline col-lg-6 col-md-6 col-sm-6 ">
-            <input type="text" id="country" onkeypress="return /[a-zA-Z]/i.test(event.key)" placeholder="Country" class="input" required>
+            <input type="text" id="country" name="country" onkeypress="return /[a-zA-Z]/i.test(event.key)" placeholder="Country" class="input" required>
           </div>
 
           <div class="form-ouline col-lg-6 col-md-6 col-sm-6 ">
@@ -115,6 +116,8 @@
     <script src="sign up.js"></script>
     <script src="../fragments/js/jquery-3.1.1.min.js"></script>
     <script src="../fragments/js/barre.js"></script>
+
+    
 </body>
 
 </html>
