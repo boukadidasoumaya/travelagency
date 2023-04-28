@@ -1,0 +1,64 @@
+body {
+	background-image: url("pics/choice6.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;/**/
+	color: #f3b9b9;
+	
+	opacity: 90%;
+}
+
+.container {
+  margin-top: 50px;
+/*  max-height: 500px;*/
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+
+.card-header {
+  background-color: #f7f7f7;
+  border-bottom: 0;
+  
+}
+
+.card-header h5 {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  font-weight: 500;
+}
+
+.btn-submit {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.btn-submit:hover {
+  background-color: #0069d9;
+  color: #fff;
+  border-color: #0062cc;
+}
+
+.preview {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin-top: 10px;
+  }
+  
+  .card {
+    margin-top: 10px;
+
+  }
+  
+}
+.card {
+    margin-top: 10vh;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
