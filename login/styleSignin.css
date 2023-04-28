@@ -1,5 +1,7 @@
 body{
-    background-image: url("images/bg login.png");
+    background: url("images/bg login.png")no-repeat;
+    background-size: cover;
+    position: relative;;
 }
 main{
     min-height: 100vh;
