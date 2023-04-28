@@ -3,11 +3,10 @@
 
 <?php
 require('bdd.php');
-$cnx = CBD::getInstance();
 require('generate_country_file.php');
 class countries
 {
-  protected $cnx;
+  protected PDO $cnx;
   private  $country_id, $country_name, $expectation,
     $population, $climate, $currency, $history, $price_car, $pricetg, $pricetrip, $imgfolder, $hero_src, $cta_src, $about_src, $services_src, $contact_src;
 

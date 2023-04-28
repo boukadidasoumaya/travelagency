@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 ?>
 </head>
@@ -23,15 +23,18 @@
 
                         <?php
 
-                        if (!isset($_SESSION)) {
-                            echo '<li><a class="menu-hover" href="../login/sign in.php">Register/Login</a></li>';
-                        } else {
-                            if ($_SESSION['admin'] = false) {
-                                '<li><a class="menu-hover" href="../login/profil.php">Profil</a></li>';
-                            } else if ($_SESSION['admin'] = true) {
+                        var_dump($_SESSION);
+                        if (isset($_SESSION)) {
 
+                            if ($_SESSION['user_name'] = 'admin') {
                                 echo '<li><a class="menu-hover" href="../login/edit_accounts.php">Edit accounts</a></li>';
+                            } else {
+
+                                echo  '<li><a class="menu-hover" href="../login/profil.php">Profil</a></li>';
                             }
+                        } else {
+
+                            echo '<li><a class="menu-hover" href="../login/sign in.php">Register/Login</a></li>';
                         }
                         ?>
 

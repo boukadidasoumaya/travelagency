@@ -11,12 +11,12 @@ if (filter_var($credentiel, FILTER_VALIDATE_EMAIL)) {
     $user = $user->verify_accountByname($_POST['credentiel'], $_POST['password']);
 }
 
-$_SESSION['admin'] = false;
+
 if (($user)) {
     if (($_POST['credentiel'] == 'admin' || 'admin@gmail.com') && $_POST['password'] == 'admin') {
         $_SESSION['user_name'] = 'admin';
 
-        $_SESSION['admin'] = true;
+
         $_SESSION['isAuthenticated'] = true;
         $isAuthenticated = true;
         echo 'i am here';
@@ -25,14 +25,15 @@ if (($user)) {
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['user_name'] = $user['user_name'];
         $_SESSION['isAuthenticated'] = true;
-        $_SESSION['admin'] = false;
+
         $isAuthenticated = true;
-        var_dump($_SESSION);
-        header('Location:login.php');
+
+        header('Location:../home/home.php');
         echo 'else here';
+        unset($_SESSION['admin']);
     }
 } else {
     $_SESSION['error'] = "veuillez verifier vos credentiels";
-    $_SESSION['admin'] = false;
+
     header('Location:sign in.php?');
 }

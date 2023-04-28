@@ -1,5 +1,6 @@
 <?php include_once '../fragments/barrehead.php';
 session_start();
+
 ?>
 
 <link rel="stylesheet" href="styleSignin.css">

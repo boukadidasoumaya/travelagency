@@ -8,8 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="../fragments/barre.css">
-<link rel="stylesheet" href="../fragments/footer.css">
+
 <title>Document</title>
 </head>
 
@@ -106,7 +105,7 @@
                     </div>
 
                     <!--signin-->
-                    <div><a class="signinlink" href="sign in.html">
+                    <div><a class="signinlink" href="sign in.php">
                             <h6 class="signin">Already have an account? Sign In</h6>
                         </a></div>
             </div>
