@@ -1,15 +1,42 @@
-<?php 
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
-$_SESSION['username']="mabahej";
-$_SESSION['lastname']="benh";
-$_SESSION['photo']="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1200px-Grosser_Panda.JPG";
-$_SESSION['authorized']=false;
+<style>
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url() top center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: -90px;
+  }
 
 
-?>
+  .about {
+    background: url() center center no-repeat;
+    background-size: cover;
+    padding: 60px 0;
+    position: relative;
+  }
+
+  .services {
+    background: url() center center no-repeat;
+    background-size: cover;
+    padding: 60px 0;
+    position: relative;
+  }
+
+  .contact {
+    padding-bottom: 80px;
+    background: url()no-repeat;
+    background-size: cover;
+    padding: 60px 0;
+    position: relative;
+  }
+
+  .cta {
+    background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url() fixed center center;
+    background-size: cover;
+    padding: 60px 0;
+  }
+</style>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,12 +68,12 @@ $_SESSION['authorized']=false;
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: Squadfree
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        * Template Name: Squadfree
+        * Updated: Mar 10 2023 with Bootstrap v5.2.3
+        * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
 </head>
 
 <body>
@@ -60,69 +87,7 @@ $_SESSION['authorized']=false;
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li>
-                <strong>Column 1</strong>
-                <a href="#">Column 1 link 1</a>
-                <a href="#">Column 1 link 2</a>
-                <a href="#">Column 1 link 3</a>
-              </li>
-              <li>
-                <strong>Column 2</strong>
-                <a href="#">Column 2 link 1</a>
-                <a href="#">Column 2 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <strong>Column 3</strong>
-                <a href="#">Column 3 link 1</a>
-                <a href="#">Column 3 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <strong>Column 4</strong>
-                <a href="#">Column 4 link 1</a>
-                <a href="#">Column 4 link 2</a>
-                <a href="#">Column 4 link 3</a>
-              </li>
-              <li>
-                <strong>Column 5</strong>
-                <a href="#">Column 5 link 1</a>
-                <a href="#">Column 5 link 2</a>
-                <a href="#">Column 5 link 3</a>
-              </li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      <!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
@@ -130,7 +95,7 @@ $_SESSION['authorized']=false;
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="fade-up">
-      <h1>Explore Bali</h1>
+      <h1>Explore </h1>
       <h2>The Pearl Of Indonisia</h2>
       <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
     </div>
@@ -147,8 +112,9 @@ $_SESSION['authorized']=false;
             <div class="content">
               <h3>What to expect ?</h3>
               <p>
-                The mere mention of Bali evokes thoughts of a paradise. It's more than a place; it's a mood, an aspiration, a tropical state of mind.
-              </p>
+                The mere mention of evokes thoughts of a paradise. It's
+                more than a place; it's a mood, an aspiration, a tropical
+                state of mind. </p>
               <a href="#" class="about-btn">Book now <i class="bx bx-chevron-right"></i></a>
             </div>
           </div>
@@ -158,24 +124,24 @@ $_SESSION['authorized']=false;
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bi bi-people"></i>
                   <h4>population count</h4>
-                  
-                  <p>upto 4.362 million (2019) person lives in</p>
-                
+
+                  <p></p>
+
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i class="bi bi-cloud"></i>
                   <h4>climate</h4>
-                  <p>The climate in Bali, Indonesia is tropical, characterized by high temperatures and high humidity throughout the year</p>
+                  <p></p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                   <i class="bi bi-cash"></i>
                   <h4>local currency </h4>
-                  <p>The currency used on the island of Bali is the Indonesian Rupiah. </p>
+                  <p></p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                   <i class="bi bi-clock-history"></i>
                   <h4>preview of the history</h4>
-                  <p>Bali came under the rule of the Majapahit empire of eastern Java in 1343 and continued under the Majapahits until the empire was overthrown in 1478 by Muslims.</p>
+                  <p></p>
                 </div>
               </div>
             </div><!-- End .content-->
@@ -200,7 +166,7 @@ $_SESSION['authorized']=false;
               <div class="icon"><i class="bi bi-house-fill"></i>
               </div>
               <h4 class="title"><a href="">variety of hotels </a></h4>
-              <p class="description">our tarveling agency deals  with over 96 hotels all around the world                            </p>
+              <p class="description">our tarveling agency deals with over 96 hotels all around the world </p>
             </div>
           </div>
 
@@ -235,6 +201,53 @@ $_SESSION['authorized']=false;
 
       </div>
     </section><!-- End Services Section -->
+    <!-- ======= photo Section ======= -->
+    <section id="team" class="team section-bg1">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+          <h2>Discover <?= $city_name ?></h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up">
+              <div class="pic">s
+                <img src="<?= $pic1 ?>" class="img-fluid" alt="" />
+              </div>
+              <div class="member-info">
+                <h4><?= $pic1_name ?></h4>
+                <span><?= $pic1_place ?></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="150">
+              <div class="pic">
+                <img src="<?= $pic2 ?>" class="img-fluid" alt="" />
+              </div>
+              <div class="member-info">
+                <h4><?= $pic2_name ?></h4>
+                <span><?= $pic2_place ?></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="pic">
+                <img src="<?= $pic3 ?>" class="img-fluid" alt="" />
+              </div>
+              <div class="member-info">
+                <h4><?= $pic3_name ?></h4>
+                <span><?= $pic3_place ?></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Team Section -->
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts  section-bg">
@@ -292,11 +305,11 @@ $_SESSION['authorized']=false;
       </div>
     </section><!-- End Cta Section -->
 
-    
+
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container">
-      
+
         <div class="section-title" data-aos="fade-in" data-aos-delay="100">
           <h2>Testimonials</h2>
           <p>reviews of our loyal customers</p>
@@ -304,29 +317,29 @@ $_SESSION['authorized']=false;
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper"><?php
-           require('Persistence.php');
-$comment_post_ID = 62;
-$db = new Persistence();
-$comments = $db->get_comments($comment_post_ID);
-$has_comments = (count($comments) > 0);
-  
-    foreach ($comments as $comment) {
-      ?>
+                                      require('Persistence.php');
+                                      $comment_post_ID = 80;
+                                      $db = new Persistence();
+                                      $comments = $db->get_comments($comment_post_ID);
+                                      $has_comments = (count($comments) > 0);
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p id="comment_<?php echo($comment['com_id']); ?>">
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  <?php echo($comment['content']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3><?php echo($comment['comment_author'].' '.$comment['user_last_name']); ?></h3>
-              </div>
-            </div><!-- End testimonial item -->
+                                      foreach ($comments as $comment) {
+                                      ?>
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p id="comment_<?php echo ($comment['com_id']); ?>">
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    <?php echo ($comment['content']); ?> <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <h3><?php echo ($comment['comment_author'] . ' ' . $comment['user_last_name']); ?></h3>
+                </div>
+              </div><!-- End testimonial item -->
 
             <?php };
-    
-    ?>
+
+            ?>
           </div>
 
           <div class="swiper-pagination"></div>
@@ -352,7 +365,7 @@ $has_comments = (count($comments) > 0);
               <div class="member-info">
                 <h4>Japan</h4>
                 <span>asia</span>
-                
+
               </div>
             </div>
           </div>
@@ -363,7 +376,7 @@ $has_comments = (count($comments) > 0);
               <div class="member-info">
                 <h4>switzerland</h4>
                 <span>europe</span>
-                
+
               </div>
             </div>
           </div>
@@ -374,7 +387,7 @@ $has_comments = (count($comments) > 0);
               <div class="member-info">
                 <h4>tunisia</h4>
                 <span>africa</span>
-                
+
               </div>
             </div>
           </div>
@@ -421,70 +434,62 @@ $has_comments = (count($comments) > 0);
 
         <div class="row">
 
-         
-<!-- Wrapper container -->
-<div class="container py-4" name="commentsection" class="commentsection" id="commentsection">
-<div class="row">
-                    <div class="col-lg-6">
-                
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31568.26907436767!2d115.24543978486727!3d-8.496110608896728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d6a992a2b07%3A0xe028854c14cbced9!2sSaraswati%20Temple!5e0!3m2!1sfr!2stn!4v1681520141592!5m2!1sfr!2stn" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <?= $iframe_localisation ?>
-                    </div>
 
-  <!-- Bootstrap 5 starter form -->
-                      <div class="col-lg-6" id="comment">
+          <!-- Wrapper container -->
+          <div class="container py-4" name="commentsection" class="commentsection" id="commentsection">
 
-  <form  action="post_comment.php" method="post" role="form" class="commenting">
->
+            <!-- Bootstrap 5 starter form -->
+            <form action="post_comment.php" method="post" role="form" class="commenting">
+              >
 
-    <!-- Name input -->
-    <div class="mb-3">
-      <label class="form-label" for="name">Name</label>
-      <input class="form-control" name="comment_author" id="comment_author" type="text" placeholder="Name" data-sb-validations="required" />
-      <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
-    </div>
+              <!-- Name input -->
+              <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" name="comment_author" id="comment_author" type="text" placeholder="Name" data-sb-validations="required" />
+                <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+              </div>
 
-    <!-- Email address input -->
-    <div class="mb-3">
-      <label class="form-label" for="ln">last</label>
-      <input class="form-control" name="user_last_name" id="user_last_name" placeholder="last name" data-sb-validations="required, email" />
-      <div class="invalid-feedback" data-sb-feedback="emailAddress:required">last name is required.</div>
-      <div class="invalid-feedback" data-sb-feedback="emailAddress:email">last name is not valid.</div>
-    </div>
-    <!-- Message input -->
-    <div class="mb-3">
-      <label class="form-label" for="message">Message</label>
-      <textarea class="form-control" name="content" id="content"  type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
-      <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
-    </div>
-<!-- Form submissions success message -->
-<div class="d-none" id="submitSuccessMessage">
-      <div class="text-center mb-3">Form submission successful!</div>
-    </div>
+              <!-- Email address input -->
+              <div class="mb-3">
+                <label class="form-label" for="ln">last</label>
+                <input class="form-control" name="user_last_name" id="user_last_name" placeholder="last name" data-sb-validations="required, email" />
+                <div class="invalid-feedback" data-sb-feedback="emailAddress:required">last name is required.</div>
+                <div class="invalid-feedback" data-sb-feedback="emailAddress:email">last name is not valid.</div>
+              </div>
+              <!-- Message input -->
+              <div class="mb-3">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-control" name="content" id="content" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+              </div>
+              <!-- Form submissions success message -->
+              <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">Form submission successful!</div>
+              </div>
 
-    <!-- Form submissions error message -->
-    <div class="d-none" id="submitErrorMessage">
-      <div class="text-center text-danger mb-3">Error sending message!</div>
-    </div>
-    
-<!-- comment_post_ID value hard-coded as 1 --> 
-    <input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />
-    <!-- Form submit button -->
-    
-    <div class="d-grid">
+              <!-- Form submissions error message -->
+              <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Error sending message!</div>
+              </div>
 
-      <button <?php if (!$_SESSION['authorized']){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
-    </div>
-    <?php if (!$_SESSION['authorized']){ ?><div class="alert alert-danger" role="alert">
-  please sign-up first <a href="C:\Users\sapph\OneDrive\Documents\GitHub\travelagency\login"> here </a><?php } ?> 
-</div>
+              <!-- comment_post_ID value hard-coded as 1 -->
+              <input type="hidden" name="comment_post_ID" value="" id="comment_post_ID" />
+              <!-- Form submit button -->
 
-  </form>
+              <div class="d-grid">
 
-  </div>
+                <button <?php if (!$_SESSION['authorized']) { ?> disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
+              </div>
+              <?php if (!$_SESSION['authorized']) { ?><div class="alert alert-danger" role="alert">
+                  please sign-up first <a href="C:\Users\sapph\OneDrive\Documents\GitHub\travelagency\login"> here </a><?php } ?>
+                </div>
+
+            </form>
+
+          </div>
         </div>
-</div>
-      
+      </div>
+
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
@@ -555,7 +560,7 @@ $has_comments = (count($comments) > 0);
         &copy; Copyright <strong><span>Squadfree</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        
+
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>

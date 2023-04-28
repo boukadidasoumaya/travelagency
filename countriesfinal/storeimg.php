@@ -1,18 +1,58 @@
 <?php
+require_once 'bdd.php';
 class storeimg {
 
-/* private $target_dir = "img/";
-private $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+private $target_dir = "img/";
+private $target_file;
 private $uploadOk = 1;
-private $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-function __construct($vars)
-{
+private $imageFileType ;
+ function __construct()
+{}
+function storeim($vars,$target){
+    $msg = ""; 
+
+// check if the user has clicked the button "UPLOAD" 
+
+
+    $filename = $_FILES[$target]["name"];
+
+    $tempname = $_FILES[$target]["tmp_name"];  
+
+        $folder = "img/".$filename;   
+
+    // connect with the database
+    $id=$vars['country_id'];
+
+        // query to insert the submitted data
+
+        $sql = "UPDATE `country`
+        set `$target`='$filename' 
+        where country_id=$id";
+
+        // function to execute above query
+
+        // Add the image to the "image" folder"
+
+        if (move_uploaded_file($tempname, $folder)) {
+
+            $msg = "Image uploaded successfully";
+
+        }else{
+
+            $msg = "Failed to upload image";
+
+    }
+
+
+$cnx=CBD::getInstance();
+$result = $cnx->query($sql);
+
+
     $this->target_dir = "img/";
- $this->target_file = $this->target_dir . basename($_FILES["fileToUpload"]["name"]);
+ $this->target_file = $this->target_dir . basename( $vars["fileToUpload"]["name"]);
  $this->uploadOk = 1;
  $this->imageFileType = pathinfo($this->target_file,PATHINFO_EXTENSION);
-
-
+//rename("img/$filename","img/$target.png");
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -46,7 +86,8 @@ if ($uploadOk == 0) {
     } else {
         echo "<center>Sorry, there was an error uploading your file.</font></center>";
     }}
-}}
+return ;}
+}
 ?>
 </body>
-</html> */ }?>
+</html> 

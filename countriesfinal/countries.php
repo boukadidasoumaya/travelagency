@@ -3,6 +3,9 @@
 
 <?php
 require('bdd.php');
+$cnx = CBD::getInstance();
+require('storeimg.php');
+
 require('generate_country_file.php');
 class countries
 {
@@ -69,17 +72,13 @@ class countries
     $this->pricetg = $vars['pricetg'];
     $this->pricetrip = $vars['pricetrip'];
     $this->imgfolder = $vars['imgfolder'];
-
-
-
-    $cnx = CBD::getInstance();
-
-    $this->hero_src = $vars['hero_src'];
+    $this->hero_src = $_FILES['hero_src'];
     $this->cta_src = $vars['cta_src'];
     $this->about_src = $vars['about_src'];
     $this->services_src = $vars['services_src'];
     $this->contact_src = $vars['contact_src'];
-    $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder' , '$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src');";
+
+    $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder','$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src');";
     $response = $this->cnx->query($query);
     $file = new generate_country_file($this->country_id, $this->country_name,  $this->population, $this->climate, $this->currency, $this->history, $this->hero_src, $this->cta_src, $this->about_src, $this->services_src, $this->contact_src);
 
