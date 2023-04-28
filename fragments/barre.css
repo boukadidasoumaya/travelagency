@@ -41,7 +41,7 @@ nav{
     position: absolute;
     top: 0;
     left: 10px;
-    background-color: #fff;
+    background-color: #00a8b4;
     width: 0%;
     height: 2px;
     font-size: 0px;
@@ -51,7 +51,7 @@ nav{
     width: 74%;
 }
 .nav ul li a{
-    color:#fff;
+    color:#00a8b4;
     padding: 10px;
     position: relative;
 

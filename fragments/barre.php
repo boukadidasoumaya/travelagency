@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 </head>
 
 <body>
@@ -15,7 +19,22 @@
                         <li><a class="menu-hover" href="../home/home.php#about">About</a></li>
                         <li><a class="menu-hover" href="../home/home.php#book">Book Now</a></li>
                         <li><a class="menu-hover" href="../home/home.php#welcome">Our Trips</a></li>
-                        <li><a class="menu-hover" href="../login/sign in.php">Register/Login</a></li>
+
+
+                        <?php
+
+                        if (!isset($_SESSION)) {
+                            echo '<li><a class="menu-hover" href="../login/sign in.php">Register/Login</a></li>';
+                        } else {
+                            if ($_SESSION['admin'] = false) {
+                                '<li><a class="menu-hover" href="../login/profil.php">Profil</a></li>';
+                            } else if ($_SESSION['admin'] = true) {
+
+                                echo '<li><a class="menu-hover" href="../login/edit_accounts.php">Edit accounts</a></li>';
+                            }
+                        }
+                        ?>
+
 
                     </ul>
                 </div>

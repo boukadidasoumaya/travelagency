@@ -1,3 +1,7 @@
+<?
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +52,7 @@ include_once '../fragments/barre.php'
 <div class="about" id="about">
     <div class="container1">
         <div class="title">
-            <h1>About us</h1>
+            <h1>About us </h1>
         </div>
         <div class="content">
             <div class="article">

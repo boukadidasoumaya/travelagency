@@ -424,8 +424,16 @@ $has_comments = (count($comments) > 0);
          
 <!-- Wrapper container -->
 <div class="container py-4" name="commentsection" class="commentsection" id="commentsection">
+<div class="row">
+                    <div class="col-lg-6">
+                
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31568.26907436767!2d115.24543978486727!3d-8.496110608896728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d6a992a2b07%3A0xe028854c14cbced9!2sSaraswati%20Temple!5e0!3m2!1sfr!2stn!4v1681520141592!5m2!1sfr!2stn" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <?= $iframe_localisation ?>
+                    </div>
 
   <!-- Bootstrap 5 starter form -->
+                      <div class="col-lg-6" id="comment">
+
   <form  action="post_comment.php" method="post" role="form" class="commenting">
 >
 
