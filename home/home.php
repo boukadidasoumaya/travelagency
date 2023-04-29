@@ -92,7 +92,7 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="images/soumaya.jpg">
+                        <img class="team-img" src="images/soumaya1.jpg">
                     </div>
                     <p class="text-blk name">
                         Soumaya
@@ -119,7 +119,7 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="images/mabehej.jpg">
+                        <img class="team-img" src="images/mabehej1.jpg">
                     </div>
                     <p class="text-blk name">
                         Mabehej
@@ -146,10 +146,10 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
+                        <img class="team-img" src="images/yosr1.jpeg">
                     </div>
                     <p class="text-blk name">
-                        Maxwell Doe
+                        Yosr GHOZZI
                     </p>
                     <p class="text-blk position">
                         Instructor
@@ -173,7 +173,7 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert1.png">
+                        <img class="team-img" src="images/bali.jpg">
                     </div>
                     <p class="text-blk name">
                         Maxwell Doe

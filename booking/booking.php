@@ -35,20 +35,9 @@
                     <label for="date">Date</label>
                     <input type="date" name="date" id="date" class="form-control" min="<?php echo date('Y-m-d'); ?>">
                 </div>
-                <!-- <div class="form-group">
-                        <label for="car">Car</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="car" id="car" value="1" <?php if ($destination === "12") {
-                                                                                                                echo "disabled";
-                                                                                                            } ?>>
-                            <label class="form-check-label" for="car">
-                                Add a car rental to your booking
-                            </label>
-                        </div>
-                    </div>-->
+
                 <div class="form-group form-check">
-                    <input type="checkbox" name="car_rental" id="car_rental" class="form-check-input" <?php $destination = $_POST['destination'] ?? "";
-                                                                                                        echo ($destination == "Bali") ? "disabled" : ""; ?>>
+                    <input type="checkbox" name="car_rental" id="car_rental" class="form-check-input">
                     <label class="form-check-label" for="car_rental">Add a car rental to your booking</label>
                 </div>
                 <div class="form-group">
