@@ -23,7 +23,6 @@ session_start();
 
                         <?php
 
-                        var_dump($_SESSION);
                         if (isset($_SESSION)) {
 
                             if ($_SESSION['user_name'] = 'admin') {
