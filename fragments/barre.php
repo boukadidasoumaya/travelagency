@@ -17,7 +17,7 @@ session_start();
                     <ul>
                         <li><a class="menu-hover" href="../home/home.php">Home</a></li>
                         <li><a class="menu-hover" href="../home/home.php#about">About</a></li>
-                        <li><a class="menu-hover" href="../home/home.php#book">Book Now</a></li>
+                        <li><a class="menu-hover" href="../booking/booking.php">Book Now</a></li>
                         <li><a class="menu-hover" href="../home/home.php#welcome">Our Trips</a></li>
 
 
