@@ -43,7 +43,7 @@ class users
         $users = $response->fetchAll(\PDO::FETCH_ASSOC);
         return $users;
     }
-    public function create($POST )
+    public function create($POST)
     {
         $user_name = $_POST['name'];
         $lastname = $_POST['lastname'];
@@ -54,10 +54,8 @@ class users
         $city = $_POST['city'];
         $passport = $_POST['passport'];
 
-        if ($this->verify_account($user_name)) {
-            throw new Exception("User already exists");
-        }
-       
+
+
         $query = "INSERT INTO `user` (user_name, user_last_name,email,password,date_birth, country, city, num_passport) 
                 VALUES (?, ?, ?, ?, ?, ?, ? , ?)";
         $response = $this->cnx->prepare($query);
@@ -65,15 +63,13 @@ class users
     }
 
 
-    
+
     public function update_user($user_id, $new_info)
-    {   
+    {
 
-        //$new_info hya new values passed as parameters juste na9es na3mlo page ily bech ybadel mineha admin paramaters mta3 users
 
-        if (!$this->is_admin()) {
-            throw new Exception("You do not have permission to modify user accounts.");
-        }
+
+
 
         $query = "UPDATE `user` SET `user_name` = ?,`user_last_name`=?, `email` = ?, `password` = ?, `birthday` = ?, `country` = ?, `city` = ?, `passport` = ? WHERE `user_id` = $user_id";
         $stmt = $this->cnx->prepare($query);
@@ -92,13 +88,12 @@ class users
         if ($stmt->rowCount() == 0) {
             throw new Exception("User with ID $user_id does not exist.");
         }
-}
+    }
 
     public function delete_user($user_id)
-    {   $query = "DELETE FROM `user` WHERE `user_id` = ?";
+    {
+        $query = "DELETE FROM `user` WHERE `user_id` = ?";
         $stmt = $this->cnx->prepare($query);
         $stmt->execute([$user_id]);
     }
-
-    
 }
