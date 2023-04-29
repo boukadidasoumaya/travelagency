@@ -1,5 +1,4 @@
 <?php include_once '../fragments/barrehead.php';
-session_start();
 
 ?>
 
@@ -21,7 +20,7 @@ session_start();
 <body>
 
   <?php
-  include_once '../fragments/barre.php'
+  include_once '../fragments/barre.php';
   ?>
   <main>
 
