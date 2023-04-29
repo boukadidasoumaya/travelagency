@@ -41,11 +41,12 @@ include_once 'navbar.php'; ?>
                 <button type="button" class="btn btn-primary" onclick="showForm2()">Next</button>
             </form>
             <script>
-                /* function showForm2() {
-                    document.getElementById("form1").style.display = "none";
+                /**/
+                function showForm2() {
+                    /*document.getElementById("form1").style.display = "none";
                     document.getElementById("form2").style.display = "block";
-                    //document.getElementById("form1").submit();
-                }*/
+                    //document.getElementById("form1").submit();*/
+                }
             </script>
 
 
@@ -57,7 +58,7 @@ include_once 'navbar.php'; ?>
                 $price_car = 0;
                 echo $id_pays;
 
-                $sql = "SELECT * FROM country where country_id = $id_pays";
+                $sql = `SELECT * FROM country where country_id = $id_pays`;
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -68,7 +69,7 @@ include_once 'navbar.php'; ?>
                         $price_car = $row["price_car"];
                     }
                 }
-
+                /**/
                 ?>
 
                 <div class="form-group">
@@ -99,24 +100,20 @@ include_once 'navbar.php'; ?>
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="showForm1()">Previous</button>
                 <button type="submit" class="btn btn-primary btn-submit">Submit</button>
-<<<<<<< Updated upstream
-=======
-                <a class="btn btn-primary" href="edit_booking.php" role="button">Cancel Booking</a>
-                <a class="btn btn-primary" href="edit_booking.php" role="button">Modify</a>
->>>>>>> Stashed changes
 
             </form>
+            <script>
+                function showForm1() {
+                    document.getElementById("form1").submit();
+                    document.getElementById("form1").style.display = "block";
+                    document.getElementById("form2").style.display = "none";
+
+                }
+            </script>
         </div>
     </div>
 </div>
-<script>
-    /* function showForm1() {
 
-        document.getElementById("form1").style.display = "block";
-        document.getElementById("form2").style.display = "none";
-        document.getElementById("form1").submit();
-    }*/
-</script>
 
 <script src="../fragments/js/barre.js"></script>
 <script>
