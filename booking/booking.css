@@ -1,23 +1,9 @@
-/*.booking-form:hover {
-	background-color: #F5F5F5;
-}
-
-.booking-form label {
-	font-weight: bold;
-	font-size: 1.2rem;
-}
-
-.booking-form button[type="submit"] {
-	margin-top: 2rem;
-	font-size: 1.2rem;
-}*/
-/* Add custom styles here color: #ead2d2;*/
 body {
 	background-image: url("pics/choice6.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;/**/
 	color: #f3b9b9;
-
+	
 	opacity: 90%;
 }
 
@@ -30,9 +16,7 @@ body {
 
 .card-header {
   background-color: #f7f7f7;
-  border-bottom: 0;
-
-}
+  border-bottom: 0;}
 
 .card-header h5 {
   margin-bottom: 0;
@@ -63,16 +47,16 @@ body {
   .container {
     margin-top: 10px;
   }
-
+  
   .card {
     margin-top: 10px;
 
   }
-
+  
 }
 .card {
     margin-top: 10vh;
     max-width: 80vw;
     margin-left: auto;
     margin-right: auto;
-}
+  }
