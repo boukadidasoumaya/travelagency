@@ -70,6 +70,9 @@
                     <div class="preview mt-2"></div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+                <button type="submit" class="btn btn-primary btn-submit">Cancel your trip</button>
+                <button type="submit" class="btn btn-primary btn-submit">Modify</button>
+
             </form>
         </div>
     </div>

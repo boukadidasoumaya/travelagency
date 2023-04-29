@@ -11,6 +11,15 @@ class users
     {
         $this->cnx = CBD::getInstance();
     }
+    public function find_user_by_email($email)
+    {
+
+        $query = "select * from `user` where email=? ;";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$email]);
+        $user = $response->fetch(PDO::FETCH_ASSOC);
+        return $user['user_id'];
+    }
     public function verify_accountByname($user_name, $password)
     {
 
@@ -29,7 +38,21 @@ class users
         $user = $response->fetch(PDO::FETCH_ASSOC);
         return $user;
     }
+    public function verify_accountByemail_motdepasse_oublie($email)
+    {
 
+        $query = "select * from `user` where email=?  ;";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$email]);
+        $user = $response->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    }
+    public function motdepasse_oublie($id, $password)
+    {
+        $query = "update user set password= ? where user_id=?";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$password, $id]);
+    }
 
 
     function get_users()
@@ -66,9 +89,6 @@ class users
 
     public function update_user($user_id, $new_info)
     {
-
-
-
 
 
         $query = "UPDATE `user` SET `user_name` = ?,`user_last_name`=?, `email` = ?, `password` = ?, `birthday` = ?, `country` = ?, `city` = ?, `passport` = ? WHERE `user_id` = $user_id";
