@@ -40,13 +40,22 @@ include_once 'navbar.php'; ?>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="showForm2()">Next</button>
             </form>
+            <script>
+                /* function showForm2() {
+                    document.getElementById("form1").style.display = "none";
+                    document.getElementById("form2").style.display = "block";
+                    //document.getElementById("form1").submit();
+                }*/
+            </script>
+
+
             <!--form2-->
             <form id="form2" action="save_booking.php" method="POST">
                 <?php
                 $id_pays = $_POST['destination'];
                 $price_trip = 0;
                 $price_car = 0;
-
+                echo $id_pays;
 
                 $sql = "SELECT * FROM country where country_id = $id_pays";
                 $result = $conn->query($sql);
@@ -95,14 +104,22 @@ include_once 'navbar.php'; ?>
         </div>
     </div>
 </div>
+<script>
+    /* function showForm1() {
 
+        document.getElementById("form1").style.display = "block";
+        document.getElementById("form2").style.display = "none";
+        document.getElementById("form1").submit();
+    }*/
+</script>
 
 <script src="../fragments/js/barre.js"></script>
 <script>
     function showForm1() {
+        document.getElementById("form1").submit();
         document.getElementById("form1").style.display = "block";
         document.getElementById("form2").style.display = "none";
-        //document.getElementById("form1").submit();
+
     }
 
     function showForm2() {
