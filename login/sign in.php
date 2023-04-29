@@ -52,7 +52,7 @@
       <div><a href="signup.php">
           <h5>Create an account</h5>
         </a></div>
-      <div><a href="">
+      <div><a href="motdepasse_oublie.php">
           <h5>Forget password?</h5>
         </a></div>
 
