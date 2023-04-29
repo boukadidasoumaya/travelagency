@@ -85,6 +85,8 @@
         </div>
     </div>
 </div>
+
+
 <script src="../fragments/js/barre.js"></script>
 </body>
 <?php $conn->close(); ?>
