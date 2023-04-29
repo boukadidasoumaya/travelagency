@@ -12,6 +12,9 @@
 	font-size: 1.2rem;
 }*/
 /* Add custom styles here color: #ead2d2;*/
+#form2{
+  display:none;
+}
 body {
 	background-image: url("pics/choice6.jpg");
 	background-repeat: no-repeat;

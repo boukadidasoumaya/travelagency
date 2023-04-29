@@ -40,6 +40,9 @@ include_once 'navbar.php'; ?>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="showForm2()">Next</button>
             </form>
+
+
+
             <!--form2-->
             <form id="form2" action="save_booking.php" method="POST">
                 <?php
@@ -92,26 +95,28 @@ include_once 'navbar.php'; ?>
                 <button type="submit" class="btn btn-primary btn-submit">Submit</button>
 
             </form>
+
         </div>
     </div>
-</div>
 
+    </body>
+    <script src="../fragments/js/barre.js"></script>
+    <script>
+        function showForm1() {
 
-<script src="../fragments/js/barre.js"></script>
-<script>
-    function showForm1() {
-        document.getElementById("form1").style.display = "block";
-        document.getElementById("form2").style.display = "none";
-        //document.getElementById("form1").submit();
-    }
+            document.getElementById("form1").style.display = "block";
+            document.getElementById("form2").style.display = "none";
 
-    function showForm2() {
-        document.getElementById("form1").style.display = "none";
-        document.getElementById("form2").style.display = "block";
+        }
 
-    }
-</script>
-</body>
-<?php $conn->close(); ?>
+        function showForm2() {
 
-</html>
+            document.getElementById("form1").style.display = "none";
+            document.getElementById("form2").style.display = "block";
+            document.getElementById("form1").submit();
+        }
+    </script>
+
+    <?php $conn->close(); ?>
+
+    </html>
