@@ -91,31 +91,10 @@ include_once 'navbar.php';
                 </div>
 
                 <div id="form-2" class="d-none">
-                    <!--
-                    <div class="form-group">
-                        <label for="num_passport">Passport Number</label>
-                        <input type="text" name="num_passport" id="num_passport" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="client_first_name">First Name</label>
-                        <input type="text" name="client_first_name" id="client_first_name" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="client_last_name">Last Name</label>
-                        <input type="text" name="client_last_name" id="client_last_name" class="form-control">
-                    </div>
-                    -->
+
                     <div class="form-group">
                         <label for="price">Price</label>
                         <input type="number" name="price" id="price" class="form-control" readonly>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="receipt">Receipt</label>
-                        <a href="receipt.pdf" download id="receipt-link">Download Receipt</a>
-
-                        <small class="form-text text-muted">Max file size: 2 MB</small>
-                        <div class="preview mt-2"></div>
                     </div>
 
                     <button type="button" class="btn btn-secondary" onclick="toForm1()">Previous</button>

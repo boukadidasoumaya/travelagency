@@ -42,11 +42,20 @@ class Booking
 
     public function createBooking()
     {
-        $sql = "INSERT INTO booking VALUES (null, '$this->trip_date', $this->price, $this->user_id, $this->destination)";
-        if ($this->conn->query($sql)) {
-            return true;
+        $sql = "SELECT * FROM booking where user_id=" . $_POST['user'] . " AND date='" . $this->trip_date . "'";
+        $result = $this->conn->query($sql);
+
+        $booking = $result->fetch(PDO::FETCH_OBJ);
+        if ($booking == false) {
+
+            $sql = "INSERT INTO booking VALUES (null, '$this->trip_date', $this->price, $this->user_id, $this->destination)";
+            if ($this->conn->query($sql)) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            return false;
+            header("Location: booking.php");
         }
     }
 
