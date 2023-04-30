@@ -33,19 +33,19 @@
                                 <h4 class="text-right">Profile Settings</h4>
                             </div>
                             <div class="row mt-2">
-                                <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="First name" value=""></div>
-                                <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="Last Name"></div>
+                                <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="name" value=""></div>
+                                <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="lastName"></div>
 
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Date Birth</label><input type="text" class="form-control" value=""></div>
+                                <div class="col-md-12"><label class="labels">Date Birth</label><input type="text" class="form-control" name="birthday" value=""></div>
                                 <div class="row mt-3">
-                                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" name="country" value=""></div>
+                                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" name="city" value="" placeholder="state"></div>
                                 </div>
-                                <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" value=""></div>
+                                <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" name="email" value=""></div>
 
-                                <div class="col-md-12"><label class="labels">Num Passport</label><input type="text" class="form-control" value=""></div>
+                                <div class="col-md-12"><label class="labels">Num Passport</label><input type="text" class="form-control" name="passport" value=""></div>
                                 <div class="col-md-12"><label class="labels">Your Reservation</label><input type="text" class="form-control" value=""></div>
 
 

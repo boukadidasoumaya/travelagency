@@ -1,6 +1,6 @@
 <?php
 require('../countriesfinal/bdd.php');
-$cnx = CBD::getInstance();
+$cnx = database::getInstance();
 
 class users
 {
@@ -9,7 +9,7 @@ class users
 
     public function __construct()
     {
-        $this->cnx = CBD::getInstance();
+        $this->cnx = database::getInstance();
     }
     public function verify_accountByname($user_name, $password)
     {
@@ -32,7 +32,7 @@ class users
 
 
 
-    function get_users()
+    public function get_users()
     {
         $users = array();
         /*  $cnx = CBD::getInstance(); */
@@ -43,6 +43,15 @@ class users
         $users = $response->fetchAll(\PDO::FETCH_ASSOC);
         return $users;
     }
+    public function get_user_by_id($user_id)
+{
+    $query = "SELECT * FROM `user` WHERE `user_id` = ?";
+    $stmt = $this->cnx->prepare($query);
+    $stmt->execute([$user_id]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $user;
+}
+
     public function create($POST)
     {
         $user_name = $_POST['name'];
@@ -64,31 +73,21 @@ class users
 
 
 
-    public function update_user($user_id, $new_info)
-    {
+public function update_user($vars) 
+  {
+    $this->user_name = $vars['name'];
+    $this->user_last_name = $vars['lastName'];
+    $this->date_birth = $vars['birthday'];
+    $this->country = $vars['country'];
+    $this->city = $vars['city'];
+    $this->email = $vars['email'];
+    $this->num_passport = $vars['passport'];
 
 
-
-
-
-        $query = "UPDATE `user` SET `user_name` = ?,`user_last_name`=?, `email` = ?, `password` = ?, `birthday` = ?, `country` = ?, `city` = ?, `passport` = ? WHERE `user_id` = $user_id";
-        $stmt = $this->cnx->prepare($query);
-
-        $stmt->execute([
-            $new_info['user_name'],
-            $new_info['user_last_name'],
-            $new_info['email'],
-            $new_info['password'],
-            $new_info['birthday'],
-            $new_info['country'],
-            $new_info['city'],
-            $new_info['passport'],
-        ]);
-
-        if ($stmt->rowCount() == 0) {
-            throw new Exception("User with ID $user_id does not exist.");
-        }
-    }
+    $cnx = CBD::getInstance();
+    $query = "UPDATE  `user` SET `user_name`='$this->user_name', `user_last_name`= '$this->user_last_name',`email`='$this->email',`date_birth`='$this->date_birth',`country`='$this->country',`city`='$this->city',`num_passport`='$this->num_passport'  where country_id=$this->country_id ;";
+    $response = $cnx->query($query);
+  }
 
     public function delete_user($user_id)
     {
