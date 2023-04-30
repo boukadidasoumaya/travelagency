@@ -4,16 +4,16 @@ class generate_country_file
 {
 
 
-    protected $file;
-    public function __construct($country_id, $country_name, $population, $climate, $currency, $history,$hero_src,$cta_src,$about_src,$services_src,$contact_src)
-    {
-        $this->file = '
+  protected $file;
+  public function __construct($country_id, $country_name, $population, $climate, $currency, $history, $hero_src, $cta_src, $about_src, $services_src, $contact_src)
+  {
+    $this->file = '
         
     <style>
     #hero {
         width: 100%;
         height: 100vh;
-        background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("img/'.$hero_src .'") top center;
+        background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("img/' . $hero_src . '") top center;
         background-size: cover;
         position: relative;
         margin-bottom: -90px;
@@ -21,14 +21,14 @@ class generate_country_file
 
 
     .about {
-        background: url("img/'. $about_src .'") center center no-repeat;
+        background: url("img/' . $about_src . '") center center no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
     }
 
     .services {
-        background: url("img/'. $services_src .'") center center no-repeat;
+        background: url("img/' . $services_src . '") center center no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
@@ -36,21 +36,22 @@ class generate_country_file
 
     .contact {
         padding-bottom: 80px;
-        background: url("img/'. $contact_src .'")no-repeat;
+        background: url("img/' . $contact_src . '")no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
     }
 
     .cta {
-        background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url("img/'. $cta_src.'" ) fixed center center;
+        background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url("img/' . $cta_src . '" ) fixed center center;
         background-size: cover;
         padding: 60px 0;
     }
 </style>
       <!DOCTYPE html>
       <html lang="en">
-      
+      <?php include_once \'../fragments/barrehead.php\';
+?>
       <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -74,6 +75,7 @@ class generate_country_file
         <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
         <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
         <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        
       
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
@@ -90,18 +92,9 @@ class generate_country_file
       <body>
       
         <!-- ======= Header ======= -->
-        <header id="header" class="fixed-top header-transparent">
-          <div class="container d-flex align-items-center justify-content-between position-relative">
-      
-            <div class="logo">
-              <h1 class="text-light"><a href="index.html"><span>Squadfree</span></a></h1>
-              <!-- Uncomment below if you prefer to use an image logo -->
-              <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            </div>
-      <!-- .navbar -->
-      
-          </div>
-        </header><!-- End Header -->
+        <?php
+        include_once \'../fragments/barre.php\'
+        ?>
       
         <!-- ======= Hero Section ======= -->
         <section id="hero">
@@ -123,7 +116,7 @@ class generate_country_file
                   <div class="content">
                     <h3>What to expect ?</h3>
                     <p>
-                    The mere mention of '. $country_name .' evokes thoughts of a paradise. It\'s
+                    The mere mention of ' . $country_name . ' evokes thoughts of a paradise. It\'s
                     more than a place; it\'s a mood, an aspiration, a tropical
                     state of mind.               </p>
                     <a href="#" class="about-btn">Book now <i class="bx bx-chevron-right"></i></a>
@@ -594,9 +587,9 @@ class generate_country_file
       </body>
       
       </html>';
-    }
-    function get_file()
-    {
-        return $this->file;
-    }
+  }
+  function get_file()
+  {
+    return $this->file;
+  }
 }

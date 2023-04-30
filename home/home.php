@@ -1,25 +1,23 @@
-<?php   if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+<?php if (!isset($_SESSION)) {
+    session_start();
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include_once '../fragments/barrehead.php' ;
+<?php include_once '../fragments/barrehead.php';
 ?>
 
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link type="text/css" rel="stylesheet" href="../fragments/barre.css">
 <link rel="stylesheet" href="../fragments/footer.css">
 <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
 <link rel="stylesheet" href="css/home.css">
-
+<title>Home</title>
 
 
 <div id="arrow">
@@ -83,7 +81,7 @@ include_once '../fragments/barre.php'
     </div>
 </div>
 <!--------about section ends-->
-<?php 
+<?php
 ?>
 <!----------meet us-------->
 <div class="responsive-container-block outer-container">
@@ -283,11 +281,12 @@ include_once '../fragments/barre.php'
 
 
             </div>
-            <div class="addedit"><?php if ($_SESSION['user_name']=='admin'){
+            <div class="addedit"><?php if ($_SESSION['user_name'] == 'admin') {
 
-               echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
+                                        echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
                 <input type="hidden" name="id" value="">
-                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>'); }?>
+                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>');
+                                    } ?>
             </div>
         </div>
     </section>
@@ -302,8 +301,7 @@ include_once '../fragments/barre.php'
 
 
 
-<script src="../fragments/js/jquery-3.1.1.min.js"></script>
-<script src="../fragments/js/barre.js"></script>
+
 <script src="js/home.js"></script>
 
 
