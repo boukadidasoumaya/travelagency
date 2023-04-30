@@ -58,6 +58,7 @@
                         <div class="p-3 py-5">
                             <div class="d-flex justify-content-between align-items-center experience"><span>Edit Your History Shared With Think Travel</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></div><br>
                             <div class="col-md-12"><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                            <span class="d-flex justify-content-between align-items-center experience"><button class="btn btn-primary profile-button" type="submit">Deconexion</button></span>
                         </div>
                     </div>
                 </div>
