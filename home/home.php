@@ -1,11 +1,16 @@
-<?
+<?php   if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include_once '../fragments/barrehead.php' ?>
+<?php include_once '../fragments/barrehead.php' ;
+?>
+
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,7 +83,8 @@ include_once '../fragments/barre.php'
     </div>
 </div>
 <!--------about section ends-->
-
+<?php 
+?>
 <!----------meet us-------->
 <div class="responsive-container-block outer-container">
     <div class="responsive-container-block inner-container">
@@ -92,7 +98,7 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="images/soumaya.jpg">
+                        <img class="team-img" src="images/soumaya1.jpg">
                     </div>
                     <p class="text-blk name">
                         Soumaya
@@ -119,7 +125,7 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="images/mabehej.jpg">
+                        <img class="team-img" src="images/mabehej1.jpg">
                     </div>
                     <p class="text-blk name">
                         Mabehej
@@ -146,10 +152,10 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
+                        <img class="team-img" src="images/yosr1.jpeg">
                     </div>
                     <p class="text-blk name">
-                        Maxwell Doe
+                        Yosr GHOZZI
                     </p>
                     <p class="text-blk position">
                         Instructor
@@ -173,7 +179,7 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert1.png">
+                        <img class="team-img" src="images/bali.jpg">
                     </div>
                     <p class="text-blk name">
                         Maxwell Doe
@@ -270,16 +276,18 @@ include_once '../fragments/barre.php'
 
                     </div>
 
-                <?php endforeach; ?>
+                <?php endforeach;  ?>
 
+                <?php   ?>
 
 
 
             </div>
-            <div class="addedit">
-                <button id="btnadd" class="btnadd" onclick="window.location.href='../countriesfinal/countryform.php'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
+            <div class="addedit"><?php if ($_SESSION['user_name']=='admin'){
+
+               echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
                 <input type="hidden" name="id" value="">
-                <button id="btnedit" class="btnedit" onclick="window.location.href='../countriesfinal/table_edit.php'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>
+                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>'); }?>
             </div>
         </div>
     </section>
@@ -287,46 +295,7 @@ include_once '../fragments/barre.php'
 <!-- Slides Section ends-->
 
 <!--------book now starts----->
-<section id="book">
-    <div class="container">
-        <div class="book-content-par">
-            <div class="book-counter">
-                <h3>Book Now</h3>
-                <div id="clockdiv">
-                    <div>
-                        <span class="days"></span>
-                        <div class="smalltext">Days</div>
 
-                    </div>
-                    <div>
-                        <span class="hours"></span>
-                        <div class="smalltext">Hours</div>
-
-                    </div>
-                    <div>
-                        <span class="minutes"></span>
-                        <div class="smalltext">Minutes</div>
-
-                    </div>
-                    <div>
-                        <span class="seconds"></span>
-                        <div class="smalltext">Seconds</div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="book-form">
-                <form>
-                    <input type="text" id="fname" name="firstname" placeholder="Your Name...">
-                    <input type="text" id="lname" name="lastname" placeholder="Your Last Name...">
-                    <input type="text" id="pname" name="pays" placeholder="Your country...">
-                    <textarea name="subject" id="subject" placeholder="Write something..." style="height: 200px;"></textarea>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
 <!--------book now section ends------->
 
 <?php include_once '../fragments/footer.php' ?>

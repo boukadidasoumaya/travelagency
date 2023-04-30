@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 ?>
 </head>
@@ -23,10 +26,9 @@ session_start();
 
                         <?php
 
-                        var_dump($_SESSION);
                         if (isset($_SESSION)) {
 
-                            if ($_SESSION['user_name'] = 'admin') {
+                            if ($_SESSION['user_name'] == 'admin') {
                                 echo '<li><a class="menu-hover" href="../login/edit_accounts.php">Edit accounts</a></li>';
                             } else {
 

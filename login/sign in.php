@@ -1,5 +1,8 @@
-<?php include_once '../fragments/barrehead.php';
-session_start();
+<?php if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+ include_once '../fragments/barrehead.php';
 
 ?>
 
@@ -21,7 +24,7 @@ session_start();
 <body>
 
   <?php
-  include_once '../fragments/barre.php'
+  include_once '../fragments/barre.php';
   ?>
   <main>
 
@@ -53,7 +56,7 @@ session_start();
       <div><a href="signup.php">
           <h5>Create an account</h5>
         </a></div>
-      <div><a href="">
+      <div><a href="motdepasse_oublie.php">
           <h5>Forget password?</h5>
         </a></div>
 

@@ -11,6 +11,15 @@ class users
     {
         $this->cnx = database::getInstance();
     }
+    public function find_user_by_email($email)
+    {
+
+        $query = "select * from `user` where email=? ;";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$email]);
+        $user = $response->fetch(PDO::FETCH_ASSOC);
+        return $user['user_id'];
+    }
     public function verify_accountByname($user_name, $password)
     {
 
@@ -29,7 +38,21 @@ class users
         $user = $response->fetch(PDO::FETCH_ASSOC);
         return $user;
     }
+    public function verify_accountByemail_motdepasse_oublie($email)
+    {
 
+        $query = "select * from `user` where email=?  ;";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$email]);
+        $user = $response->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    }
+    public function motdepasse_oublie($id, $password)
+    {
+        $query = "update user set password= ? where user_id=?";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$password, $id]);
+    }
 
 
     public function get_users()
@@ -88,6 +111,24 @@ public function update_user($vars)
     $query = "UPDATE  `user` SET `user_name`='$this->user_name', `user_last_name`= '$this->user_last_name',`email`='$this->email',`date_birth`='$this->date_birth',`country`='$this->country',`city`='$this->city',`num_passport`='$this->num_passport'  where country_id=$this->country_id ;";
     $response = $cnx->query($query);
   }
+        $query = "UPDATE `user` SET `user_name` = ?,`user_last_name`=?, `email` = ?, `password` = ?, `birthday` = ?, `country` = ?, `city` = ?, `passport` = ? WHERE `user_id` = $user_id";
+        $stmt = $this->cnx->prepare($query);
+
+        $stmt->execute([
+            $new_info['user_name'],
+            $new_info['user_last_name'],
+            $new_info['email'],
+            $new_info['password'],
+            $new_info['birthday'],
+            $new_info['country'],
+            $new_info['city'],
+            $new_info['passport'],
+        ]);
+
+        if ($stmt->rowCount() == 0) {
+            throw new Exception("User with ID $user_id does not exist.");
+        }
+    }
 
     public function delete_user($user_id)
     {

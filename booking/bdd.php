@@ -1,4 +1,4 @@
-
+<!--establish connection to the database 'clients'-->
 <?php
 $servername = "localhost";
 $username = "root";
