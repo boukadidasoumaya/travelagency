@@ -24,7 +24,7 @@ if (($user)) {
         $_SESSION['isAuthenticated'] = true;
         $isAuthenticated = true;
         echo 'i am here';
-        //header('Location:../home/home.php');
+        header('Location:../home/home.php');
         var_dump( $_SESSION['user_name'] );
     } else {
         $_SESSION['user_id'] = $user['user_id'];

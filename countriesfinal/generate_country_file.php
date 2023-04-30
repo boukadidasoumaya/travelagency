@@ -13,7 +13,7 @@ class generate_country_file
     #hero {
         width: 100%;
         height: 100vh;
-        background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url('. $hero_src .') top center;
+        background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("img/'.$hero_src .'") top center;
         background-size: cover;
         position: relative;
         margin-bottom: -90px;
@@ -21,14 +21,14 @@ class generate_country_file
 
 
     .about {
-        background: url('. $about_src .') center center no-repeat;
+        background: url("img/'. $about_src .'") center center no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
     }
 
     .services {
-        background: url('. $services_src .') center center no-repeat;
+        background: url("img/'. $services_src .'") center center no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
@@ -36,14 +36,14 @@ class generate_country_file
 
     .contact {
         padding-bottom: 80px;
-        background: url('. $contact_src .')no-repeat;
+        background: url("img/'. $contact_src .'")no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
     }
 
     .cta {
-        background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url('. $cta_src.' ) fixed center center;
+        background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url("img/'. $cta_src.'" ) fixed center center;
         background-size: cover;
         padding: 60px 0;
     }
