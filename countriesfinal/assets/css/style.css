@@ -412,14 +412,14 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+/*#hero {
   width: 100%;
   height: 100vh;
   background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("../img/backgroundimg\ \(1\).jpg") top center;
   background-size: cover;
   position: relative;
   margin-bottom: -90px;
-}
+}*/
 
 #hero .hero-container {
   position: absolute;
@@ -503,6 +503,10 @@ section {
   background-color: #f4f9fc;
 }
 
+.section-bg1 {
+  background-color: #eaf1f5;
+}
+
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -584,12 +588,12 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about {
+/*.about {
   background: url("../img/about-bg.jpg") center center no-repeat;
   background-size: cover;
   padding: 60px 0;
   position: relative;
-}
+}*/
 
 .about::before {
   content: "";
@@ -685,9 +689,9 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services{
+/*.services{
   background: url("../img/services.jpg");
-}
+}*/
 .services .icon-box {
   padding: 30px;
   position: relative;
@@ -753,6 +757,24 @@ section {
   color: #fff;
 }
 
+
+/*hellooooooooooooooooooooooooooooooooooooooo*/
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+.text-primary {
+  --bs-text-opacity: 1;
+ /* color: rgba(var(--bs-primary-rgb),var(--bs-text-opacity))!important;*/
+ color: #18d26e;
+}
+
+
+
+
+
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
@@ -809,11 +831,11 @@ section {
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
-.cta {
+/*.cta {
   background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url("../img/cta.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
-}
+}*/
 
 .cta h3 {
   color: #fff;
@@ -1192,10 +1214,10 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact {
+/*.contact {
   padding-bottom: 80px;
   background: url("../img/backgroundimg\ \(2\).jpg");
-}
+}*/
 
 .contact .info-box {
   color: #444444;
@@ -1227,37 +1249,57 @@ section {
   margin-bottom: 0;
 }
 
-.contact .commenting {
+.contact .commentform {
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
   padding: 30px;
   background: #fff;
 }
 
+.contact .commentform .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .commentform .error-message br+br {
+  margin-top: 25px;
+}
+
+.contact .commentform #submitSuccessMessage {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
 
 
 
-
-.contact .commenting input,
-.contact .commenting textarea {
+.contact .commentform input,
+.contact .commentform textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .commenting input::focus,
-.contact .commenting textarea::focus {
+.contact .commentform input::focus,
+.contact .commentform textarea::focus {
   background-color: #67b0d1;
 }
 
-.contact .commenting input {
+.contact .commentform input {
   padding: 10px 15px;
 }
 
-.contact .commenting textarea {
+.contact .commentform textarea {
   padding: 12px 15px;
 }
 
-.contact .commenting button[type=submit] {
+.contact .commentform button[type=submit] {
   background: #67b0d1;
   border: 0;
   padding: 10px 24px;
@@ -1265,7 +1307,7 @@ section {
   transition: 0.4s;
 }
 
-.contact .commenting button[type=submit]:hover {
+.contact .commentform button[type=submit]:hover {
   background: #8ec4dd;
 }
 

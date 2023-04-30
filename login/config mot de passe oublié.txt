@@ -1,0 +1,48 @@
+
+step 1:
+emchi hel xampp w emchi config apache  enzel ala PHP(php.ini)
+
+
+step2:
+contrl+f hot mail function
+
+
+step3:
+ekteb hetha:
+
+SMTP=smtp.gmail.com
+smtp_port=587
+sendmail_from = think.travel.agency.project@gmail.com
+
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+
+cntrl +s bich tsajil
+
+step 4:
+emchi lel dossier win massboub el xampp
+odkhil li dossier sendmail
+odkhil lil fichier    sendmail.ini     aamil ouvrir avec bloc-notes
+
+step5:
+emchi taht 
+[sendmail]
+
+ekteb hetha :
+
+smtp_server=smtp.gmail.com
+smtp_port=587
+error_logfile=error.log
+debug_logfile=debug.log
+auth_username=think.travel.agency.project@gmail.com
+auth_password=kswepiuantetwqvg
+force_sender=think.travel.agency.project@gmail.com
+
+
+cntrl +s 
+
+step6:
+sakir el apache w aawed helou 
+
+
+the end.
+rabi ykhalini likom .
