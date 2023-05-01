@@ -6,7 +6,7 @@ class users
 {
 
     protected PDO $cnx;
-
+    private  $user_id;
     public function __construct()
     {
         $this->cnx = database::getInstance();
@@ -98,8 +98,10 @@ class users
 
 public function update_user($vars) 
   {
+
+    $this->user_id = $vars['id'];
     $this->user_name = $vars['name'];
-    $this->user_last_name = $vars['lastName'];
+    $this->user_last_name = $vars['lastname'];
     $this->date_birth = $vars['birthday'];
     $this->country = $vars['country'];
     $this->city = $vars['city'];
@@ -108,13 +110,10 @@ public function update_user($vars)
 
 
     $cnx = CBD::getInstance();
-    $query = "UPDATE  `user` SET `user_name`='$this->user_name', `user_last_name`= '$this->user_last_name',`email`='$this->email',`date_birth`='$this->date_birth',`country`='$this->country',`city`='$this->city',`num_passport`='$this->num_passport'  where country_id=$this->country_id ;";
+    $query = "UPDATE  `user` SET `user_name`='$this->user_name', `user_last_name`= '$this->user_last_name',`email`='$this->email',`date_birth`='$this->date_birth',`country`='$this->country',`city`='$this->city',`num_passport`='$this->num_passport'  where user_id=$this->user_id ;";
     $response = $cnx->query($query);
-  }
-        $query = "UPDATE `user` SET `user_name` = ?,`user_last_name`=?, `email` = ?, `password` = ?, `birthday` = ?, `country` = ?, `city` = ?, `passport` = ? WHERE `user_id` = $user_id";
-        $stmt = $this->cnx->prepare($query);
-
-        $stmt->execute([
+  
+   /*     $stmt->execute([
             $new_info['user_name'],
             $new_info['user_last_name'],
             $new_info['email'],
@@ -127,7 +126,7 @@ public function update_user($vars)
 
         if ($stmt->rowCount() == 0) {
             throw new Exception("User with ID $user_id does not exist.");
-        }
+        }*/
     }
 
     public function delete_user($user_id)
