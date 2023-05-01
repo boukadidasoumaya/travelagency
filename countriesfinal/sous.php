@@ -1,19 +1,10 @@
-<?php
 
-class generate_country_file
-{
-
-
-  protected $file;
-  public function __construct($country_id, $country_name, $population, $climate, $currency, $history, $hero_src, $cta_src, $about_src, $services_src, $contact_src,$pic1,$pic2,$pic3)
-  {
-    $this->file = '
         
     <style>
     #hero {
         width: 100%;
         height: 100vh;
-        background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("img/' . $hero_src . '") top center;
+        background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("img/balih8.jpg") top center;
         background-size: cover;
         position: relative;
         margin-bottom: -90px;
@@ -21,14 +12,14 @@ class generate_country_file
 
 
     .about {
-        background: url("img/' . $about_src . '") center center no-repeat;
+        background: url("img/") center center no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
     }
 
     .services {
-        background: url("img/' . $services_src . '") center center no-repeat;
+        background: url("img/") center center no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
@@ -36,21 +27,21 @@ class generate_country_file
 
     .contact {
         padding-bottom: 80px;
-        background: url("img/' . $contact_src . '")no-repeat;
+        background: url("img/")no-repeat;
         background-size: cover;
         padding: 60px 0;
         position: relative;
     }
 
     .cta {
-        background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url("img/' . $cta_src . '" ) fixed center center;
+        background: linear-gradient(rgba(238, 241, 243, 0.8), rgba(84, 88, 90, 0.8)), url("img/balih2.jpg" ) fixed center center;
         background-size: cover;
         padding: 60px 0;
     }
 </style>
       <!DOCTYPE html>
       <html lang="en">
-      <?php include_once \'../fragments/barrehead.php\';
+      <?php include_once '../fragments/barrehead.php';
 ?>
       <head>
         <meta charset="utf-8">
@@ -68,7 +59,7 @@ class generate_country_file
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
       
         <!-- Vendor CSS Files -->
-        <script src=\'https://kit.fontawesome.com/a076d05399.js\' crossorigin=\'anonymous\'></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <link href="assets/vendor/aos/aos.css" rel="stylesheet">
         <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -93,13 +84,13 @@ class generate_country_file
       
         <!-- ======= Header ======= -->
         <?php
-        include_once \'../fragments/barre.php\'
+        include_once '../fragments/barre.php'
         ?>
       
         <!-- ======= Hero Section ======= -->
         <section id="hero">
           <div class="hero-container" data-aos="fade-up">
-            <h1>Explore ' . $country_name . '</h1>
+            <h1>Explore sous</h1>
             <h2>The Pearl Of Indonisia</h2>
             <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
           </div>
@@ -116,8 +107,8 @@ class generate_country_file
                   <div class="content">
                     <h3>What to expect ?</h3>
                     <p>
-                    The mere mention of ' . $country_name . ' evokes thoughts of a paradise. It\'s
-                    more than a place; it\'s a mood, an aspiration, a tropical
+                    The mere mention of sous evokes thoughts of a paradise. It's
+                    more than a place; it's a mood, an aspiration, a tropical
                     state of mind.               </p>
                     <a href="#" class="about-btn">Book now <i class="bx bx-chevron-right"></i></a>
                   </div>
@@ -129,23 +120,23 @@ class generate_country_file
                         <i class="bi bi-people"></i>
                         <h4>population count</h4>
                         
-                        <p>' . $population . '</p>
+                        <p></p>
                       
                       </div>
                       <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-cloud"></i>
                         <h4>climate</h4>
-                        <p>' . $climate . '</p>
+                        <p></p>
                       </div>
                       <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                         <i class="bi bi-cash"></i>
                         <h4>local currency </h4>
-                        <p>' . $currency . '</p>
+                        <p></p>
                       </div>
                       <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                         <i class="bi bi-clock-history"></i>
                         <h4>preview of the history</h4>
-                        <p>' . $history . '</p>
+                        <p></p>
                       </div>
                     </div>
                   </div><!-- End .content-->
@@ -187,8 +178,8 @@ class generate_country_file
                   <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon"><i class="bi bi-person"></i>
                     </div>
-                    <h4 class="title"><a href="">tourist\'s guide</a></h4>
-                    <p class="description">we provide a fully trained crew of tourists \'guide ,that helps elevate your experience</p>
+                    <h4 class="title"><a href="">tourist's guide</a></h4>
+                    <p class="description">we provide a fully trained crew of tourists 'guide ,that helps elevate your experience</p>
                   </div>
                 </div>
       
@@ -197,7 +188,7 @@ class generate_country_file
                     <div class="icon"><i class="bi bi-currency-dollar"></i>
                     </div>
                     <h4 class="title"><a href="">refunds </a></h4>
-                    <p class="description">insuring our customers\' satisfaction,we offer refund upon cancelation that is atleast 3 days prior to the set date</p>
+                    <p class="description">insuring our customers' satisfaction,we offer refund upon cancelation that is atleast 3 days prior to the set date</p>
                   </div>
                 </div>
       
@@ -216,7 +207,7 @@ class generate_country_file
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up">
                             <div class="pic">s
-                                <img src="img/'.$pic1.'" class="img-fluid" alt="" />
+                                <img src="<?= $pic1 ?>" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
                                 <h4><?= $pic1_name ?></h4>
@@ -228,7 +219,7 @@ class generate_country_file
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="150">
                             <div class="pic">
-                                <img src="/img/'.$pic2. '" class="img-fluid" alt="" />
+                                <img src="<?= $pic2 ?>" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
                                 <h4><?= $pic2_name ?></h4>
@@ -240,7 +231,7 @@ class generate_country_file
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="pic">
-                                <img src="'.$pic3.'" class="img-fluid" alt="" />
+                                <img src="<?= $pic3 ?>" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
                                 <h4><?= $pic3_name ?></h4>
@@ -302,7 +293,7 @@ class generate_country_file
       
               <div class="text-center">
                 <h3>Leave us a review !</h3>
-                <p> we are an agency that greatly values our customers\' review ,insuring a satisfactory service.to helps us improve leave us a feedback</p>
+                <p> we are an agency that greatly values our customers' review ,insuring a satisfactory service.to helps us improve leave us a feedback</p>
                 <a class="cta-btn" href="#comment">jump to reviews</a>
               </div>
       
@@ -321,8 +312,8 @@ class generate_country_file
       
               <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper"><?php
-                 require(\'Persistence.php\');
-      $comment_post_ID = ' . $country_id . ';
+                 require('Persistence.php');
+      $comment_post_ID = 454;
       $db = new Persistence();
       $comments = $db->get_comments($comment_post_ID);
       $has_comments = (count($comments) > 0);
@@ -332,25 +323,16 @@ class generate_country_file
       
                   <div class="swiper-slide">
                     <div class="testimonial-item">
-                      <p id="comment_<?php echo($comment[\'com_id\']); ?>">
+                      <p id="comment_<?php echo($comment['com_id']); ?>">
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        <?php echo($comment[\'content\']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        <?php echo($comment['content']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                       </p>
                       <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                      <h3><?php echo($comment[\'comment_author\'].\' \'.$comment[\'user_last_name\']); ?></h3>
+                      <h3><?php echo($comment['comment_author'].' '.$comment['user_last_name']); ?></h3>
                     </div>
                   </div><!-- End testimonial item -->
       
-                  <?php  if $_session[\'user_name\']=="admin" ||$_session[\'user_name\']=="[\'comment_author\']{"
-          
-                    <form method="post" action="delete_comment.php">
-                    <input type="hidden" name="com_id" value="$comment[\'com_id\']">
-                    <input type="hidden" name="country_id" value="<?php $comment_post_ID" ?>>
-
-                    <input type="submit">
-                </form>
-       echo 
-          <?php   };
+                  <?php };
           
           ?>
                 </div>
@@ -486,14 +468,14 @@ class generate_country_file
           </div>
           
       <!-- comment_post_ID value hard-coded as 1 --> 
-          <input type="hidden" name="comment_post_ID" value="' . $country_id . '" id="comment_post_ID" />
+          <input type="hidden" name="comment_post_ID" value="454" id="comment_post_ID" />
           <!-- Form submit button -->
           
           <div class="d-grid">
       
-            <button <?php if (!$_SESSION[\'authorized\']){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
+            <button <?php if (!$_SESSION['authorized']){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
           </div>
-          <?php if (!$_SESSION[\'authorized\']){ ?><div class="alert alert-danger" role="alert">
+          <?php if (!$_SESSION['authorized']){ ?><div class="alert alert-danger" role="alert">
         please sign-up first <a href="C:\Users\sapph\OneDrive\Documents\GitHub\travelagency\login"> here </a><?php } ?> 
       </div>
       
@@ -595,10 +577,4 @@ class generate_country_file
       
       </body>
       
-      </html>';
-  }
-  function get_file()
-  {
-    return $this->file;
-  }
-}
+      </html>
