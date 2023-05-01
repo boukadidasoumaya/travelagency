@@ -332,7 +332,7 @@
           </div>
           <div>
             <label for="pic1">Choose file to upload pic1</label>
-            <input type="file" id="pic1" name="cpic1" multiple>
+            <input type="file" id="pic1" name="pic1" multiple>
           </div>
           <div>
             <label for="pic2">Choose file to upload pic2</label>
