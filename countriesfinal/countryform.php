@@ -320,7 +320,7 @@
           </div>
           <div>
             <label for="file">Choose home photo</label>
-            <input id="imgfolder" name="imgfolder" multiple>
+            <input type="file" id="imgfolder" name="imgfolder" multiple>
           </div>
           <div>
             <label for="file">Choose file to upload for hero</label>
@@ -329,6 +329,18 @@
           <div>
             <label for="cta_src">Choose file to upload cta</label>
             <input type="file" id="cta_src" name="cta_src" multiple>
+          </div>
+          <div>
+            <label for="pic1">Choose file to upload pic1</label>
+            <input type="file" id="pic1" name="cpic1" multiple>
+          </div>
+          <div>
+            <label for="pic2">Choose file to upload pic2</label>
+            <input type="file" id="pic2" name="pic2" multiple>
+          </div>
+          <div>
+            <label for="pic3">Choose file to upload pic3</label>
+            <input type="file" id="pic3" name="pic3" multiple>
           </div>
           <div>
             <label for="file">Choose file to upload about</label>

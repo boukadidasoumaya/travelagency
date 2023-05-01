@@ -10,7 +10,7 @@ require('generate_country_file.php');
 class countries
 {
   protected PDO $cnx;
-  private  $country_id, $country_name, $expectation,
+  private  $country_id, $country_name, $pic1,$pic2,$pic3,
     $population, $climate, $currency, $history, $price_car, $pricetg, $pricetrip, $imgfolder, $hero_src, $cta_src, $about_src, $services_src, $contact_src;
 
   public function __construct()
@@ -63,7 +63,6 @@ class countries
   {
     $this->country_id = $vars['country_id'];
     $this->country_name = $vars['countryname'];
-    $this->expectation = $vars['expectation'];
     $this->population = $vars['population'];
     $this->climate = $vars['climate'];
     $this->currency = $vars['currency'];
@@ -72,15 +71,19 @@ class countries
     $this->pricetg = $vars['pricetg'];
     $this->pricetrip = $vars['pricetrip'];
     $this->imgfolder = $vars['imgfolder'];
-    $this->hero_src = $_FILES['hero_src'];
-    $this->cta_src = $vars['cta_src'];
-    $this->about_src = $vars['about_src'];
-    $this->services_src = $vars['services_src'];
-    $this->contact_src = $vars['contact_src'];
+    $this->hero_src =$_FILES['hero_src']['name'];
+    $this->cta_src = $_FILES['cta_src']['name'];
+    $this->about_src = $_FILES['about_src']['name'];
+    $this->services_src = $_FILES['services_src']['name'];
+    $this->contact_src = $_FILES['contact_src']['name'];
+    $this->pic1= $_FILES['pic1']['name'];
+    $this->pic2 = $_FILES['pic2']['name'];
+    $this->pic3 = $_FILES['pic3']['name'];
 
-    $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder','$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src');";
+
+    $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`,`pic1`,`pic2`,`pic3`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder','$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src');";
     $response = $this->cnx->query($query);
-    $file = new generate_country_file($this->country_id, $this->country_name,  $this->population, $this->climate, $this->currency, $this->history, $_FILES['hero_src']['name'],$_FILES['cta_src']['name'],$_FILES['about_src']['name'], $_FILES['services_src']['name'],$_FILES['contact_src']['name']);
+    $file = new generate_country_file($this->country_id, $this->country_name,  $this->population, $this->climate, $this->currency, $this->history, $_FILES['hero_src']['name'],$_FILES['cta_src']['name'],$_FILES['about_src']['name'], $_FILES['services_src']['name'],$_FILES['contact_src']['name'],$this->pic1,$this->pic2,$this->pic3);
 
     $txt = $file->get_file();
     return $txt;

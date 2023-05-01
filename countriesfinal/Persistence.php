@@ -81,6 +81,13 @@ $cnx= CBD::getInstance();
      
     $this->sync();
   }
+  function delete($id) {
+    $query="DELETE FROM `comments`where com_id=$id";
+    $cnx= CBD::getInstance();
+     $response=$cnx->query($query);
+     
+    $this->sync();
+  }
   
   private function sync() {
     $cnx= CBD::getInstance();
