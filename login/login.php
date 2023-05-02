@@ -1,9 +1,8 @@
 <?php
- 
- if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 $isAuthenticated = false;
 include_once 'users.php';
@@ -25,14 +24,14 @@ if (($user)) {
         $isAuthenticated = true;
         echo 'i am here';
         header('Location:../home/home.php');
-        var_dump( $_SESSION['user_name'] );
+        var_dump($_SESSION['user_name']);
     } else {
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['user_name'] = $user['user_name'];
         $_SESSION['isAuthenticated'] = true;
 
         $isAuthenticated = true;
-        var_dump( $_SESSION['user_name'] );
+        var_dump($_SESSION['user_name']);
 
         header('Location:../home/home.php');
         echo 'else here';

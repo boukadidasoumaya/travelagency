@@ -1,6 +1,7 @@
 <?php require_once 'bdd.php';
 include_once 'navbar.php';
-
+$conn = CBD::getInstance();
+$_session['username'] = 'admin'
 ?>
 
 <div class="container ">
@@ -27,24 +28,32 @@ include_once 'navbar.php';
                 <div id="form-1">
                     <div class="form-group">
                         <label for="user">Client</label>
+                        <?php if ((isset($_session['username']) && ($_session['username']) != 'admin')) {
+                            echo ('
+                        <div class="form-group">
+                            <label for="user">Traveler Name :</label>
+                             <select name="user" id="user" class="form-control" disabled>
+                            <option value="">' . $_session['username'] . '</option>) ');
+                        } else {
+                            echo ('
                         <select name="user" id="user" class="form-control">
-                            <option value="">Select client</option>
-                            <!-- PHP code to populate select options from database table -->
-                            <?php
-                            $conn = CBD::getInstance();
+                            <option value="">Select client</option> ');
+
+
                             $sql = "SELECT * FROM user";
                             $result = $conn->query($sql);
 
                             if ($result->rowCount() > 0) {
                                 while ($row = $result->fetch()) {
-                                    echo "<option value=\"" . $row["user_id"] . "
-                                    \">"
+                                    echo "<option value=\"" . $row["user_id"] . "\">"
                                         . $row["user_name"] . " "
                                         . $row["user_last_name"] .
                                         "</option>";
                                 }
                             }
-                            ?>
+                        }
+
+                        ?>
                         </select>
                     </div>
                     <div class="form-group">
