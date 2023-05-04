@@ -1,5 +1,5 @@
 <?php
-require('Persistence.php');
+require('comment.php');
 if (!isset($_SESSION)) {
     session_start();
 }

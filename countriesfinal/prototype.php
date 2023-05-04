@@ -1,19 +1,46 @@
 <?php include_once '../fragments/barrehead.php';
-      $country_id='216';
-       $country_name='JLOH';
-        $population=421212;
+require_once('countries.php');
+/* $db1=new countries();
 
-         $climate='42';
-          $currency='545';
-           $history='../countriesfinal/img/bali1.jpg';
-            $hero_src='../countriesfinal/img/bali1.jpg';
-             $cta_src='../countriesfinal/img/bali1.jpg';
-            $about_src='../img/bali2.jpg';
-               $services_src='../countriesfinal/img/bali1.jpg';
-                $contact_src='../countriesfinal/img/bali1.jpg';
-                 $pic1='../countriesfinal/img/bali1.jpg';
-                 $pic2='../countriesfinal/img/bali1.jpg';
-                 $pic3='../countriesfinal/img/bali1.jpg';
+$c=$db1->findById($_GET['id']);
+foreach ($c as $vars ):
+
+  
+
+      $country_id=$vars['country_id'];
+       $country_name=$vars['country_name'];
+       var_dump($country_name);
+
+        $population=$vars['population'];
+
+         $climate=$vars['climate'];
+          $currency=$vars['currency'];
+           $history=$vars['history'];
+            $hero_src='../countriesfinal/img/'.$vars['hero_src'];
+             $cta_src='../countriesfinal/img/'.$vars['cta_src'];;
+            $about_src='../img/'.$vars['about_src'];
+               $services_src='../countriesfinal/img/'.$vars['services_src'];
+                $contact_src='../countriesfinal/img/'.$vars['contact_src'];;
+                 $pic1='../countriesfinal/img/'.$vars['pic1'];;
+                 $pic2='../countriesfinal/img/'.$vars['pic2'];;
+                 $pic3='../countriesfinal/img/'.$vars['pic3'];;
+endforeach; */
+
+                $country_id='216';
+                 $country_name='JLOH';
+                  $population=421212; 
+          
+                  $climate='42';
+                    $currency='545';
+                     $history='../countriesfinal/img/bali1.jpg';
+                      $hero_src='../countriesfinal/img/bali1.jpg';
+                       $cta_src='../countriesfinal/img/bali1.jpg';
+                      $about_src='../img/bali2.jpg';
+                         $services_src='../countriesfinal/img/bali1.jpg';
+                          $contact_src='../countriesfinal/img/bali1.jpg';
+                           $pic1='../countriesfinal/img/bali1.jpg';
+                           $pic2='../countriesfinal/img/bali1.jpg';
+                           $pic3='../countriesfinal/img/bali1.jpg'; 
                 ?>
 <style>
    #hero {
@@ -209,49 +236,7 @@
       
             </div>
           </section><!-- End Services Section -->
-          <!-- ======= photo Section ======= -->
-        <section id="team" class="team section-bg1">
-            <div class="container">
-                <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                    <h2>Discover <?= $country_name ?></h2>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="fade-up">
-                            <div class="pic">s
-                                <img src="img/<?= $pic1 ?>" class="img-fluid" alt="" />
-                            </div>
-                            <div class="member-info">
-                               
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="150">
-                            <div class="pic">
-                                <img src="img/<?= $pic2 ?>" class="img-fluid" alt="" />
-                            </div>
-                            <div class="member-info">
-                              
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="300">
-                            <div class="pic">
-                                <img src="<?= $pic1 ?>" class="img-fluid" alt="" />
-                            </div>
-                            <div class="member-info">
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Team Section -->
+          
       
           <!-- ======= Counts Section ======= -->
           <section id="counts" class="counts  section-bg">
@@ -371,7 +356,7 @@
       
                 <div class="col-lg-4 col-md-6">
                   <div class="member" data-aos="fade-up">
-                    <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+                    <div class="pic"><img src="<?= $pic1 ?>"  class="img-fluid" alt=""></div>
                     <div class="member-info">
                       <h4>Japan</h4>
                       <span>asia</span>
@@ -382,7 +367,7 @@
       
                 <div class="col-lg-4 col-md-6">
                   <div class="member" data-aos="fade-up" data-aos-delay="150">
-                    <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+                    <div class="pic"><img src="<?= $pic2 ?>" class="img-fluid" alt=""></div>
                     <div class="member-info">
                       <h4>switzerland</h4>
                       <span>europe</span>
@@ -393,7 +378,7 @@
       
                 <div class="col-lg-4 col-md-6">
                   <div class="member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+                    <div class="pic"><img src="<?= $pic3 ?>" class="img-fluid" alt=""></div>
                     <div class="member-info">
                       <h4>tunisia</h4>
                       <span>africa</span>
@@ -488,7 +473,7 @@
           
           <div class="d-grid">
       
-            <button <?php if (!$_SESSION[ 'authorized ']){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
+            <button <?php if (!isset($_SESSION[ 'user_name'])){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
           </div>
           <?php if (!$_SESSION[ 'authorized ']){ ?><div class="alert alert-danger" role="alert">
         please sign-up first <a href="C: Users sapph OneDrive Documents GitHub travelagency login"> here </a><?php } ?> 

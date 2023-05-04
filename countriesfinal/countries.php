@@ -44,11 +44,12 @@ class countries
 
 
   function findById($id)
-  {
-    $query = "select * from `country` where country_id= ? ;";
-    $response = $this->cnx->prepare($query);
-    $response->execute([$id]);
-    return $response->fetch(PDO::FETCH_ASSOC);
+  {$countries=array();
+    $query = "select * from `country` where country_id=".$id;
+    $response = $this->cnx->query($query);
+
+    $countries = $response->fetchAll(\PDO::FETCH_ASSOC);
+        return $countries;
   }
   function delete_country($country_id)
   {
