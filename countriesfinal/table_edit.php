@@ -3,6 +3,7 @@ require('countries.php');
 $db = new countries();
 $countries = $db->get_countries();
 
+include_once '../fragments/barrehead.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,9 @@ $countries = $db->get_countries();
 </head>
 
 <body>
+<!--?php
+  include_once '../fragments/barre.php';
+  ?-->
     <div class="container my-4">
         <table class="table">
             <thead>
@@ -62,7 +66,8 @@ $countries = $db->get_countries();
         <button >Back to Home</button></a>
         </div>
     </div>
-
+    <script src="../fragments/js/jquery-3.1.1.min.js"></script>
+    <script src="../fragments/js/barre.js"></script>
 </body>
 
 </html>
