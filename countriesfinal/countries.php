@@ -45,7 +45,7 @@ class countries
 
   function findById($id)
   {$countries=array();
-    $query = "select * from `country` where country_id=".$id;
+    $query = "select * from `country` where country_id=$id";
     $response = $this->cnx->query($query);
 
     $countries = $response->fetchAll(\PDO::FETCH_ASSOC);

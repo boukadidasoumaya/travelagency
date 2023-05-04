@@ -124,8 +124,11 @@ endforeach;
       
         <!-- ======= Header ======= -->
         <?php
-        include_once '../fragments/barre.php'
-        ?>
+        include_once '../fragments/barre.php';
+        if (!isset($_SESSION)){
+          session_start();
+        }
+      ?>
       
         <!-- ======= Hero Section ======= -->
         <section id="hero">
@@ -308,8 +311,8 @@ endforeach;
                 <div class="swiper-wrapper"><?php
                  require_once( 'comment.php');
       $comment_post_ID =  $country_id ; 
-      $db = new Persistence();
-      $comments = $db->get_comments($comment_post_ID);
+      $db2 = new Persistence();
+      $comments = $db2->get_comments($comment_post_ID);
       $has_comments = (count($comments) > 0);
         
           foreach ($comments as $comment) {
@@ -317,25 +320,31 @@ endforeach;
       
                   <div class="swiper-slide">
                     <div class="testimonial-item">
-                      <p id="comment_<?= $comment[ 'com_id ']; ?>">
+                      <p id="comment_<?= $comment[ 'com_id']; ?>">
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        <?php echo($comment[ 'content ']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        <?php echo($comment[ 'content']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                       </p>
                       <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                      <h3><?php echo($comment[ 'comment_author ']. '  '.$comment[ 'user_last_name ']); ?></h3>
+                      <h3><?php echo($comment[ 'comment_author']. '  '.$comment[ 'user_last_name']); ?>
+                      <?php if (isset($_SESSION[ 'user_name'])) {if ($_SESSION[ 'user_name']=="admin" ||$_SESSION[ 'user_name']==$comment_author ){
+                  
+                  echo('<form id ="deleting" method="post" action="delete_comment.php">
+                   <input type="hidden" name="com_id" value="'.$comment[ 'com_id'].' ">
+                   <input type="hidden" name="cou_id" value="'.$_GET['id'].'">
+                   <script>
+                   function submitForm() {
+                     document.getElementById("deleting").submit();
+                   }
+                 </script>
+                   <span id="boot-icon" class="bi bi-trash" style="font-size:15px" onclick="submitForm()"></span>
+                   </form>');
+
+                  
+                }?></h3>
                     </div>
                   </div><!-- End testimonial item -->
       
-                  <?php  if ($_session[ 'user_name']=="admin" ||$_session[ 'user_name']==$comment_author ){
-          
-                   echo('<form method="post" action="delete_comment.php">
-                    <input type="hidden" name="'.$com_id.'" value="'.$comment['com_id '].'">
-                    <input type="hidden" name="'.$country_id.'" value=" $comment_post_ID ">
-                     <input type="submit">
-                    </form>');
-
-                   
-                 }}?>
+                  <?php }}?>
                 </div>
                 <div class="swiper-pagination"></div>
       
@@ -435,12 +444,12 @@ endforeach;
       
         <!-- Bootstrap 5 starter form -->
         <form  action="post_comment.php" method="post" role="form" class="commenting">
-      >
+      
       
           <!-- Name input -->
           <div class="mb-3">
-            <label class="form-label" for="name">Name</label>
-            <input class="form-control" name="comment_author" id="comment_author" type="text" placeholder="Name" data-sb-validations="required" />
+            <label class="form-label" for="name"><?= $_SESSION['user_name'] ?></label>
+            <input class="form-control" name="comment_author" id="comment_author" type="text" placeholder="Name" value=<?= $_SESSION['user_name'] ?> data-sb-validations="required" />
             <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
           </div>
       
@@ -473,10 +482,12 @@ endforeach;
           
           <div class="d-grid">
       
-            <button <?php if (!isset($_SESSION[ 'user_name'])){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
+            <button <?php 
+            if (!isset($_SESSION['user_name'])){ echo( 'disabled' ) ; } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
+            
           </div>
-          <?php if (!isset($_SESSION[ 'user_name'])){ ?><div class="alert alert-danger" role="alert">
-        please sign-up first <a href="C: Users sapph OneDrive Documents GitHub travelagency login"> here </a><?php } ?> 
+          <?php if (!($_SESSION["user_name"]=="admin")){ echo('<div class="alert alert-danger" role="alert">
+        please sign-up first <a href="C: Users sapph OneDrive Documents GitHub travelagency login"> here </a>') ;} ?> 
       </div>
       
         </form>

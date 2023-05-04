@@ -55,7 +55,7 @@ $this->data=$response->fetch(PDO::FETCH_ASSOC);
      
      $content =$vars['content'];
       $comment_post_ID=$vars['comment_post_ID'];
-    $query="INSERT INTO `comments` (`comment_author`, `user_last_name`, `content`, `comment_post_ID` ,`photo`) VALUES ('$comment_author','$user_last_name','$content ', '$comment_post_ID','$photo');";
+    $query="INSERT INTO `comments` (`comment_author`, `user_last_name`, `content`, `comment_post_ID` ) VALUES ('$comment_author','$user_last_name','$content ', '$comment_post_ID');";
     
    // if($this->validate_input($input) == true) {
      // if( isset($this->data[$comment_post_ID]) == false ) {
