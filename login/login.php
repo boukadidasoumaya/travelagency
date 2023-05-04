@@ -1,9 +1,8 @@
 <?php
- 
- if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 $isAuthenticated = false;
 include_once 'users.php';
@@ -38,5 +37,5 @@ if (($user)) {
 } else {
     $_SESSION['error'] = "veuillez verifier vos credentiels";
 
-    header('Location:sign in.php?');
+    header('Location:sign in.php');
 }

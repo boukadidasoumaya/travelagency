@@ -1,8 +1,8 @@
-<?php if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
- include_once '../fragments/barrehead.php';
+<?php if (!isset($_SESSION)) {
+  session_start();
+}
+
+include_once '../fragments/barrehead.php';
 
 ?>
 

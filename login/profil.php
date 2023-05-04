@@ -1,10 +1,3 @@
-<?php
-require('users.php');
-$db = new users();
-
-$account_selected = $db->get_user_by_id($_GET['id']);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,21 +32,20 @@ $account_selected = $db->get_user_by_id($_GET['id']);
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="text-right">Profile Settings</h4>
                             </div>
-
                             <div class="row mt-2">
-                                <div class="col-md-4"><label class="labels">Name</label><input type="text" class="form-control" name="name" value="<?= $account_selected['user_name'] ?>"></div>
-                                <div class="col-md-4"><label class="labels">Last Name</label><input type="text" class="form-control" name="lastname" value="<?= $account_selected['user_last_name'] ?>" ></div>
-                                <div class="col-md-4"><label class="labels">ID</label><input type="text" class="form-control" name="id" value="<?= $account_selected['user_id'] ?>" readonly ></div>
+                                <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="First name" value=""></div>
+                                <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="Last Name"></div>
+
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Date Birth</label><input type="text" class="form-control" name="birthday" value="<?= $account_selected['date_birth']?>"></div>
+                                <div class="col-md-12"><label class="labels">Date Birth</label><input type="text" class="form-control" value=""></div>
                                 <div class="row mt-3">
-                                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" name="country" value="<?= $account_selected['country'] ?>"></div>
-                                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" name="city" value="<?= $account_selected['city'] ?>" ></div>
+                                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
                                 </div>
-                                <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" name="email" value="<?= $account_selected['email'] ?>"></div>
+                                <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" value=""></div>
 
-                                <div class="col-md-12"><label class="labels">Num Passport</label><input type="text" class="form-control" name="passport" value="<?= $account_selected['num_passport'] ?>"></div>
+                                <div class="col-md-12"><label class="labels">Num Passport</label><input type="text" class="form-control" value=""></div>
                                 <div class="col-md-12"><label class="labels">Your Reservation</label><input type="text" class="form-control" value=""></div>
 
 

@@ -1,6 +1,6 @@
 <?php
 require('../countriesfinal/bdd.php');
-$cnx = database::getInstance();
+$cnx = CBD::getInstance();
 
 class users
 {
@@ -9,7 +9,7 @@ class users
     private  $user_id;
     public function __construct()
     {
-        $this->cnx = database::getInstance();
+        $this->cnx = CBD::getInstance();
     }
     public function find_user_by_email($email)
     {
@@ -67,13 +67,13 @@ class users
         return $users;
     }
     public function get_user_by_id($user_id)
-{
-    $query = "SELECT * FROM `user` WHERE `user_id` = ?";
-    $stmt = $this->cnx->prepare($query);
-    $stmt->execute([$user_id]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $user;
-}
+    {
+        $query = "SELECT * FROM `user` WHERE `user_id` = ?";
+        $stmt = $this->cnx->prepare($query);
+        $stmt->execute([$user_id]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    }
 
     public function create($POST)
     {
@@ -96,24 +96,24 @@ class users
 
 
 
-public function update_user($vars) 
-  {
+    public function update_user($vars)
+    {
 
-    $this->user_id = $vars['id'];
-    $this->user_name = $vars['name'];
-    $this->user_last_name = $vars['lastname'];
-    $this->date_birth = $vars['birthday'];
-    $this->country = $vars['country'];
-    $this->city = $vars['city'];
-    $this->email = $vars['email'];
-    $this->num_passport = $vars['passport'];
+        $this->user_id = $vars['id'];
+        $this->user_name = $vars['name'];
+        $this->user_last_name = $vars['lastname'];
+        $this->date_birth = $vars['birthday'];
+        $this->country = $vars['country'];
+        $this->city = $vars['city'];
+        $this->email = $vars['email'];
+        $this->num_passport = $vars['passport'];
 
 
-    $cnx = CBD::getInstance();
-    $query = "UPDATE  `user` SET `user_name`='$this->user_name', `user_last_name`= '$this->user_last_name',`email`='$this->email',`date_birth`='$this->date_birth',`country`='$this->country',`city`='$this->city',`num_passport`='$this->num_passport'  where user_id=$this->user_id ;";
-    $response = $cnx->query($query);
-  
-   /*     $stmt->execute([
+        $cnx = CBD::getInstance();
+        $query = "UPDATE  `user` SET `user_name`='$this->user_name', `user_last_name`= '$this->user_last_name',`email`='$this->email',`date_birth`='$this->date_birth',`country`='$this->country',`city`='$this->city',`num_passport`='$this->num_passport'  where user_id=$this->user_id ;";
+        $response = $cnx->query($query);
+
+        /*     $stmt->execute([
             $new_info['user_name'],
             $new_info['user_last_name'],
             $new_info['email'],

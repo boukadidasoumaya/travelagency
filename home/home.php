@@ -249,39 +249,41 @@ include_once '../fragments/barre.php'
     <!-- Slides Section Start-->
     <section id="slides-par">
         <div class="container">
-            <div class="slides">
+            <a href="../countriesfinal/new york.php">
+                <div class="slides">
 
-                <?php
+                    <?php
 
-                foreach ($countries as $c) :
-                    $id = $c['country_id']
-                ?>
-
-
-                    <div class="slide_1 slide_0 " id="id" name="id">
-                        <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>">
+                    foreach ($countries as $c) :
+                        $id = $c['country_id']
+                    ?>
 
 
-                        <div class="slide-info">
-                            <p><?php echo $c['country_name']; ?>
+                        <div class="slide_1 slide_0 " id="id" name="id">
+                            <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>">
+
+
+                            <div class="slide-info">
+                                <p><?php echo $c['country_name']; ?>
 
 
 
 
-                            </p>
+                                </p>
+
+                            </div>
 
                         </div>
 
-                    </div>
+                    <?php endforeach;  ?>
 
-                <?php endforeach;  ?>
-
-                <?php   ?>
+                    <?php   ?>
 
 
 
-            </div>
-            <div class="addedit"><?php if ($_SESSION['user_name'] == 'admin') {
+                </div>
+            </a>
+            <div class="addedit"><?php if (isset($_SESSION['user_name']) && $_SESSION['user_name'] == 'admin') {
 
                                         echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
                 <input type="hidden" name="id" value="">
