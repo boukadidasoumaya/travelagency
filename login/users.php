@@ -6,6 +6,19 @@ class users
 {
 
     protected PDO $cnx;
+<<<<<<< Updated upstream
+=======
+    private  $user_id;
+    private $user_name;
+    private $lastname ;
+    private $password ;
+    private $email ;
+    private $birthday ;
+    private $country ;
+    private $city ;
+    private $passport;
+    
+>>>>>>> Stashed changes
 
     public function __construct()
     {
@@ -97,18 +110,31 @@ class users
         $user_name = $_POST['name'];
         $lastname = $_POST['lastname'];
         $password = $_POST['password'];
+        
         $email = $_POST['email'];
         $birthday = $_POST['birthday'];
         $country = $_POST['country'];
         $city = $_POST['city'];
         $passport = $_POST['passport'];
 
-        //verifier si il existe
 
-        $query = "INSERT INTO `user` (user_name, user_last_name,email,password,date_birth, country, city, num_passport) 
+        //verifier si il existe
+        $query = "SELECT * FROM `user` WHERE email = ?";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$email]);
+        $result = $response->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+            header("Location: warning.php");
+        }else{
+            $query = "INSERT INTO `user` (user_name, user_last_name,email,password,date_birth, country, city, num_passport) 
                 VALUES (?, ?, ?, ?, ?, ?, ? , ?)";
         $response = $this->cnx->prepare($query);
         $response->execute([$user_name, $lastname, $email, $password, $birthday, $country, $city, $passport]);
+        header("Location: sign in.php");
+       
+        }
+
+        
     }
 
 
