@@ -57,6 +57,10 @@ $countries = $db->get_countries();
             </tbody>
         <?php endforeach; ?>
         </table>
+        <div>
+            <a href='..\home\home.php'>
+        <button >Back to Home</button></a>
+        </div>
     </div>
 
 </body>
