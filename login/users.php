@@ -103,7 +103,7 @@ class users
         $city = $_POST['city'];
         $passport = $_POST['passport'];
 
-
+        //verifier si il existe
 
         $query = "INSERT INTO `user` (user_name, user_last_name,email,password,date_birth, country, city, num_passport) 
                 VALUES (?, ?, ?, ?, ?, ?, ? , ?)";

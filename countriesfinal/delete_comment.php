@@ -4,7 +4,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $db = new Persistence();
-$id = htmlspecialchars($_POST['id']);
+$id = htmlspecialchars($_POST['com_id']);
 $db->delete($id);
-$locate=$POST['countryname'];
-header("location:$locate.php");
+header( 'Location: prototype.php?id='.$_POST['cou_id']);

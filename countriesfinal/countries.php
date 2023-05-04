@@ -2,11 +2,11 @@
 
 
 <?php
-require('bdd.php');
+require_once('bdd.php');
 $cnx = CBD::getInstance();
-require('storeimg.php');
+require_once('storeimg.php');
 
-require('generate_country_file.php');
+require_once('generate_country_file.php');
 class countries
 {
   protected PDO $cnx;
@@ -45,7 +45,7 @@ class countries
 
   function findById($id)
   {$countries=array();
-    $query = "select * from `country` where country_id=".$id;
+    $query = "select * from `country` where country_id=$id";
     $response = $this->cnx->query($query);
 
     $countries = $response->fetchAll(\PDO::FETCH_ASSOC);
