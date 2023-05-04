@@ -3,7 +3,7 @@ require('countries.php');
 if (!isset($_SESSION)) {
     session_start();
 }
-header('location:../home/home.php');
+//header('location:../home/home.php');
 
 var_dump($_POST);
 $db = new countries();

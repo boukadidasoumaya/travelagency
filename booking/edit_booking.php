@@ -1,5 +1,5 @@
 <?php 
-include 'bdd.php';
+include 'bdd_delete_update.php';
 ?>
 
 <!DOCTYPE html>

@@ -81,7 +81,7 @@ class countries
     $this->pic3 = $_FILES['pic3']['name'];
 
 
-    $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`,`pic1`,`pic2`,`pic3`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder','$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src');";
+    $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`,`pic1`,`pic2`,`pic3`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder','$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src','$this->pic1','$this->pic2','$this->pic3');";
     $response = $this->cnx->query($query);
     $file = new generate_country_file($this->country_id, $this->country_name,  $this->population, $this->climate, $this->currency, $this->history, $_FILES['hero_src']['name'],$_FILES['cta_src']['name'],$_FILES['about_src']['name'], $_FILES['services_src']['name'],$_FILES['contact_src']['name'],$this->pic1,$this->pic2,$this->pic3);
 

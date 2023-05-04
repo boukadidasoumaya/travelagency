@@ -1,6 +1,6 @@
 
 <?php
-include 'bdd.php';
+include 'bdd_delete_update.php';
 //access deletedid from the url of the page:start:
 if (isset($_GET['deletedid'])){
     $id_reservation=$_GET['deletedid'];
