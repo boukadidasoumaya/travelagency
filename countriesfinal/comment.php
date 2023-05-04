@@ -1,5 +1,5 @@
 <?php
-require 'bdd.php';
+require_once 'bdd.php';
     $cnx=CBD::getInstance();
     if(!isset($_SESSION)) 
     { 

@@ -1,6 +1,6 @@
 <?php include_once '../fragments/barrehead.php';
 require_once('countries.php');
-/* $db1=new countries();
+ $db1=new countries();
 
 $c=$db1->findById($_GET['id']);
 foreach ($c as $vars ):
@@ -24,9 +24,9 @@ foreach ($c as $vars ):
                  $pic1='../countriesfinal/img/'.$vars['pic1'];;
                  $pic2='../countriesfinal/img/'.$vars['pic2'];;
                  $pic3='../countriesfinal/img/'.$vars['pic3'];;
-endforeach; */
+endforeach; 
 
-                $country_id='216';
+               /*  $country_id='216';
                  $country_name='JLOH';
                   $population=421212; 
           
@@ -40,7 +40,7 @@ endforeach; */
                           $contact_src='../countriesfinal/img/bali1.jpg';
                            $pic1='../countriesfinal/img/bali1.jpg';
                            $pic2='../countriesfinal/img/bali1.jpg';
-                           $pic3='../countriesfinal/img/bali1.jpg'; 
+                           $pic3='../countriesfinal/img/bali1.jpg';  */
                 ?>
 <style>
    #hero {
@@ -306,7 +306,7 @@ endforeach; */
       
               <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper"><?php
-                 require( 'comment.php');
+                 require_once( 'comment.php');
       $comment_post_ID =  $country_id ; 
       $db = new Persistence();
       $comments = $db->get_comments($comment_post_ID);
@@ -326,7 +326,7 @@ endforeach; */
                     </div>
                   </div><!-- End testimonial item -->
       
-                  <?php  if ($_session[ 'user_name ']=="admin" ||$_session[ 'user_name ']==$comment_author ){
+                  <?php  if ($_session[ 'user_name']=="admin" ||$_session[ 'user_name']==$comment_author ){
           
                    echo('<form method="post" action="delete_comment.php">
                     <input type="hidden" name="'.$com_id.'" value="'.$comment['com_id '].'">
@@ -475,7 +475,7 @@ endforeach; */
       
             <button <?php if (!isset($_SESSION[ 'user_name'])){ ?>  disabled <?php } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
           </div>
-          <?php if (!$_SESSION[ 'authorized ']){ ?><div class="alert alert-danger" role="alert">
+          <?php if (!isset($_SESSION[ 'user_name'])){ ?><div class="alert alert-danger" role="alert">
         please sign-up first <a href="C: Users sapph OneDrive Documents GitHub travelagency login"> here </a><?php } ?> 
       </div>
       
