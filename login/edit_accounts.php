@@ -6,6 +6,8 @@ include_once 'users.php';
 $usersObj = new Users();
 $users = $usersObj->get_users();
 ?>
+<!--?php include_once '../fragments/barrehead.php';
+?-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +21,9 @@ $users = $usersObj->get_users();
 </head>
 
 <body>
+<!--?php
+  include_once '../fragments/barre.php';
+  ?-->
     <div class="container my-4">
         <table class="table">
             <thead>
@@ -62,7 +67,8 @@ $users = $usersObj->get_users();
         <button >Back to Home</button></a>
         </div>
     </div>
-
+    <script src="../fragments/js/jquery-3.1.1.min.js"></script>
+    <script src="../fragments/js/barre.js"></script>
 </body>
 
 </html>
