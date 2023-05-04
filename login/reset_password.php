@@ -51,12 +51,12 @@ if (isset($_SESSION)) {
             </div>
             <form action="update_password.php" method="post">
                 <div class="form-outline ">
-                    <input type="password" placeholder="Enter your new password" id="form3Example3" class="form-control" name="password" />
+                    <input type="password" placeholder="Enter your new password" id="password" class="form-control" name="password" required />
                 </div>
                 <div class="form-outline ">
-                    <input type="password" placeholder="Verify your new password" id="form3Example3" class="form-control" name="" />
+                    <input type="password" placeholder="Verify your new password" id="passwordv" class="form-control" name=""  required/>
                 </div>
-                <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
+                <button id="ajouter" type="submit" class="buton" disabled>
                     Change Password
                 </button>
                 <?php unset($_SESSION['code']); ?>
@@ -66,7 +66,7 @@ if (isset($_SESSION)) {
     <footer>
         <?php include_once '../fragments/footer.php' ?>
     </footer>
-
+    <script src="reset_password.js"></script>
     <script src="../fragments/js/jquery-3.1.1.min.js"></script>
     <script src="../fragments/js/barre.js"></script>
 </body>
