@@ -6,7 +6,7 @@ class users
 {
 
     protected PDO $cnx;
-    private  $user_id;
+
     public function __construct()
     {
         $this->cnx = CBD::getInstance();
@@ -55,7 +55,7 @@ class users
     }
 
 
-    public function get_users()
+    function get_users()
     {
         $users = array();
         /*  $cnx = CBD::getInstance(); */
@@ -66,13 +66,30 @@ class users
         $users = $response->fetchAll(\PDO::FETCH_ASSOC);
         return $users;
     }
-    public function get_user_by_id($user_id)
+    function get_users_byid($id)
     {
-        $query = "SELECT * FROM `user` WHERE `user_id` = ?";
-        $stmt = $this->cnx->prepare($query);
-        $stmt->execute([$user_id]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = array();
+
+
+        $query = "select * from `user` where user_id=? ;";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$id]);
+        $user = $response->fetch(PDO::FETCH_ASSOC);
         return $user;
+    }
+    function get_reservation($id)
+    {
+        $reservation = array();
+
+
+        $query = "SELECT * from booking
+        inner join country on booking.destination=country.country_id
+        inner join user on booking.user_id=user.user_id
+        where booking.user_id=?;";
+        $response = $this->cnx->prepare($query);
+        $response->execute([$id]);
+        $reservation = $response->fetchAll(\PDO::FETCH_ASSOC);
+        return $reservation;
     }
 
     public function create($POST)
@@ -96,24 +113,14 @@ class users
 
 
 
-    public function update_user($vars)
+    public function update_user($user_id, $new_info)
     {
 
-        $this->user_id = $vars['id'];
-        $this->user_name = $vars['name'];
-        $this->user_last_name = $vars['lastname'];
-        $this->date_birth = $vars['birthday'];
-        $this->country = $vars['country'];
-        $this->city = $vars['city'];
-        $this->email = $vars['email'];
-        $this->num_passport = $vars['passport'];
 
+        $query = "UPDATE `user` SET `user_name` = ?,`user_last_name`=?, `email` = ?, `password` = ?, `date_birth` = ?, `country` = ?, `city` = ?, `num_passport` = ? WHERE `user_id` = $user_id";
+        $stmt = $this->cnx->prepare($query);
 
-        $cnx = CBD::getInstance();
-        $query = "UPDATE  `user` SET `user_name`='$this->user_name', `user_last_name`= '$this->user_last_name',`email`='$this->email',`date_birth`='$this->date_birth',`country`='$this->country',`city`='$this->city',`num_passport`='$this->num_passport'  where user_id=$this->user_id ;";
-        $response = $cnx->query($query);
-
-        /*     $stmt->execute([
+        $stmt->execute([
             $new_info['user_name'],
             $new_info['user_last_name'],
             $new_info['email'],
@@ -126,7 +133,28 @@ class users
 
         if ($stmt->rowCount() == 0) {
             throw new Exception("User with ID $user_id does not exist.");
-        }*/
+        }
+    }
+    public function update_userprofil($user_id, $new_info)
+    {
+
+
+        $query = "UPDATE `user` SET `user_name` = ?,`user_last_name`=?,`date_birth`=? , `email` = ?,  `country` = ?, `city` = ?, `num_passport` = ? WHERE `user_id` = $user_id";
+        $stmt = $this->cnx->prepare($query);
+
+        $stmt->execute([
+            $new_info['user_name'],
+            $new_info['user_last_name'],
+            $new_info['email'],
+            $new_info['birthday'],
+            $new_info['country'],
+            $new_info['city'],
+            $new_info['passport'],
+        ]);
+
+        if ($stmt->rowCount() == 0) {
+            throw new Exception("User with ID $user_id does not exist.");
+        }
     }
 
     public function delete_user($user_id)
