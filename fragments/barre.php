@@ -35,7 +35,7 @@ if (!isset($_SESSION)) {
                                 </li>';
                             } else {
 
-                                echo  '<li><a class="menu-hover" href="../login/profil.php?id=$_SESSION[""]">Profil</a>
+                                echo  '<li><a class="menu-hover" href="../login/profil.php?id=' . $_SESSION["user_id"] . '">Profil</a>
 
                                 </li>
                                 <li><a class="menu-hover" href="../login/log_out.php?logout=1">Log out </a>

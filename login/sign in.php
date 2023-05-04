@@ -66,8 +66,7 @@ include_once '../fragments/barrehead.php';
     <?php include_once '../fragments/footer.php' ?>
   </footer>
 
-  <script src="../fragments/js/jquery-3.1.1.min.js"></script>
-  <script src="../fragments/js/barre.js"></script>
+
 </body>
 
 </html>

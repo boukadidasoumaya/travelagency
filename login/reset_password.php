@@ -1,9 +1,21 @@
 <!-- $user->motdepasse_oublie($token, $_POST['email']); -->
 
-<?php include_once '../fragments/barrehead.php';
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+include_once '../fragments/barrehead.php';
 
 include_once 'users.php';
 $user = new users();
+if (isset($_SESSION)) {
+    if (isset($_SESSION['code']) && $_SESSION['code'] != $_POST['code']) {
+        $_SESSION['error_code'] = 'Please Verify your code';
+        header('Location:../login/verify_code.php');
+    }
+}
+
 
 
 
@@ -37,17 +49,17 @@ $user = new users();
                 <h1>Reset Password</h1>
 
             </div>
-            <form method="post">
+            <form action="update_password.php" method="post">
                 <div class="form-outline ">
-                    <input placeholder="Enter your new password" id="form3Example3" class="form-control" name="password" />
+                    <input type="password" placeholder="Enter your new password" id="form3Example3" class="form-control" name="password" />
                 </div>
                 <div class="form-outline ">
-                    <input placeholder="Verify your new password" id="form3Example3" class="form-control" name="" />
+                    <input type="password" placeholder="Verify your new password" id="form3Example3" class="form-control" name="" />
                 </div>
                 <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
                     Change Password
                 </button>
-
+                <?php unset($_SESSION['code']); ?>
             </form>
         </section>
     </main>
@@ -60,14 +72,3 @@ $user = new users();
 </body>
 
 </html>
-
-<?php
-if (isset($_POST['password'])) {
-
-
-    $id = $_GET['id'];
-    $user->motdepasse_oublie($id, $_POST['password']);
-    header('Location: sign in.php');
-} else {
-    echo  "please enter password";
-}

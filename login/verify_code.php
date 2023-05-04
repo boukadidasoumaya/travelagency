@@ -1,13 +1,12 @@
-<?php include_once '../fragments/barrehead.php';
+<?php
+
 if (!isset($_SESSION)) {
     session_start();
 }
-include_once 'users.php';
-$user = new users();
 
 
 
-?>
+include_once '../fragments/barrehead.php'; ?>
 
 <link rel="stylesheet" href="styleSignin.css">
 <!--dosis-->
@@ -21,7 +20,7 @@ $user = new users();
 
 <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
 <link rel="stylesheet" href="../fragments/footer.css">
-<title>Reset Password</title>
+<title>Mail sent</title>
 </head>
 
 <body>
@@ -32,31 +31,31 @@ $user = new users();
     <main>
 
         <section class="glass main">
-            <h1 class="wb">Welcome </h1>
+            <h1 class="wb">Mail sent </h1>
             <div>
-                <h1>Reset Password</h1>
-
-            </div>
-            <?php
-            if (isset($_SESSION['error_msg'])) {
-            ?>
-                <div class="alert alert-danger" style="text-align: center;color: red; padding-bottom: 20px;">
-                    <?php echo  $_SESSION['error_msg'];
-                    unset($_SESSION['error_msg']); ?>
+                <div>
+                    <h1>Please check out your email</h1>
+                    <?php
+                    if (isset($_SESSION['error_code'])) {
+                    ?>
+                        <div class="alert alert-danger" style="text-align: center;color: red; padding-bottom: 20px;">
+                            <?php echo  $_SESSION['error_code'];
+                            unset($_SESSION['error_code']); ?>
+                        </div>
+                    <?php } ?>
+                    <form action="reset_password.php" method="post">
+                        <div class="form-outline ">
+                            <input type="number" placeholder="Enter the code sent" id="form3Example3" class="form-control" name="code" />
+                        </div>
+                        <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
+                            Confirm code
+                        </button>
+                    </form>
                 </div>
-            <?php } ?>
-            </div>
-
-            <form action="mail_sent.php" method="post">
-                <div class="form-outline ">
-                    <input type="email" placeholder="Enter your email" id="form3Example3" class="form-control" name="email" />
-                </div>
-                <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
-                    Send Mail
-                </button>
 
 
-            </form>
+
+
         </section>
     </main>
     <footer>
@@ -68,4 +67,3 @@ $user = new users();
 </body>
 
 </html>
-<?php
