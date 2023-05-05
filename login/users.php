@@ -6,8 +6,6 @@ class users
 {
 
     protected PDO $cnx;
-<<<<<<< Updated upstream
-=======
     private  $user_id;
     private $user_name;
     private $lastname ;
@@ -18,7 +16,6 @@ class users
     private $city ;
     private $passport;
     
->>>>>>> Stashed changes
 
     public function __construct()
     {

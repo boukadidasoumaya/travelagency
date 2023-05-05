@@ -6,7 +6,6 @@ if (!isset($_SESSION)) {
 }
 
 include_once '../fragments/barrehead.php';
-
 include_once 'users.php';
 $user = new users();
 if (isset($_SESSION)) {
