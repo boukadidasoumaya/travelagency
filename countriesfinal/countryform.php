@@ -277,7 +277,7 @@
         <legend>country's Information</legend>
         <div class="item">
           <label for="fname"> country name<span>*</span></label>
-          <input id="countryname" type="text" name="countryname" />
+          <input id="countryname" type="text" name="countryname" required/>
         </div>
         <div class="item">
           <label for="country_id">id #<span>*</span></label>
@@ -293,26 +293,26 @@
         </div>
         <div class="item">
           <label for="climat"> climate<span>*</span></label>
-          <input id="climat" type="text" name="climat" />
+          <input id="climat" type="text" name="climat"required />
         </div>
         <div class="item">
           <label for="activity">currency #<span>*</span></label>
-          <input id="currency" type="text" name="currency" />
+          <input id="currency" type="text" name="currency" required/>
         </div>
         <div class="item">
           <label for="history">history<span>*</span></label>
-          <input id="history" name="history" />
+          <input id="history" name="history" required/>
         </div>
         <div class="item">
           <label for="bdate">Price car <span>*</span></label>
-          <input id="price_car" name="price_car" />
+          <input id="price_car" name="price_car" required/>
         </div>
         <div class="item">
           <label for="fname"> pricetrip<span>*</span></label>
-          <input id="pricetip" name="pricetrip" />
+          <input id="pricetip" name="pricetrip"required />
           <div class="item">
             <label for="fname"> pricetourguide<span>*</span></label>
-            <input id="pricetg" name="pricetg" />
+            <input id="pricetg" name="pricetg"required />
           </div>
           <div>
             <label for="file">Choose link for maps</label>
@@ -324,7 +324,7 @@
           </div>
           <div>
             <label for="file">Choose file to upload for hero</label>
-            <input type="file" id="hero_src" name="hero_src" >
+            <input type="file" id="hero_src" name="hero_src" multiple>
           </div>
           <div>
             <label for="cta_src">Choose file to upload cta</label>
@@ -356,7 +356,9 @@
           </div>
       </fieldset>
       <div class="btn-block">
-        <button type="submit" href="/">Submit</button>
+        <button type="submit" href="/" <?php $country=new $countries();
+       if ($country->check_name){ echo 'disabled '?> >Submit</button><?php
+       echo("<div class='alert alert-danger' role = alert");}?>
       </div>
     </form>
   </div>
