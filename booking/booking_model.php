@@ -8,11 +8,11 @@ class Booking
     private $price;
     private $user_id;
     private $destination;
-    private $conn;
+    private PDO $conn;
 
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = CBD::getInstance();
+        $this->conn = CBD::getInstance();//yconnecti lel database clients
     }
 
     public function setIdReservation($id_reservation)
@@ -86,4 +86,15 @@ class Booking
             return false;
         }
     }
+    public function get_clients ()
+    {
+        $sql = "SELECT * FROM booking ";   
+        $resultat= $this->conn->prepare($sql);
+        $resultat->execute([]);
+        $clients = $resultat->fetchAll(\PDO::FETCH_ASSOC);
+        return $clients;
+
+        
+    }
+
 }
