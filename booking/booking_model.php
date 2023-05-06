@@ -88,7 +88,9 @@ class Booking
     }
     public function get_clients ()
     {
-        $sql = "SELECT * FROM booking ";   
+        $clients = array();
+
+        $sql = "SELECT * FROM booking inner join user ;";   
         $resultat= $this->conn->prepare($sql);
         $resultat->execute([]);
         $clients = $resultat->fetchAll(\PDO::FETCH_ASSOC);
@@ -96,5 +98,19 @@ class Booking
 
         
     }
+
+    public function get_reservation($user_id)
+    {
+        $reserv = array();
+
+        $sql = "SELECT * FROM `booking` inner join `user` where user_id=?";   
+        $resultat= $this->conn->prepare($sql);
+        $resultat->execute([]);
+        $reserv = $resultat->fetchAll(\PDO::FETCH_ASSOC);
+        return $reserv;
+
+        
+    }
+    
 
 }
