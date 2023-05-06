@@ -24,14 +24,20 @@ if (($user)) {
         $isAuthenticated = true;
         echo 'i am here';
         header('Location:../home/home.php');
+<<<<<<< HEAD
         var_dump($_SESSION['user_name']);
+=======
+>>>>>>> 942645aa72f0de866f80fee6678f58d24beb83b4
     } else {
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['user_name'] = $user['user_name'];
         $_SESSION['isAuthenticated'] = true;
 
         $isAuthenticated = true;
+<<<<<<< HEAD
         var_dump($_SESSION['user_name']);
+=======
+>>>>>>> 942645aa72f0de866f80fee6678f58d24beb83b4
 
         header('Location:../home/home.php');
         echo 'else here';
@@ -39,5 +45,5 @@ if (($user)) {
 } else {
     $_SESSION['error'] = "veuillez verifier vos credentiels";
 
-    header('Location:sign in.php?');
+    header('Location:sign in.php');
 }

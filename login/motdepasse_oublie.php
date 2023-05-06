@@ -1,5 +1,7 @@
 <?php include_once '../fragments/barrehead.php';
-
+if (!isset($_SESSION)) {
+    session_start();
+}
 include_once 'users.php';
 $user = new users();
 
@@ -35,13 +37,24 @@ $user = new users();
                 <h1>Reset Password</h1>
 
             </div>
-            <form method="post">
+            <?php
+            if (isset($_SESSION['error_msg'])) {
+            ?>
+                <div class="alert alert-danger" style="text-align: center;color: red; padding-bottom: 20px;">
+                    <?php echo  $_SESSION['error_msg'];
+                    unset($_SESSION['error_msg']); ?>
+                </div>
+            <?php } ?>
+            </div>
+
+            <form action="mail_sent.php" method="post">
                 <div class="form-outline ">
                     <input type="email" placeholder="Enter your email" id="form3Example3" class="form-control" name="email" />
                 </div>
                 <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
                     Send Mail
                 </button>
+
 
             </form>
         </section>
@@ -56,23 +69,3 @@ $user = new users();
 
 </html>
 <?php
-if (isset($_POST['email'])) {
-    if ($user->verify_accountByemail_motdepasse_oublie($_POST['email'])) {
-
-        $id = $user->find_user_by_email($_POST['email']);
-        $url = "http://localhost:3000/login/reset_password.php?id=$id";
-        $message = "Hello! this is the link for resetting your password: $url";
-        $headers = "From: think.travel.agency.project@gmail.com\r\n";
-        $headers .= "Reply-To: think.travel.agency.project@gmail.com\r\n";
-        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-        if (mail($_POST['email'], "Password forgotten", $message, $headers)) {
-            $_SESSION['mail'] = 'Mail Sent';
-        } else {
-            echo "error";
-        }
-    } else {
-        $_SESSION['mail'] = "this email does not exist";
-    }
-} else {
-    $_SESSION['mail'] =  "please enter un email";
-}

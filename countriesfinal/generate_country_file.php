@@ -5,7 +5,7 @@ class generate_country_file
 
 
   protected $file;
-  public function __construct($country_id, $country_name, $population, $climate, $currency, $history, $hero_src, $cta_src, $about_src, $services_src, $contact_src)
+  public function __construct($country_id, $country_name, $population, $climate, $currency, $history, $hero_src, $cta_src, $about_src, $services_src, $contact_src,$pic1,$pic2,$pic3)
   {
     $this->file = '
         
@@ -216,7 +216,7 @@ class generate_country_file
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up">
                             <div class="pic">s
-                                <img src="<?= $pic1 ?>" class="img-fluid" alt="" />
+                                <img src="img/'.$pic1.'" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
                                 <h4><?= $pic1_name ?></h4>
@@ -228,7 +228,7 @@ class generate_country_file
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="150">
                             <div class="pic">
-                                <img src="<?= $pic2 ?>" class="img-fluid" alt="" />
+                                <img src="/img/'.$pic2. '" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
                                 <h4><?= $pic2_name ?></h4>
@@ -240,7 +240,7 @@ class generate_country_file
                     <div class="col-lg-4 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="pic">
-                                <img src="<?= $pic3 ?>" class="img-fluid" alt="" />
+                                <img src="'.$pic3.'" class="img-fluid" alt="" />
                             </div>
                             <div class="member-info">
                                 <h4><?= $pic3_name ?></h4>
@@ -341,7 +341,16 @@ class generate_country_file
                     </div>
                   </div><!-- End testimonial item -->
       
-                  <?php };
+                  <?php  if $_session[\'user_name\']=="admin" ||$_session[\'user_name\']=="[\'comment_author\']{"
+          
+                    <form method="post" action="delete_comment.php">
+                    <input type="hidden" name="com_id" value="$comment[\'com_id\']">
+                    <input type="hidden" name="country_id" value="<?php $comment_post_ID" ?>>
+
+                    <input type="submit">
+                </form>
+       echo 
+          <?php   };
           
           ?>
                 </div>

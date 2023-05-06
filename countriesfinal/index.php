@@ -1,15 +1,4 @@
-<?php 
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
-$_SESSION['username']="mabahej";
-$_SESSION['lastname']="benh";
-$_SESSION['photo']="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1200px-Grosser_Panda.JPG";
-$_SESSION['authorized']=false;
 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 

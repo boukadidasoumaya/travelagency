@@ -2,32 +2,33 @@
 require_once 'bdd.php';
 class storeimg {
 
-private $target_dir = "img/";
+private $target_dir ;
 private $target_file;
 private $uploadOk = 1;
 private $imageFileType ;
  function __construct()
 {}
-function storeim($vars,$target){
+function storeim($vars,$target,$location){
+    if($this->verify($vars,$location)==1){
     $msg = ""; 
 
 // check if the user has clicked the button "UPLOAD" 
-
+//img/
 
     $filename = $_FILES[$target]["name"];
 
     $tempname = $_FILES[$target]["tmp_name"];  
 
-        $folder = "img/".$filename;   
+        $folder = $location.$filename;   
 
     // connect with the database
     $id=$vars['country_id'];
 
         // query to insert the submitted data
 
-        $sql = "UPDATE `country`
-        set `$target`='$filename' 
-        where country_id=$id";
+       //// $sql = "UPDATE `country`
+       // set `$target`='$filename' 
+       // where country_id=$id";
 
         // function to execute above query
 
@@ -41,14 +42,11 @@ function storeim($vars,$target){
 
             $msg = "Failed to upload image";
 
-    }
+    }}}
 
+ function verify ($vars,$location){
 
-$cnx=CBD::getInstance();
-$result = $cnx->query($sql);
-
-
-    $this->target_dir = "img/";
+    $this->target_dir = $location;
  $this->target_file = $this->target_dir . basename( $vars["fileToUpload"]["name"]);
  $this->uploadOk = 1;
  $this->imageFileType = pathinfo($this->target_file,PATHINFO_EXTENSION);
@@ -86,7 +84,13 @@ if ($uploadOk == 0) {
     } else {
         echo "<center>Sorry, there was an error uploading your file.</font></center>";
     }}
-return ;}
+return $uploadOk;}
+function deleteimg($img,$location){
+    if (file_exists($this->target_file)) {
+        unlink($location.$img);
+}
+
+}
 }
 ?>
 </body>

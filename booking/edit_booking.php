@@ -1,7 +1,11 @@
-<?php 
-include 'bdd.php';
-?>
+<?php
+include "bdd.php";
+require('booking_model.php');
+$db = new Booking();
+/*$id=$_GET['id'];*/
+$reserv= $db->get_reservation(1);
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,50 +23,36 @@ include 'bdd.php';
             <thead>
                 <tr>
                     <th scope="col">id_reservation</th>
-                    <th scope="col">destination</th>
                     <th scope="col">date</th>
-                    <th scope="col">num_passport</th>
-                    <th scope="col">client_first_name</th>
-                    <th scope="col">client_last_name</th>
                     <th scope="col" >price-trip</th>
+                    <th scope="col">user_id</th>
+                    <th scope="col">destination</th>
                     <th scope="col" >changes</th>
-                </tr>
+                
+                    </tr>
             </thead>
  
   <tbody>
   <?php
-    $sql="Select * from `booking`";
-    /*the query method is used to execute the sql statement */ 
-    $result=mysqli_query($conn,$sql);
-    if ($result){
-        while($row=mysqli_fetch_assoc($result)){
-           $id_reservation=$row['id_reservation'];
-           $destination=$row['destination'];
-           $date=$row['date'];
-           $num_passport=$row['num_passport'];
-           $client_first_name=$row['client_first_name'];
-           $client_last_name=$row['client_last_name'];
-           $price_trip= $row['prix'];
-           echo '<tr>
-           <th scope="row">'.$id_reservation.'</th>
-           <td>'.$destination.'</td>
-           <td>'.$date.'</td>
-           <td>'.$num_passport.'</td>
-           <td>'.$client_first_name.'</td>
-           <td>'.$client_last_name.'</td>
-           <td>'.$price_trip.'</td>
-           <td> 
-           <button><a href="update_booking.php?updatedid='.$id_reservation.'">update your trip</a></button>
-           <button><a href="delete_booking.php?deletedid='.$id_reservation.'">cancel your trip</a></button>
-           </td>
-           </tr>';
-           
-        }
-    }
-    ?>
-   
+    foreach ($reserv as $cl) :
+?>
+           <tr>
+           <th scope="row"><?php echo $cl['id_reservation']?></th>
+           <td><?php echo $cl['date']?></td>
+           <td><?php echo $cl['prix'] ?></td>
+           <td><?php echo $cl['user_id']?></td>
 
-  </tbody>
+           <td><?php echo $cl['destination']?></td>
+           <td> 
+           <button><a  class="btn btn-success" href="update_booking.php?updatedid=<?= $cl['id_reservation']?> ">update your trip</a></button>
+           <button><a href="delete_booking.php?deletedid=<?=$cl['id_reservation']?>">cancel your trip</a></button>
+           </td>
+           </tr>
+           
+   
+</tbody>
+  <?php endforeach; ?>
+
 </table>
             
     </div>
