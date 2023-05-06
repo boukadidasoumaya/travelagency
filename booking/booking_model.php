@@ -8,11 +8,11 @@ class Booking
     private $price;
     private $user_id;
     private $destination;
-    private PDO $conn;
+    private $conn;
 
-    public function __construct()
+    public function __construct($conn)
     {
-        $this->conn = CBD::getInstance();//yconnecti lel database clients
+        $this->conn = CBD::getInstance();
     }
 
     public function setIdReservation($id_reservation)
@@ -86,31 +86,25 @@ class Booking
             return false;
         }
     }
-    public function get_clients ()
+    public function get_clients()
     {
         $clients = array();
 
-        $sql = "SELECT * FROM booking inner join user ;";   
-        $resultat= $this->conn->prepare($sql);
+        $sql = "SELECT * FROM booking inner join user ;";
+        $resultat = $this->conn->prepare($sql);
         $resultat->execute([]);
         $clients = $resultat->fetchAll(\PDO::FETCH_ASSOC);
         return $clients;
-
-        
     }
 
     public function get_reservation($user_id)
     {
         $reserv = array();
 
-        $sql = "SELECT * FROM `booking` inner join `user` where user_id=?";   
-        $resultat= $this->conn->prepare($sql);
+        $sql = "SELECT * FROM `booking` inner join `user` where user_id=?";
+        $resultat = $this->conn->prepare($sql);
         $resultat->execute([]);
         $reserv = $resultat->fetchAll(\PDO::FETCH_ASSOC);
         return $reserv;
-
-        
     }
-    
-
 }
