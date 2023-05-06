@@ -30,7 +30,7 @@ if (isset($_SESSION)) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
 <link rel="stylesheet" href="../fragments/footer.css">
 <title>Reset Password</title>
@@ -50,13 +50,16 @@ if (isset($_SESSION)) {
 
             </div>
             <form action="update_password.php" method="post">
-                <div class="form-outline ">
+                <div class="form-outline position-relative">
                     <input type="password" placeholder="Enter your new password" id="password" class="form-control" name="password" required />
+                    <i class="bi bi-eye-slash password-toggle position-absolute top-50 end-0 translate-middle-y"></i>
                 </div>
-                <div class="form-outline ">
-                    <input type="password" placeholder="Verify your new password" id="passwordv" class="form-control" name=""  required/>
+                <div class="form-outline position-relative">
+                    <input type="password" placeholder="Verify your new password" id="passwordv" class="form-control" name="passwordv" required />
+                    <i class="bi bi-eye-slash password-toggle position-absolute top-50 end-0 translate-middle-y"></i>
                 </div>
-                <button id="ajouter" type="submit" class="buton" disabled>
+
+                <button type="submit" class="buton btn btn-primary btn-block mb-4 ">
                     Change Password
                 </button>
                 <?php unset($_SESSION['code']); ?>

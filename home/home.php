@@ -72,7 +72,7 @@ include_once '../fragments/barre.php'
                 </p>
 
                 </p>
-                <a href="" class="button">Let us introduce ourselves</a>
+                <a href="#meetus" class="button">Let us introduce ourselves</a>
             </div>
             <div class="image-section">
                 <img src="images/travel.jpg">
@@ -83,8 +83,75 @@ include_once '../fragments/barre.php'
 <!--------about section ends-->
 <?php
 ?>
+
+
+<!-------Welcome-text section------->
+<div class="welcome" id="welcome">
+    <section id="welcome-text">
+        <div class="container">
+            <h2>The Official Travel Site of the Think travel agency</h2>
+            <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
+        </div>
+        <?php
+        require('../countriesfinal/countries.php');
+        $db = new countries();
+        $countries = $db->get_countries();
+        ?>
+
+
+    </section>
+    <!-- Slides Section Start-->
+    <section id="slides-par">
+        <div class="container">
+            <a href="../countriesfinal/new york.php">
+                <div class="slides">
+
+                    <?php
+
+                    foreach ($countries as $c) :
+                        $id = $c['country_id']
+                    ?>
+
+
+                        <div class="slide_1 slide_0 " id="id" name="id">
+                            <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>">
+
+
+                            <div class="slide-info">
+                                <p><?php echo $c['country_name']; ?>
+
+
+
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    <?php endforeach;  ?>
+
+                    <?php   ?>
+
+
+
+                </div>
+            </a>
+            <div class="addedit"><?php if (isset($_SESSION['user_name']) && $_SESSION['user_name'] == 'admin') {
+
+                                        echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
+                <input type="hidden" name="id" value="">
+                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>');
+                                    } ?>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- Slides Section ends-->
 <!----------meet us-------->
-<div class="responsive-container-block outer-container">
+<div id="meetus" class="responsive-container-block outer-container">
     <div class="responsive-container-block inner-container">
         <p class="text-blk section-head-text">
             Meet Our Expert Instructors
@@ -231,73 +298,6 @@ include_once '../fragments/barre.php'
         </div>
     </div>
 </div>
-<!-------Welcome-text section------->
-<div class="welcome" id="welcome">
-    <section id="welcome-text">
-        <div class="container">
-            <h2>The Official Travel Site of the Think travel agency</h2>
-            <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
-        </div>
-        <?php
-        require('../countriesfinal/countries.php');
-        $db = new countries();
-        $countries = $db->get_countries();
-        ?>
-
-
-    </section>
-    <!-- Slides Section Start-->
-    <section id="slides-par">
-        <div class="container">
-            <a href="../countriesfinal/new york.php">
-                <div class="slides">
-
-                    <?php
-
-                    foreach ($countries as $c) :
-                        $id = $c['country_id']
-                    ?>
-
-
-                        <div class="slide_1 slide_0 " id="id" name="id">
-                            <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>">
-
-
-                            <div class="slide-info">
-                                <p><?php echo $c['country_name']; ?>
-
-
-
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    <?php endforeach;  ?>
-
-                    <?php   ?>
-
-
-
-                </div>
-            </a>
-            <div class="addedit"><?php if (isset($_SESSION['user_name']) && $_SESSION['user_name'] == 'admin') {
-
-                                        echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
-                <input type="hidden" name="id" value="">
-                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>');
-                                    } ?>
-            </div>
-        </div>
-    </section>
-</div>
-<!-- Slides Section ends-->
-
-<!--------book now starts----->
-
-<!--------book now section ends------->
 
 <?php include_once '../fragments/footer.php' ?>
 
