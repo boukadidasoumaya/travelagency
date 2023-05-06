@@ -259,7 +259,7 @@ include_once '../fragments/barre.php'
 ?>
 
 
-                        <div class="slide_1 slide_0 " id="id" name="id"> <a href='delete_country.php?id=<?= $c['country_id'] ?>'>
+                        <div class="slide_1 slide_0 " id="id" name="id"> <a href='prototype.php?id=<?= $c['country_id'] ?>'>
                             <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>"></a>
 
 
