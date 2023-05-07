@@ -31,8 +31,10 @@ if (!isset($_SESSION['user_name'])) {
                 <div id="form-1">
                     <div class="form-group">
                         <label for="user">Client</label>
-                        <?php if (isset($_SESSION)) {
-                            if (($_SESSION['user_name']) != 'admin') {
+                        <?php
+
+                        if ((isset($_SESSION['user_name']))) {
+                            if ($_SESSION['user_name'] != 'admin') {
                                 echo ('
                         <div class="form-group">
                             <label for="user">Traveler Name :</label>
@@ -107,7 +109,7 @@ if (!isset($_SESSION['user_name'])) {
                 <div id="form-2" class="d-none">
 
                     <div class="form-group">
-                        <label for="price">Total Price</label>
+                        <label for="price">Price</label>
                         <input type="number" name="price" id="price" class="form-control" readonly>
                     </div>
 

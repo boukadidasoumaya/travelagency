@@ -84,4 +84,42 @@ $pdf->Ln();
 $pdf->Cell(40, 10, 'Total Cost Price : ' . $_POST['price']);
 $pdf->Ln();
 
-$pdf->Output();
+// Prepare PDF data
+$pdfContent = $pdf->Output('', 'S');
+$pdfData = chunk_split(base64_encode($pdfContent));
+$pdfName = 'receipt.pdf';
+
+// Sender and recipient email addresses
+$from = 'think.travel.agency.project@gmail.com';
+$to = 'soumaya.boukadida@insat.ucar.tn';
+
+// Email subject and body
+$subject = 'Booking Receipt';
+$body = 'Please find attached the booking receipt.';
+
+// Email headers
+$headers = "From: $from\r\n";
+$headers .= "Reply-To: $from\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: multipart/mixed; boundary=\"boundary\"\r\n";
+
+// Email content
+$message = "--boundary\r\n";
+$message .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$message .= "Content-Transfer-Encoding: 8bit\r\n";
+$message .= "\r\n$body\r\n";
+$message .= "--boundary\r\n";
+$message .= "Content-Type: application/pdf; name=\"$pdfName\"\r\n";
+$message .= "Content-Disposition: attachment; filename=\"$pdfName\"\r\n";
+$message .= "Content-Transfer-Encoding: base64\r\n";
+$message .= "\r\n$pdfData\r\n";
+$message .= "--boundary--\r\n";
+
+// Send the email
+if (mail($to, $subject, $message, $headers)) {
+    // Email sent successfully, redirect to booking.php
+    header('Location: booking.php');
+} else {
+    // Email sending failed, show an error message
+    echo 'Error sending email.';
+}

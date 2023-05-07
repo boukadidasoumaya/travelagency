@@ -51,7 +51,7 @@ $clients = $db->get_reservation($id_user);
 
                     <td>
                         <a class='btn btn-success' href="update_page.php?updatedid=<?= $cl['id_reservation'] ?> ">Edit</a>
-                        <a class='btn btn-danger' href="delete_booking.php?deletedid=<?= $cl['id_reservation'] ?>">Delete</a>
+                        <a class='btn btn-danger' href="delet_bookingforuser.php?deletedid=<?= $cl['id_reservation'] ?>">Delete</a>
                     </td>
                 </tr>
 
