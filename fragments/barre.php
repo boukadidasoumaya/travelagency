@@ -30,7 +30,7 @@ if (!isset($_SESSION)) {
 
                             if ($_SESSION['user_name'] == 'admin') {
                                 echo '<li><a class="menu-hover" href="../login/edit_accounts.php">Edit_accounts</a></li>
-                                <li><a class="menu-hover" href="../login/edit_bookingadmin.php">Edit_booking</a></li>
+                                <li><a class="menu-hover" href="../booking/edit_bookingadmin.php">Edit_booking</a></li>
                                 <li><a class="menu-hover" href="../login/log_out.php?logout=1">Log out </a>
                                 
                                 </li>';

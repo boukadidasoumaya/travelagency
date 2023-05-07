@@ -1,4 +1,3 @@
-
 <?php
 require('booking_model.php');
 
@@ -7,12 +6,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $resultat = new Booking();
-$id_reservation= htmlspecialchars($_GET['deletedid']);
+/*$id_reservation= htmlspecialchars($_GET['updatedid']);*/
 
-$resultat->deleteBooking($id_reservation);
+$resultat->updateBooking($_POST);
 
 //header to refresh the page after deleting the trip.
-header('location:edit_bookingadmin.php');
+header('location:edit_booking.php?edit_id='.$_POST['id'].'');
 
 
 

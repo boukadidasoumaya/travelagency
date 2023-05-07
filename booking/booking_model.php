@@ -66,10 +66,14 @@ class Booking
         return $result->fetch();
     }
 
-    public function updateBooking($booking_id)
+    public function updateBooking($vars)
     {
-        $sql = "UPDATE booking SET id_reservation = '$this->id_reservation', trip_date = '$this->trip_date', price = '$this->price', 
-                user_id = '$this->user_id', destination = '$this->destination' WHERE id_reservation = $booking_id";
+        $this->id_reservation=$vars['id'];
+        $this->trip_date=$vars['date'];
+        $this->price=$vars['prix'];
+        $this->$vars['user_id'];
+        $this->$vars['destination'];
+        $sql = "UPDATE booking SET id_reservation ='$this->id_reservation', date = '$this->trip_date', prix= '$this->price', user_id = '$this->user_id', destination ='$this->destination' WHERE id_reservation ='$this->id_reservation '";
         if ($this->conn->query($sql)) {
             return true;
         } else {
