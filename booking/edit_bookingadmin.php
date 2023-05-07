@@ -1,7 +1,7 @@
 <?php
 include "bdd.php";
 require('booking_model.php');
-$db = new Booking($conn);
+$db = new Booking();
 $clients = $db->get_clients();
 
 ?>

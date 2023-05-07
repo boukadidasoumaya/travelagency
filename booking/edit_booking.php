@@ -2,8 +2,10 @@
 include "bdd.php";
 require('booking_model.php');
 $db = new Booking();
-/*$id=$_GET['id'];*/
-$reserv= $db->get_reservation(1);
+
+$id_user= htmlspecialchars($_GET['edit_id']);
+
+$reserv= $db->get_reservation($id_user);
 
 ?>
 <!DOCTYPE html>

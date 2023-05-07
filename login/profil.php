@@ -6,7 +6,8 @@ $user = new users();
 $user = $user->get_users_byid($_GET['id']);
 $reservation = new users();
 $reservation = $reservation->get_reservation($_GET['id']);
-$idbook=$_GET['id'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +67,7 @@ $idbook=$_GET['id'];
 
                             <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
                              
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit"><a  href="../booking/edit_booking.php?id='. $idbook. '">Edit reservation</a></div>
+                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit"><a  href="../booking/edit_booking.php?edit_id=<?= $user['user_id'] ?>">Edit reservation</a></div>
 
                         </div>
                     </div>
