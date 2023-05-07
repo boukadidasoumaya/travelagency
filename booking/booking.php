@@ -1,7 +1,7 @@
 <?php require_once 'bdd.php';
 include_once 'navbar.php';
 $conn = CBD::getInstance();
-$_session['username'] = 'yosr'
+$_session['username'] = 'admin'
 ?>
 
 <div class="container ">
