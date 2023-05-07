@@ -64,6 +64,9 @@ $reservation = $reservation->get_reservation($_GET['id']);
                             </div>
 
                             <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+
+                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit"><a href="../booking/edit_booking.php?edit_id=<?= $user['user_id'] ?>">Edit reservation</a></div>
+
                         </div>
                     </div>
                     <div class="col-md-4">
