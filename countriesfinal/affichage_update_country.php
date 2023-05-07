@@ -5,66 +5,69 @@ $db = new countries();
 $country_selected = $db->findById($_GET['id']);
 
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
+    <title>update page</title>
 </head>
 
 <body>
-    <form action="update_country.php" method="post" role="form">
+    <div class=container>
+        <form action="update_country.php" method="post" role="form">
 
-        <div class="container my-4">
+            <div class="form-group">
+                <label for="destination">ID</label>
+                <input id="country_id" class="form-control" name="country_id" value='<?= $country_selected['country_id'] ?>'>
+            </div>
+            <div class="form-group">
+                <label for="date">Country Name</label>
+                <input id="countryname" class="form-control" name="countryname" value='<?= $country_selected['country_name'] ?>'>
+            </div>
 
-            <table class="table">
+            <div class="form-group">
+                <label for="name">Climate</label>
+                <textarea id="climate" class="form-control" name="climate" cols="40" rows="10"><?= $country_selected['climate'] ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Currency</label>
+                <textarea id="currency" class="form-control" name="currency" cols="40" rows="10"><?= $country_selected['currency'] ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Email">History</label>
+                <textarea id="history" class="form-control" name="history" cols="40" rows="10"><?= $country_selected['history'] ?></textarea>
 
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>Population</th>
-                        <th>Climate</th>
-                        <th>Currency</th>
-                        <th>History</th>
-                        <th>Price car</th>
-                        <th>Price trip</th>
-                        <th>Price tour guide</th>
-                        <th>Photo for home</th>
-                    </tr>
-                </thead>
-                <tbody>
+            </div>
+            <div class="form-group">
+                <label for="Email">Price car</label>
+                <input id="price_car" class="form-control" name="price_car" value='<?= $country_selected['price_car'] ?>'>
 
-                    <tr>
-                        <td><input id="country_id" name="country_id" value='<?= $country_selected['country_id'] ?>'></td>
-                        <td><input id="countryname" name="countryname" value='<?= $country_selected['country_name'] ?>'></td>
+            </div>
+            <div class="form-group">
+                <label for="Email">Price trip</label>
+                <input id="pricetrip" class="form-control" name="pricetrip" value='<?= $country_selected['price_trip'] ?>'>
 
-                        <td><textarea id="population" name="population" cols="40" rows="10"><?= $country_selected['population'] ?></textarea></td>
-                        <td><textarea id="climate" name="climate" cols="40" rows="10"><?= $country_selected['climate'] ?></textarea></td>
-                        <td><textarea id="currency" name="currency" cols="40" rows="10"><?= $country_selected['currency'] ?></textarea></td>
-                        <td><textarea id="history" name="history" cols="40" rows="10"><?= $country_selected['history'] ?></textarea></td>
-                        <td><input id="price_car" name="price_car" value='<?= $country_selected['price_car'] ?>'></td>
-                        <td><input id="pricetg" name="pricetg" value='<?= $country_selected['price_tour_guide'] ?>'></td>
-                        <td><input id="pricetrip" name="pricetrip" value='<?= $country_selected['price_trip'] ?>'></td>
-                        <td><input id="imgfolder" name="imgfolder" value='<?= $country_selected['photo_for_home'] ?>'></td>
+            </div>
+            <div class="form-group">
+                <label for="Email">Price tour guide</label>
+                <input id="pricetg" class="form-control" name="pricetg" value='<?= $country_selected['price_tour_guide'] ?>'>
 
-                        <td>
-                            <button type='submit' class='btn btn-success'>Edit</button>
-                        </td>
-                    </tr>
-
-
-                </tbody>
-
-            </table>
-
-        </div>
-    </form>
+            </div>
+            <div class="form-group">
+                <label for="Email">Photo for home</label>
+                <input id="imgfolder" class="form-control" name="imgfolder" value='<?= $country_selected['photo_for_home'] ?>'>
+            </div>
+            <span> <a href='..\home\home.php'>
+                    <button class="btn ">Back to Home</button></a></span><button type="submit" class="btn btn-primary" href="update_booking.php?updatedid=<?= $id_reservation ?>">Edit</button>
+        </form>
+    </div>
 </body>
 
 </html>

@@ -49,7 +49,7 @@ class countries
     $query = "select * from `country` where country_id=$id";
     $response = $this->cnx->query($query);
 
-    $countries = $response->fetchAll(\PDO::FETCH_ASSOC);
+    $countries = $response->fetch(PDO::FETCH_ASSOC);
     return $countries;
   }
   function delete_country($country_id)

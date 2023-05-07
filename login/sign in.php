@@ -40,6 +40,14 @@ include_once '../fragments/barrehead.php';
               unset($_SESSION['error']); ?>
             </div>
           <?php } ?>
+          <?php
+          if (isset($_SESSION['booking_msg'])) {
+          ?>
+            <div class="alert alert-danger" style="text-align: center;color: red; padding-bottom: 20px;">
+              <?php echo  $_SESSION['booking_msg'];
+              unset($_SESSION['booking_msg']); ?>
+            </div>
+          <?php } ?>
         </div>
         <form action="login.php" method="post">
           <div class="form-outline ">

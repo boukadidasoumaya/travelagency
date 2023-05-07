@@ -1,7 +1,10 @@
 <?php require_once 'bdd.php';
 include_once 'navbar.php';
 $conn = CBD::getInstance();
-$_session['username'] = 'admin'
+if (!isset($_SESSION['user_name'])) {
+    header('location:../login/sign in.php');
+    $_SESSION['booking_msg'] = 'You have to sign in so that you can book a trip';
+}
 ?>
 
 <div class="container ">
@@ -28,12 +31,14 @@ $_session['username'] = 'admin'
                 <div id="form-1">
                     <div class="form-group">
                         <label for="user">Client</label>
-                        <?php if ((isset($_session['username']) && ($_session['username']) != 'admin')) {
-                            echo ('
+                        <?php if (isset($_SESSION)) {
+                            if (($_SESSION['user_name']) != 'admin') {
+                                echo ('
                         <div class="form-group">
                             <label for="user">Traveler Name :</label>
                              <select name="user" id="user" class="form-control" disabled>
-                            <option value="">' . $_session['username'] . '</option>) ');
+                            <option value="">' . $_SESSION['user_name'] . '</option>) ');
+                            }
                         } else {
                             echo ('
                         <select name="user" id="user" class="form-control">
