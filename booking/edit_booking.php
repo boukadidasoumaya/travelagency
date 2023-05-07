@@ -29,6 +29,10 @@ $reserv= $db->get_reservation($id_user);
                     <th scope="col" >price-trip</th>
                     <th scope="col">user_id</th>
                     <th scope="col">destination</th>
+                    <th scope="col">user_name</th>
+                    <th scope="col">user_last_name</th>
+                    <th scope="col">email</th>
+
                     <th scope="col" >changes</th>
                 
                     </tr>
@@ -45,8 +49,12 @@ $reserv= $db->get_reservation($id_user);
            <td><?php echo $cl['user_id']?></td>
 
            <td><?php echo $cl['destination']?></td>
+           <td><?php echo $cl['user_name'] ?></td>
+            <td><?php echo $cl['user_last_name'] ?></td>
+            <td><?php echo $cl['email'] ?></td>
+
            <td> 
-           <button><a  class="btn btn-success" href="update_booking.php?updatedid=<?= $cl['id_reservation']?> ">update your trip</a></button>
+           <button><a  class="btn btn-success" href="update_page.php?updatedid=<?= $cl['id_reservation']?> ">update your trip</a></button>
            <button><a href="delete_booking.php?deletedid=<?=$cl['id_reservation']?>">cancel your trip</a></button>
            </td>
            </tr>

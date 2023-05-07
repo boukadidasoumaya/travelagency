@@ -90,7 +90,7 @@ class Booking
     {
         $clients = array();
 
-        $sql = "SELECT * FROM booking inner join user ;";
+        $sql = "SELECT * FROM `booking` inner join `user` ;";
         $resultat = $this->conn->prepare($sql);
         $resultat->execute([]);
         $clients = $resultat->fetchAll(\PDO::FETCH_ASSOC);
