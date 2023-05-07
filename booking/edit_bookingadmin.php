@@ -51,7 +51,7 @@ $clients = $db->get_clients();
                         <td><?php echo $cl['email'] ?></td>
 
                         <td>
-                            <button><a class="btn btn-success" href="update_booking.php?updatedid=<?= $cl['id_reservation'] ?> ">update your trip</a></button>
+                            <button><a class="btn btn-success" href="update_page.php?updatedid=<?= $cl['id_reservation'] ?> ">update your trip</a></button>
                             <button><a href="delete_booking.php?deletedid=<?= $cl['id_reservation'] ?>">cancel your trip</a></button>
                         </td>
                     </tr>
