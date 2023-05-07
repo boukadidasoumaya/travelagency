@@ -6,7 +6,7 @@ $user = new users();
 $user = $user->get_users_byid($_GET['id']);
 $reservation = new users();
 $reservation = $reservation->get_reservation($_GET['id']);
-$idbook = $_GET['id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@ $idbook = $_GET['id'];
 
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Date Birth</label><input name="birthday" id="date" class="form-control" value="<?php echo  $user['date_birth']; ?>"></div>
+                                <div class="col-md-12"><label class="labels">Date Birth</label><input type="date" name="birthday" id="date" class="form-control" value="<?php echo  $user['date_birth']; ?>"></div>
                                 <div class="row mt-3">
                                     <div class="col-md-6"><label class="labels">Country</label><input type="text" name="country" class="form-control" placeholder="country" value="<?= $user['country'] ?>"></div>
                                     <div class="col-md-6"><label class="labels">State/Region</label><input type="text" name="city" class="form-control" value="<?= $user['city'] ?>" placeholder="state"></div>
@@ -60,7 +60,7 @@ $idbook = $_GET['id'];
 
                                 <div class="col-md-12"><label class="labels">Num Passport</label><input type="text" class="form-control" name="passport" value="<?= $user['num_passport'] ?>"></div>
                                 <div class="col-md-12"><label class="labels">Your Reservation</label> <textarea type="text" class="form-control" value=""><?php foreach ($reservation as $r) : ?> <?= $r['country_name'] ?> <?= $r['date'] ?> <?php endforeach; ?></textarea></div>
-                                <div class="col-md-12 "><a href="../booking/edit_booking.php?id='. $idbook. '"> Edit reservation<a href=></a></div>
+                                <div class="col-md-12 "><a href="../booking/edit_booking.php?id=<?= $_GET['id'] ?>"> Edit reservation<a href=></a></div>
 
                             </div>
 

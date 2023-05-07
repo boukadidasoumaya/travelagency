@@ -10,7 +10,7 @@ class Booking
     private $destination;
     private $conn;
 
-    public function __construct($conn)
+    public function __construct()
     {
         $this->conn = CBD::getInstance();
     }
@@ -68,12 +68,11 @@ class Booking
 
     public function updateBooking($vars)
     {
-        $this->id_reservation=$vars['id'];
-        $this->trip_date=$vars['date'];
-        $this->price=$vars['prix'];
-        $this->$vars['user_id'];
+        $this->id_reservation = $vars['id'];
+        $this->trip_date = $vars['date'];
         $this->$vars['destination'];
-        $sql = "UPDATE booking SET id_reservation ='$this->id_reservation', date = '$this->trip_date', prix= '$this->price', user_id = '$this->user_id', destination ='$this->destination' WHERE id_reservation ='$this->id_reservation '";
+
+        $sql = "UPDATE booking SET  date = '$this->trip_date' WHERE id_reservation ='$this->id_reservation '";
         if ($this->conn->query($sql)) {
             return true;
         } else {
@@ -94,7 +93,7 @@ class Booking
     {
         $clients = array();
 
-        $sql = "SELECT * FROM booking inner join user ;";
+        $sql = "SELECT * FROM booking inner join user on booking.user_id=user.user_id inner join country on country.country_id=booking.destination order by booking.id_reservation asc ;";
         $resultat = $this->conn->prepare($sql);
         $resultat->execute([]);
         $clients = $resultat->fetchAll(\PDO::FETCH_ASSOC);
@@ -105,10 +104,20 @@ class Booking
     {
         $reserv = array();
 
-        $sql = "SELECT * FROM `booking` inner join `user` where user_id=?";
+        $sql = "SELECT * FROM `booking` inner join `user` on booking.user_id=user.user_id inner join country on country.country_id=booking.destination  where user.user_id=? order by booking.id_reservation asc ;";
         $resultat = $this->conn->prepare($sql);
-        $resultat->execute([]);
+        $resultat->execute([$user_id]);
         $reserv = $resultat->fetchAll(\PDO::FETCH_ASSOC);
+        return $reserv;
+    }
+    public function get_reservation_byone($user_id)
+    {
+        $reserv = array();
+
+        $sql = "SELECT * FROM `booking` inner join `user` on booking.user_id=user.user_id inner join country on country.country_id=booking.destination  where booking.id_reservation=? order by booking.id_reservation asc ;";
+        $resultat = $this->conn->prepare($sql);
+        $resultat->execute([$user_id]);
+        $reserv = $resultat->fetch(PDO::FETCH_ASSOC);
         return $reserv;
     }
 }
