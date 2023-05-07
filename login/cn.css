@@ -1,0 +1,205 @@
+
+
+
+/*
+@keyframes background 
+{
+   0%   {  background-image: url('https://source.unsplash.com/1600x900/?nature,mountains');
+;
+      background-size: cover;
+      position: relative;}
+   25%  {  background-image: url('https://source.unsplash.com/1600x900/?nature,forest');
+
+      background-size: cover;
+      position: relative;}
+   50%  {  background-image: url('https://source.unsplash.com/1600x900/?nature,beach');
+
+      background-size: cover;
+      position: relative;}
+   100% {  background-image: url('https://source.unsplash.com/1600x900/?nature,landscape');
+
+      background-size: cover;
+      position: relative;}
+}*/
+
+
+
+@-webkit-keyframes changeBg {
+  10% {
+    background-image: url('images/p1.jpg');
+  }
+ 
+  25% {
+    background-image: url('images/p2.jpg');
+  }
+
+  50% {
+    background-image: url('images/p3.jpg');
+  }
+
+  100% {
+    background-image: url('images/p1.jpg');
+  }
+}
+
+body {
+  /*background: url('https://source.unsplash.com/1600x900/?nature,water') ;
+  background-size: cover;
+  transition: background 0.5s ease-in-out;
+ -webkit-animation: changeBg 10s linear infinite;*/
+
+/*background-image:url('images/p1.jpg');
+     background-size: cover;
+  animation: background 15s linear infinite;*/
+       background-size: cover;
+
+   -webkit-animation: changeBg 10s infinite ease-in-out;
+
+}
+
+/*
+
+body.bg-image1 {
+  background-image: url('https://source.unsplash.com/1600x900/?nature,mountains');
+}
+
+body.bg-image2 {
+  background-image: url('https://source.unsplash.com/1600x900/?nature,forest');
+}
+
+body.bg-image3 {
+  background-image: url('https://source.unsplash.com/1600x900/?nature,beach');
+}
+
+body.bg-image4 {
+  background-image: url('https://source.unsplash.com/1600x900/?nature,landscape');
+}
+*/
+@media only screen and (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+.form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/*.container {
+  padding-top :10vh;
+}*/
+.slogan {
+  color: white;
+  font-size: 5vw;
+  font-family: 'Castoro Titling', serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin: auto;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.txt {
+  margin-bottom: 2vw;
+}
+
+.acc {
+  color: #2e639c;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.username {
+  margin-bottom: 20px;
+}
+
+.txtbirth {
+  font-weight: bold;
+}
+
+.birthday {
+  margin-bottom: 20px;
+}
+
+.location {
+  margin-bottom: 20px;
+}
+
+.p {
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 20px;
+  color: green;
+  margin-left: -30px;
+}
+
+.email {
+  margin-bottom: 20px;
+}
+
+.password {
+  margin-bottom: 20px;
+}
+
+.hide {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.rule {
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #999;
+}
+
+.verify-password {
+  margin-bottom: 20px;
+}
+
+.start {
+  text-align: center;
+}
+
+
+.input{
+   border-radius: 2rem;
+   width: 100%;
+   height: 2.5rem;
+   border: transparent;
+   padding-left: 5%;
+   background: linear-gradient(
+        to right bottom, rgba(255,255,255,0.8),
+        rgba(255,255,255,0.3)
+        );
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.buton{
+  margin: 0% 35%;
+  height:60px!important;
+  border-radius: 3rem!important;    
+  background-color: #ADA2FF ;
+   
+  color: whitesmoke!important;
+}

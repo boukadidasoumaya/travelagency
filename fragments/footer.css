@@ -1,117 +1,258 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,600;0,900;1,100;1,300&display=swap');
-footer{
-  width: 100%;
-  /*position:absolute;*/
-  bottom:0;
-  background-color:#f6f6f6;
-  color:#fff;
-  padding:100px 0 30px;
-  font-size: 13px;
-  line-height :0px;
-  color: #000;
-  padding-top:30px;
-  padding-bottom: 10px;
-}
-footer .row{
-  width:85%;
-  margin:auto;
-   display: flex;
-   flex-wrap: wrap;
-   align-items: flex-start;
-   justify-content: space-between;
-}
-footer .col{
-  flex-basis:25% ;
-  padding:10px ;
-}
-/*to set the initial size of the column two and three to 15%:devide the row to equal parts */
-.col:nth-child(2),.col:nth-child(3){
-  flex-basis: 15%;
+
+footer {
+  background-color: #1d1d1d;
+  color: #fff;
+  padding: 50px 0;
+  font-size: 14px;
 }
 
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1100px;
+}
 
+footer .col {
+  flex-basis: 25%;
+  padding: 0 20px;
+}
 
+footer .col h3 {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 30px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
 
-footer.logo{
-  width: 80px;
+footer .col h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: #fff;
+}
+
+footer .col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .col ul li {
+  margin-bottom: 10px;
+}
+
+footer .col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 600;
+}
+
+footer .col ul li a:hover {
+  color: #fff;
+}
+
+footer .col p {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
   margin-bottom: 30px;
 }
-footer .txte{
+
+footer .contact {
+  display: flex;
+  align-items: center;
   margin-top: 20px;
 }
-footer .col h3{
-  width: fit-content;
-  margin-bottom: 40px;
-  position:relative;
-  text-decoration:underline;
-  color:#40E0D0;
 
-}
-footer .email{
-  width: fit-content;
-  border-bottom: #ccc;
-  text-decoration: underline;
-
-  margin:20px 0;
-}
-footer ul li{
-  list-style:none;
-  margin-bottom: 12px;
-} 
-footer .link{
-  line-height: 1.5;
-
-}
-footer ul li a{
-
-text-decoration:none;
-
-}
-footer form{
-  padding-bottom: 15px;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 50px;
-
-}
-footer form button{
-  background: transparent;
-  border: 0;
-}
-footer form input{
-  width: 100%;
-  background: transparent;
-  color:#ccc;
-  border:0;
-  outline: none;
-}
-footer .contact .fab{
+footer .contact a {
+  display: inline-block;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
   font-size: 20px;
-  color:#000;
-  background:#fff;
-  margin-right: 15px;
+  color: #fff;
+  background-color: #666;
+  margin-right: 10px;
+  transition: background-color 0.2s;
+}
+
+footer .contact a:hover {
+  background-color: #c2c2c2;
+  color: #1d1d1d;
+}
+
+footer form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+footer form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+
+footer form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #1d1d1d;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: 600;
+}
+
+footer form button[type="submit"]:hover {
+  background-color: #c2c2c2;
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 30px auto;
+  width: 100%;
+}
+/* Ajout de styles pour rendre le footer fancy */
+
+/* Couleur de fond et police pour les titres */
+footer .col h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Style pour le trait en dessous des titres */
+footer .col h3::after {
+  background-color: #fff;
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  bottom: -5px;
+  width: 30%;
+}
+
+/* Couleur et taille de police pour le texte */
+footer {
+  font-size: 16px;
+}
+
+/* Couleur des liens dans les colonnes */
+footer .col ul li a {
+  color: #aaa;
+}
+
+/* Ajout d'une bordure à gauche pour les colonnes */
+footer .col {
+  border-left: 1px solid #444;
+  padding-left: 30px;
+}
+
+/* Styles pour la section de contact */
+footer .contact {
+  margin-top: 30px;
+}
+
+footer .contact h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+footer .contact a {
+  background-color: #fff;
+  color: #333;
+}
+
+footer .contact a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+footer .contact p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Ajout d'une marge à droite pour le formulaire */
+footer form {
+  margin-right: 30px;
+}
+
+/* Style pour le champ de saisie de l'email */
+footer form input[type="email"] {
+  border-radius: 20px 0 0 20px;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+}
+
+footer form input[type="email"]:focus {
+  border-color: #aaa;
+  box-shadow: none;
+}
+
+/* Style pour le bouton d'envoi du formulaire */
+footer form button[type="submit"] {
+  background-color: #333;
+  border-radius: 0 20px 20px 0;
+  color: #fff;
+  padding: 10px 30px;
+  transition: background-color 0.2s;
+}
+
+footer form button[type="submit"]:hover {
+  background-color: #555;
   cursor: pointer;
 }
-footer .button{
-  
-}
- hr{
-  width: 90%;
-  border: 0;
-  border-bottom: 1px solid;
-  /*margin:to specify the place between an element's border and the adjacent elements' content*/
-  margin:20px auto;
-  color: #000;
-}
-.copyright{
-  text-align: center;
-  color: #000;
 
+/* Style pour la section de crédits */
+footer .credits {
+  font-size: 12px;
+  margin-top: 30px;
+  color: #aaa;
+}
+
+
+footer .symbol {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+footer .copyright {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+  color: #999;
+}
+
+@media (min-width: 768px) {
+  footer .symbol {
+    font-size: 24px;
+  }
+
+  footer .copyright {
+    font-size: 16px;
+  }
 }

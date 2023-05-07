@@ -18,7 +18,7 @@
                 <li>Centre Urbain Nord</li>
                 <li class="email"><a href="#">thinktravel@gmail.com</a></li>
                 <li>
-                    <h4>- 01234567</h4>
+                    <h4>+216 71 703 829</h4>
                 </li>
         </div>
         <div class="col">
@@ -54,5 +54,7 @@
     </div>
     <!--<hr> is used to add a line at the bottom of the page-->
     <hr>
-    <p class="copyright">think travel © copyright 2023 - All Rights Reserved</p>
+    <p class="copyright">
+        <span class="symbol">&copy;</span> Think Travel 2023. All rights reserved.
+    </p>
 </footer>

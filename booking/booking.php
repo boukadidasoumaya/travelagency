@@ -93,7 +93,7 @@ include_once 'navbar.php';
                 <div id="form-2" class="d-none">
 
                     <div class="form-group">
-                        <label for="price">Price</label>
+                        <label for="price">Total Price</label>
                         <input type="number" name="price" id="price" class="form-control" readonly>
                     </div>
 

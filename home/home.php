@@ -70,12 +70,19 @@ include_once '../fragments/barre.php'
                     Our team of travel experts is made up of seasoned professionals who are passionate about travel and have first-hand knowledge of the destinations we offer.
 
                 </p>
+<<<<<<< Updated upstream
 
                 </p>
                 <a href="#meetus" class="button">Let us introduce ourselves</a>
             </div>
             <div class="image-section">
                 <img src="images/travel.jpg">
+=======
+                <a href="#team" class="button">Let us introduce ourselves</a>
+            </div>
+            <div class="image-section">
+                <img src="images/pic5.jpg">
+>>>>>>> Stashed changes
             </div>
         </div>
     </div>
@@ -151,13 +158,18 @@ include_once '../fragments/barre.php'
 
 <!-- Slides Section ends-->
 <!----------meet us-------->
+<<<<<<< Updated upstream
 <div id="meetus" class="responsive-container-block outer-container">
     <div class="responsive-container-block inner-container">
+=======
+<div class="responsive-container-block outer-container">
+    <div class="responsive-container-block inner-container" id="team">
+>>>>>>> Stashed changes
         <p class="text-blk section-head-text">
             Meet Our Expert Instructors
         </p>
         <p class="text-blk section-subhead-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Our mission is to help you create unforgettable memories through personalized travel experiences.
         </p>
         <div class="responsive-container-block">
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
