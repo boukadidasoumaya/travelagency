@@ -10,7 +10,8 @@ if (!isset($_SESSION)) {
 <head>
 
     <meta charset="utf-8">
-    <title>Booking Form</title>
+    <title>&#9992; Booking Form</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- jQuery library -->
