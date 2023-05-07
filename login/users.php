@@ -21,6 +21,9 @@ class users
     {
         $this->cnx = CBD::getInstance();
     }
+    public function getCnx() {
+        return $this->cnx;
+    }
     public function find_user_by_email($email)
     {
 
@@ -116,20 +119,14 @@ class users
 
 
         //verifier si il existe
-        $query = "SELECT * FROM `user` WHERE email = ?";
-        $response = $this->cnx->prepare($query);
-        $response->execute([$email]);
-        $result = $response->fetch(PDO::FETCH_ASSOC);
-        if ($result) {
-            header("Location: warning.php");
-        }else{
+        
             $query = "INSERT INTO `user` (user_name, user_last_name,email,password,date_birth, country, city, num_passport) 
                 VALUES (?, ?, ?, ?, ?, ?, ? , ?)";
         $response = $this->cnx->prepare($query);
         $response->execute([$user_name, $lastname, $email, $password, $birthday, $country, $city, $passport]);
         header("Location: sign in.php");
        
-        }
+        
 
         
     }
