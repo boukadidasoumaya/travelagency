@@ -1,4 +1,11 @@
 <?php include_once '../fragments/barrehead.php' ?>
+<?php 
+    if (!isset($_SESSION)) {
+      session_start();
+  }
+  
+include_once '../fragments/barrehead.php' ?>
+<link rel="stylesheet" href="StyleV2.css">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -15,6 +22,7 @@
 </head>
 
 <body>
+  <section class="pagehome">
   <?php
   include_once '../fragments/barre.php'
   ?>
@@ -39,10 +47,14 @@
             <h2 class="acc">Create an Account</h2>
           </div>
           <?php
-          if (isset($_GET['error'])) { ?>
-            <p class="error"><?php echo $_GET['error']; ?></p>
+                    if (isset($_SESSION['error_code'])) {
+                    ?>
+                        <div class="alert alert-danger" style="text-align: center;color: red; padding-bottom: 20px;">
+                            <?php echo  $_SESSION['error_code'];
+                            unset($_SESSION['error_code']); 
+                            ?>
+                        </div>
           <?php } ?>
-
           <!-- 2 column grid layout with text inputs for the first and last names -->
           <div class="row username ">
             <div class="form-outline col-lg-6 col-md-6 col-sm-6">

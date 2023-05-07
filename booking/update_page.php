@@ -27,34 +27,38 @@ $id_reservation= htmlspecialchars($_GET['updatedid']);
   </head>
   <body>
   <div class=container>
-    <form>
+    <form method="post" action="update_booking.php">
  
+ <div class="form-group">
+    <label for="destination">id</label>
+    <input type="text" name="id" class="form-control" id="destination" placeholder="change destination" value="<?=$id_reservation?>">
+  </div>
   <div class="form-group">
     <label for="destination">destination</label>
-    <input type="text" class="form-control" id="destination" placeholder="change destination">
+    <input type="text" name="destination" class="form-control" id="destination" placeholder="change destination">
   </div>
   <div class="form-group">
     <label for="date">date</label>
-    <input type="text" class="form-control" id="date" placeholder="change trip date">
+    <input type="date" name="date" class="form-control" id="date" placeholder="change trip date">
   </div>
   <div class="form-group">
-    <label for="prix">destination</label>
-    <input type="text" class="form-control" id="prix" placeholder="choose an other price">
+    <label for="prix">price</label>
+    <input type="text" name="prix" class="form-control" id="prix" placeholder="choose an other price">
   </div>
   <div class="form-group">
     <label for="name">First_name</label>
-    <input type="text" class="form-control" id="name" placeholder="change name">
+    <input type="text" name="first_name" class="form-control" id="name" placeholder="change name">
   </div>
   <div class="form-group">
     <label for="last_name">Last_name</label>
-    <input type="text" class="form-control" id="last_name" placeholder="change last_name">
+    <input type="text" name="last_name" class="form-control" id="last_name" placeholder="change last_name">
   </div>
   <div class="form-group">
     <label for="Email">Email address</label>
-    <input type="text" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Change email">
+    <input type="text" name="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Change email">
 
   </div>
-  <button type="submit" class="btn btn-primary" href="update_booking.php?updatedid=<?= $id_reservation ?>">Submit</button>
+  <button type="submit" class="btn btn-primary" href="update_booking.php">update</button>
 </form>
 </div>
    </body>
