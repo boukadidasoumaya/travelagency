@@ -33,8 +33,14 @@ include_once '../fragments/barre.php'
         <div class="header-info-par">
             <h1 class="typewrite" data-period="2000" data-type='["Travel brings power and love back into your life.","Travel far, travel wide, travel often.","Adventure Awaits, go find it."]'>
             </h1>
-            <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions.
-                It broadens our horizons and exposes us to different perspectives and ways of life.</p>
+
+            <p style="
+			padding: 10px;
+			font-size: 20px;
+			font-family: monospace;">
+                <span id="text-to-animate">Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions. It broadens our horizons and exposes us to different perspectives and ways of life.</span>
+            </p>
+
             <a href="#" class="a">Read More</a>
         </div>
         <div class="video">
@@ -59,30 +65,18 @@ include_once '../fragments/barre.php'
         </div>
         <div class="content">
             <div class="article">
-                <h2> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-
-
+                <h2>Welcome to our travel agency, where we believe that every journey is an adventure.
                 </h2>
                 <p>At Think Travel, we're passionate about travel and believe that exploring the world is one of life's greatest joys.
                     That's why we're dedicated to creating unforgettable travel experiences for our clients.
                     We specialize in customizing trips that cater to each individual's unique interests and preferences,
                     so you can be sure that your travel experience will be tailored just for you.
                     Our team of travel experts is made up of seasoned professionals who are passionate about travel and have first-hand knowledge of the destinations we offer.
-
                 </p>
-<<<<<<< Updated upstream
-
-                </p>
-                <a href="#meetus" class="button">Let us introduce ourselves</a>
-            </div>
-            <div class="image-section">
-                <img src="images/travel.jpg">
-=======
                 <a href="#team" class="button">Let us introduce ourselves</a>
             </div>
             <div class="image-section">
                 <img src="images/pic5.jpg">
->>>>>>> Stashed changes
             </div>
         </div>
     </div>
@@ -90,81 +84,9 @@ include_once '../fragments/barre.php'
 <!--------about section ends-->
 <?php
 ?>
-
-
-<!-------Welcome-text section------->
-<div class="welcome" id="welcome">
-    <section id="welcome-text">
-        <div class="container">
-            <h2>The Official Travel Site of the Think travel agency</h2>
-            <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
-        </div>
-        <?php
-        require('../countriesfinal/countries.php');
-        $db = new countries();
-        $countries = $db->get_countries();
-        ?>
-
-
-    </section>
-    <!-- Slides Section Start-->
-    <section id="slides-par">
-        <div class="container">
-            <a href="../countriesfinal/new york.php">
-                <div class="slides">
-
-                    <?php
-
-                    foreach ($countries as $c) :
-                        $id = $c['country_id']
-                    ?>
-
-
-                        <div class="slide_1 slide_0 " id="id" name="id">
-                            <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>">
-
-
-                            <div class="slide-info">
-                                <p><?php echo $c['country_name']; ?>
-
-
-
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    <?php endforeach;  ?>
-
-                    <?php   ?>
-
-
-
-                </div>
-            </a>
-            <div class="addedit"><?php if (isset($_SESSION['user_name']) && $_SESSION['user_name'] == 'admin') {
-
-                                        echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
-                <input type="hidden" name="id" value="">
-                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>');
-                                    } ?>
-            </div>
-        </div>
-    </section>
-</div>
-
-
-<!-- Slides Section ends-->
 <!----------meet us-------->
-<<<<<<< Updated upstream
-<div id="meetus" class="responsive-container-block outer-container">
-    <div class="responsive-container-block inner-container">
-=======
 <div class="responsive-container-block outer-container">
     <div class="responsive-container-block inner-container" id="team">
->>>>>>> Stashed changes
         <p class="text-blk section-head-text">
             Meet Our Expert Instructors
         </p>
@@ -310,12 +232,101 @@ include_once '../fragments/barre.php'
         </div>
     </div>
 </div>
+<!-------Welcome-text section------->
+<div class="welcome" id="welcome">
+    <section id="welcome-text">
+        <div class="container">
+            <h2>The Official Travel Site of the Think travel agency</h2>
+            <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
+        </div>
+        <?php
+        require('../countriesfinal/countries.php');
+        $db = new countries();
+        $countries = $db->get_countries();
+        ?>
+
+
+    </section>
+    <!-- Slides Section Start-->
+    <section id="slides-par">
+        <div class="container">
+            <a href="../countriesfinal/new york.php">
+                <div class="slides">
+
+                    <?php
+
+                    foreach ($countries as $c) :
+                        $id = $c['country_id']
+                    ?>
+
+
+                        <div class="slide_1 slide_0 " id="id" name="id"> <a href='../countriesfinal/prototype.php?id=<?= $c['country_id'] ?>'>
+                                <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>"></a>
+
+
+                            <div class="slide-info">
+                                <p><?php echo $c['country_name']; ?>
+
+
+
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    <?php endforeach;  ?>
+
+                    <?php   ?>
+
+
+
+                </div>
+            </a>
+            <div class="addedit"><?php if (isset($_SESSION['user_name']) && $_SESSION['user_name'] == 'admin') {
+
+                                        echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
+                <input type="hidden" name="id" value="">
+                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>');
+                                    } ?>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- Slides Section ends-->
+
+<!--------book now starts----->
+
+<!--------book now section ends------->
 
 <?php include_once '../fragments/footer.php' ?>
 
 
 
+<script>
+    // Get the span element containing the text to animate.
+    const textToAnimate = document.getElementById('text-to-animate');
 
+    // Get the text content and split it into an array of characters.
+    const textContent = textToAnimate.textContent;
+    const textChars = textContent.split('');
+
+    // Clear the original text content.
+    textToAnimate.textContent = '';
+
+    // Loop through the array of characters and set a timeout to reveal each character one by one.
+    for (let i = 0; i < textChars.length; i++) {
+        setTimeout(() => {
+            textToAnimate.textContent += textChars[i];
+        }, i * 100);
+    }
+
+    // Show the text element after the animation is complete.
+    setTimeout(() => {
+        textToAnimate.style.display = 'inline';
+    }, textChars.length * 50);
+</script>
 <script src="js/home.js"></script>
 
 

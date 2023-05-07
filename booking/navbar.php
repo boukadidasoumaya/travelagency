@@ -10,7 +10,8 @@ if (!isset($_SESSION)) {
 <head>
 
     <meta charset="utf-8">
-    <title>Booking Form</title>
+    <title>&#9992; Booking Form</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -36,7 +37,7 @@ if (!isset($_SESSION)) {
         <div class="container1 ">
             <div class="menu-par ">
                 <div class="logo-par ">
-                    <a href="#head">
+                    <a href="../home/home.php">
                         <img src="../fragments/images/think travel1.png" alt="logo" class="logo">
                     </a>
                 </div>
@@ -51,15 +52,24 @@ if (!isset($_SESSION)) {
                         <?php
 
 
-                        if (isset($_SESSION)) {
+                        if (isset($_SESSION)  && isset($_SESSION['user_name'])) {
 
-                            if ($_SESSION['user_name'] = 'admin') {
-                                echo '<li><a class="menu-hover" href="../login/edit_accounts.php">Edit accounts</a></li>';
+                            if ($_SESSION['user_name'] == 'admin') {
+                                echo '<li><a class="menu-hover" href="../login/edit_accounts.php">Edit_accounts</a></li>
+                                <li><a class="menu-hover" href="../login/edit_bookingadmin.php">Edit_booking</a></li>
+                                <li><a class="menu-hover" href="../login/log_out.php?logout=1">Log out </a>
+                                
+                                </li>';
                             } else {
 
-                                echo  '<li><a class="menu-hover" href="../login/profil.php">Profil</a></li>';
+                                echo  '<li><a class="menu-hover" href="../login/profil.php?id=' . $_SESSION["user_id"] . '">Profil</a>
+
+                                </li>
+                                <li><a class="menu-hover" href="../login/log_out.php?logout=1">Log out </a>
+                                
+                                </li>';
                             }
-                        } else {
+                        } else if (!isset($_SESSION['user_name'])) {
 
                             echo '<li><a class="menu-hover" href="../login/sign in.php">Register/Login</a></li>';
                         }
