@@ -17,11 +17,11 @@ include_once '../fragments/barrehead.php';
 </head>
 
 <body>
-    <!--?php
+<!--?php
   include_once '../fragments/barre.php';
   ?-->
     <div class="container my-4">
-        <table class="table  table-striped">
+        <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -49,7 +49,6 @@ include_once '../fragments/barrehead.php';
                         <td><?= $c['currency'] ?></td>
                         <td><?= $c['history'] ?></td>
                         <td><?= $c['price_car'] ?></td>
-                        <td><?= $c['price_trip'] ?></td>
                         <td><?= $c['price_tour_guide'] ?></td>
                         <td><?= $c['photo_for_home'] ?></td>
 
@@ -64,7 +63,7 @@ include_once '../fragments/barrehead.php';
         </table>
         <div>
             <a href='..\home\home.php'>
-                <button>Back to Home</button></a>
+        <button >Back to Home</button></a>
         </div>
     </div>
     <script src="../fragments/js/jquery-3.1.1.min.js"></script>

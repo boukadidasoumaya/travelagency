@@ -14,7 +14,7 @@ function storeim($vars,$target){
     $msg = ""; 
 
 // check if the user has clicked the button "UPLOAD" 
-
+//img/
 
     $filename = $_FILES[$target]["name"];
 
@@ -28,9 +28,9 @@ function storeim($vars,$target){
 
         // query to insert the submitted data
 
-        $sql = "UPDATE `country`
-        set `$target`='$filename' 
-        where country_id=$id";
+       //// $sql = "UPDATE `country`
+       // set `$target`='$filename' 
+       // where country_id=$id";
 
         // function to execute above query
 
@@ -49,6 +49,7 @@ function storeim($vars,$target){
 
     }}
 
+ function verify ($vars,$location){
 
     //$this->target_dir = $location;
 // $this->target_file = $this->target_dir . basename( $vars["fileToUpload"]["name"]);
