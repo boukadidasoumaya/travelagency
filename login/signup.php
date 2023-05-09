@@ -120,7 +120,7 @@ include_once '../fragments/barrehead.php' ?>
           </div>
 
           <!--signin-->
-          <div><a class="signinlink" href="sign in.html">
+          <div><a class="signinlink" href="sign in.php">
               <h6 class="signin">Already have an account? Sign In</h6>
             </a></div>
       </div>

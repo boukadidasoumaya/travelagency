@@ -9,13 +9,13 @@ include_once 'users.php';
 $credentiel = $_POST['credentiel'];
 $user = new users();
 if (filter_var($credentiel, FILTER_VALIDATE_EMAIL)) {
-    $user = $user->verify_accountByemail($_POST['credentiel'], $_POST['password']);
+    $user = $user->verify_accountByemail($_POST['credentiel']);
 } else {
-    $user = $user->verify_accountByname($_POST['credentiel'], $_POST['password']);
+    $user = $user->verify_accountByname($_POST['credentiel']);
 }
 
 
-if (($user)) {
+if (($user) && password_verify($_POST['password'], $user['password']))  {
     if (($_POST['credentiel'] == 'admin' || 'admin@gmail.com') && ($_POST['password'] == 'admin')) {
         $_SESSION['user_name'] = 'admin';
 

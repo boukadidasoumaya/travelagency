@@ -15,7 +15,7 @@ class users
     private $country ;
     private $city ;
     private $passport;
-    
+    private $hashed_password;
 
     public function __construct()
     {
@@ -33,23 +33,25 @@ class users
         $user = $response->fetch(PDO::FETCH_ASSOC);
         return $user['user_id'];
     }
-    public function verify_accountByname($user_name, $password)
+    public function verify_accountByname($user_name)
     {
 
-        $query = "select * from `user` where user_name=? AND password=? ;";
+        $query = "select * from `user` where user_name=? ;";
         $response = $this->cnx->prepare($query);
-        $response->execute([$user_name, $password]);
+        $response->execute([$user_name]);
         $user = $response->fetch(PDO::FETCH_ASSOC);
         return $user;
+    
     }
-    public function verify_accountByemail($email, $password)
+    public function verify_accountByemail($email)
     {
 
-        $query = "select * from `user` where email=? AND password=? ;";
+        $query = "select * from `user` where email=?  ;";
         $response = $this->cnx->prepare($query);
-        $response->execute([$email, $password]);
+        $response->execute([$email]);
         $user = $response->fetch(PDO::FETCH_ASSOC);
-        return $user;
+            return $user;
+        
     }
     public function verify_accountByemail_motdepasse_oublie($email)
     {
@@ -110,20 +112,20 @@ class users
         $user_name = $_POST['name'];
         $lastname = $_POST['lastname'];
         $password = $_POST['password'];
-        
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $email = $_POST['email'];
         $birthday = $_POST['birthday'];
         $country = $_POST['country'];
         $city = $_POST['city'];
         $passport = $_POST['passport'];
-
+        
 
         //verifier si il existe
         
             $query = "INSERT INTO `user` (user_name, user_last_name,email,password,date_birth, country, city, num_passport) 
                 VALUES (?, ?, ?, ?, ?, ?, ? , ?)";
         $response = $this->cnx->prepare($query);
-        $response->execute([$user_name, $lastname, $email, $password, $birthday, $country, $city, $passport]);
+        $response->execute([$user_name, $lastname, $email, $hashed_password, $birthday, $country, $city, $passport]);
         header("Location: sign in.php");
        
         
