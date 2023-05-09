@@ -1,6 +1,7 @@
 <?php if (!isset($_SESSION)) {
   session_start();
-} ?>
+} 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -293,7 +294,7 @@
         </div>
         <div class="item">
           <label for="climat"> climate<span>*</span></label>
-          <input id="climat" type="text" name="climat" />
+          <input id="climate" type="text" name="climate"required />
         </div>
         <div class="item">
           <label for="activity">currency #<span>*</span></label>
@@ -356,7 +357,7 @@
           </div>
       </fieldset>
       <div class="btn-block">
-        <button type="submit" href="/">Submit</button>
+        <button type="submit" href="/" Submit>add country</button>
       </div>
     </form>
   </div>

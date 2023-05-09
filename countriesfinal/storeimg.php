@@ -2,13 +2,15 @@
 require_once 'bdd.php';
 class storeimg {
 
-private $target_dir = "img/";
+private $location ;
 private $target_file;
 private $uploadOk = 1;
 private $imageFileType ;
- function __construct()
-{}
+ function __construct($loc)
+{ $this->location=$loc;}
 function storeim($vars,$target){
+    
+    
     $msg = ""; 
 
 // check if the user has clicked the button "UPLOAD" 
@@ -17,8 +19,9 @@ function storeim($vars,$target){
     $filename = $_FILES[$target]["name"];
 
     $tempname = $_FILES[$target]["tmp_name"];  
-
-        $folder = "img/".$filename;   
+    $pos = strrpos($filename, '.');
+    $ext = substr($filename, $pos);
+        $folder = $this->location.$filename;   
 
     // connect with the database
     $id=$vars['country_id'];
@@ -32,30 +35,31 @@ function storeim($vars,$target){
         // function to execute above query
 
         // Add the image to the "image" folder"
-
-        if (move_uploaded_file($tempname, $folder)) {
+        
+        if (move_uploaded_file($tempname,$folder)) {
 
             $msg = "Image uploaded successfully";
+            rename( $folder, $this->location."".$target.$vars["countryname"]."".$filename);
+
 
         }else{
 
             $msg = "Failed to upload image";
 
-    }
+
+    }}
 
 
-$cnx=CBD::getInstance();
-$result = $cnx->query($sql);
-
-
-    $this->target_dir = "img/";
- $this->target_file = $this->target_dir . basename( $vars["fileToUpload"]["name"]);
- $this->uploadOk = 1;
+    //$this->target_dir = $location;
+// $this->target_file = $this->target_dir . basename( $vars["fileToUpload"]["name"]);
+ $uploadOk = 1;
  $this->imageFileType = pathinfo($this->target_file,PATHINFO_EXTENSION);
 //rename("img/$filename","img/$target.png");
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+//unlink('../countriesfinal/img/bali1.jpg')
+
+/* if(isset($_POST["submit"])) {
+ */ /*    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "";
         $uploadOk = 1;
@@ -63,14 +67,14 @@ if(isset($_POST["submit"])) {
         echo "<center>File is not an image.</center>";
         $uploadOk = 0;
     }
-}
+} */
 // Check if file already exists
-if (file_exists($this->target_file)) {
+/* if (file_exists($this->target_file)) {
     echo "<center>Sorry, file already exists.</center>";
     $uploadOk = 0;
-}
+} */
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($vars["fileToUpload"]["size"] > 500000) {
     echo "<center>Sorry, your file is too large.</center>";
     $uploadOk = 0;
 }
@@ -80,13 +84,19 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 if ($uploadOk == 0) {
     echo "<center>Sorry, your file was not uploaded.</center>";
 // if everything is ok, try to upload file
-} else {
+}/*  else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $this->target_file)) {
         echo "<center><i><h4>The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.</h4></i></center>";
     } else {
         echo "<center>Sorry, there was an error uploading your file.</font></center>";
-    }}
-return ;}
+    }} */
+return $uploadOk;}
+function deleteimg($img){
+    if (file_exists($this->target_file)) {
+        unlink($this->location.$img);
+}
+
+}
 }
 ?>
 </body>

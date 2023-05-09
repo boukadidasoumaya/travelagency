@@ -18,6 +18,9 @@ if (filter_var($credentiel, FILTER_VALIDATE_EMAIL)) {
 if (($user) && password_verify($_POST['password'], $user['password']))  {
     if (($_POST['credentiel'] == 'admin' || 'admin@gmail.com') && ($_POST['password'] == 'admin')) {
         $_SESSION['user_name'] = 'admin';
+        $_SESSION['user_id'] = $user['user_id'];
+    ;
+        ;
 
 
         $_SESSION['isAuthenticated'] = true;
@@ -28,6 +31,7 @@ if (($user) && password_verify($_POST['password'], $user['password']))  {
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['user_name'] = $user['user_name'];
         $_SESSION['isAuthenticated'] = true;
+     
 
         $isAuthenticated = true;
 

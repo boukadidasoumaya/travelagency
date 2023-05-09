@@ -1,5 +1,6 @@
 <?php
 require_once 'bdd.php';
+
     $cnx=CBD::getInstance();
     if(!isset($_SESSION)) 
     { 
@@ -8,7 +9,6 @@ require_once 'bdd.php';
 
 class Persistence {
   private $data = array();
-  
   function __construct() {
     $cnx=CBD::getInstance();
 
@@ -26,13 +26,27 @@ $this->data=$response->fetch(PDO::FETCH_ASSOC);
     $comments = array();
    
     $cnx=CBD::getInstance();
-    $query="SELECT * FROM `comments` WHERE comment_post_ID=$comment_post_ID;";
+    $query="SELECT * FROM `comments` LEFT JOIN `user` ON comments.user_id=user.user_id  WHERE comment_post_ID=$comment_post_ID ; ";
     $response=$cnx->query($query);
     $comments = $response->fetchAll(\PDO::FETCH_ASSOC);
 
     return $comments;
   }
-  
+  function count(){
+
+  }
+  function get_users_byid($id)
+    {
+        $user = array();
+        $cnx=CBD::getInstance();
+
+
+        $query = "select * from `user` where user_id=? ;";
+        $response = $cnx->prepare($query);
+        $response->execute([$id]);
+        $user = $response->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    }
   /**
    * Get all comments.
    */
@@ -46,17 +60,15 @@ $this->data=$response->fetch(PDO::FETCH_ASSOC);
   function add_comment($vars) {
     
     $added = false;
-    
+    $user=array();
     $comment_post_ID = $vars['comment_post_ID'];
-    
-     $comment_author= $_SESSION['username']  ;
-     $user_last_name = $_SESSION['lastname'];
-     $photo=$_SESSION['photo'];
-     
-     $content =$vars['content'];
-      $comment_post_ID=$vars['comment_post_ID'];
-    $query="INSERT INTO `comments` (`comment_author`, `user_last_name`, `content`, `comment_post_ID` ) VALUES ('$comment_author','$user_last_name','$content ', '$comment_post_ID');";
-    
+    $content = $vars['content'];
+
+  $user=$this->get_users_byid($vars['user_id']);
+  $id=$user['user_id'];
+ 
+    $query="INSERT INTO `comments` ( `content`, `comment_post_ID`,`user_id` ) VALUES ('$content ', '$comment_post_ID','$id');";
+  
    // if($this->validate_input($input) == true) {
      // if( isset($this->data[$comment_post_ID]) == false ) {
        // $this->data[$comment_post_ID] = array();
@@ -65,13 +77,16 @@ $this->data=$response->fetch(PDO::FETCH_ASSOC);
      /*  $input['id'] = uniqid('comment_'); */
 $cnx= CBD::getInstance();
      $response=$cnx->query($query);
-     
-      
+     if ($response){
       $this->sync();
+      return true;
+     }
+      
+      
       
       
     
-    return ;
+    return false ;
   }
   
   function delete_all() {

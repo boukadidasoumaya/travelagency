@@ -1,7 +1,9 @@
 <?php include_once '../fragments/barrehead.php';
 require_once('countries.php');
+if (!isset($_SESSION)) {
+    session_start();
+}
  $db1=new countries();
-
 $c=$db1->findById($_GET['id']);
 foreach ($c as $vars ):
 
@@ -134,7 +136,7 @@ endforeach;
         <section id="hero">
           <div class="hero-container" data-aos="fade-up" >
             <h1>Explore '<?=  $country_name ?> '</h1>
-            <h2>The Pearl Of Indonisia</h2>
+            <h2>a journey you will never forget</h2>
             <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
           </div>
         </section><!-- End Hero -->
@@ -313,11 +315,12 @@ endforeach;
       $comment_post_ID =  $country_id ; 
       $db2 = new Persistence();
       $comments = $db2->get_comments($comment_post_ID);
-      $has_comments = (count($comments) > 0);
+      $has_comments = (count($comments));
+      if ($has_comments>0){
         
           foreach ($comments as $comment) {
-            ?>
-      
+            
+      if (isset($_SESSION[ 'user_name'])){?>
                   <div class="swiper-slide">
                     <div class="testimonial-item">
                       <p id="comment_<?= $comment[ 'com_id']; ?>">
@@ -325,8 +328,8 @@ endforeach;
                         <?php echo($comment[ 'content']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                       </p>
                       <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                      <h3><?php echo($comment[ 'comment_author']. '  '.$comment[ 'user_last_name']); ?>
-                      <?php if (isset($_SESSION[ 'user_name'])) {if ($_SESSION[ 'user_name']=="admin" ||$_SESSION[ 'user_name']==$comment_author ){
+                      <h3><?php echo($comment[ 'user_name']. '  '.$comment[ 'user_last_name']);
+                        {if ($_SESSION['user_name']=="admin" ||$_SESSION[ 'user_name']==$comment[ 'user_name'] ){
                   
                   echo('<form id ="deleting" method="post" action="delete_comment.php">
                    <input type="hidden" name="com_id" value="'.$comment[ 'com_id'].' ">
@@ -339,8 +342,15 @@ endforeach;
                    <span id="boot-icon" class="bi bi-trash" style="font-size:15px" onclick="submitForm()"></span>
                    </form>');
 
-                  
-                }?></h3>
+                 
+                }}}else echo (' <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <p id="comment_' .$comment['com_id'].'; ?>">
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    '.$comment[ 'content'].');                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <h3>'.$comment[ 'user_name'].'  '.$comment[ 'user_last_name']);?></h3>
                     </div>
                   </div><!-- End testimonial item -->
       
@@ -367,8 +377,7 @@ endforeach;
                   <div class="member" data-aos="fade-up">
                     <div class="pic"><img src="<?= $pic1 ?>"  class="img-fluid" alt=""></div>
                     <div class="member-info">
-                      <h4>Japan</h4>
-                      <span>asia</span>
+                      
                       
                     </div>
                   </div>
@@ -378,8 +387,7 @@ endforeach;
                   <div class="member" data-aos="fade-up" data-aos-delay="150">
                     <div class="pic"><img src="<?= $pic2 ?>" class="img-fluid" alt=""></div>
                     <div class="member-info">
-                      <h4>switzerland</h4>
-                      <span>europe</span>
+                   
                       
                     </div>
                   </div>
@@ -389,8 +397,7 @@ endforeach;
                   <div class="member" data-aos="fade-up" data-aos-delay="300">
                     <div class="pic"><img src="<?= $pic3 ?>" class="img-fluid" alt=""></div>
                     <div class="member-info">
-                      <h4>tunisia</h4>
-                      <span>africa</span>
+                      
                       
                     </div>
                   </div>
@@ -448,18 +455,11 @@ endforeach;
       
           <!-- Name input -->
           <div class="mb-3">
-            <label class="form-label" for="name"><?= $_SESSION['user_name'] ?></label>
-            <input class="form-control" name="comment_author" id="comment_author" type="text" placeholder="Name" value=<?= $_SESSION['user_name'] ?> data-sb-validations="required" />
-            <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+            <label class="form-label" for="name">first name</label>
+            <input class="form-control" name="comment_author" id="comment_author" type="text" placeholder="Name" value="<?php if (isset($_SESSION['user_name'])){ echo( $_SESSION['user_name']);} ?>" data-sb-validations="required" disabled/>
           </div>
       
-          <!-- Email address input -->
-          <div class="mb-3">
-            <label class="form-label" for="ln">last</label>
-            <input class="form-control" name="user_last_name" id="user_last_name" placeholder="last name" data-sb-validations="required, email" />
-            <div class="invalid-feedback" data-sb-feedback="emailAddress:required">last name is required.</div>
-            <div class="invalid-feedback" data-sb-feedback="emailAddress:email">last name is not valid.</div>
-          </div>
+          
           <!-- Message input -->
           <div class="mb-3">
             <label class="form-label" for="message">Message</label>
@@ -473,11 +473,13 @@ endforeach;
       
           <!-- Form submissions error message -->
           <div class="d-none" id="submitErrorMessage">
-            <div class="text-center text-danger mb-3">Error sending message!</div>
+            <div class="text-center text-danger mb-3">please sign-up first <a href="../login/signin.php"> here </a></div>
           </div>
           
       <!-- comment_post_ID value hard-coded as 1 --> 
           <input type="hidden" name="comment_post_ID" value="<?= $country_id ?>" id="comment_post_ID" />
+          <input type="hidden" name="user_id" value="<?php if( isset( $_SESSION['user_id'])){ echo $_SESSION['user_id'];}?>" id="'user_id'" />
+
           <!-- Form submit button -->
           
           <div class="d-grid">
@@ -486,8 +488,8 @@ endforeach;
             if (!isset($_SESSION['user_name'])){ echo( 'disabled' ) ; } ?> class="btn btn-primary btn-lg" type="submit">Submit</button>
             
           </div>
-          <?php if (!($_SESSION["user_name"]=="admin")){ echo('<div class="alert alert-danger" role="alert">
-        please sign-up first <a href="C: Users sapph OneDrive Documents GitHub travelagency login"> here </a>') ;} ?> 
+          <?php if (!isset($_SESSION['user_name'])){ echo('<div >
+        please sign-up first <a href="../login/signin.php"> here </a>') ;} ?> 
       </div>
       
         </form>
