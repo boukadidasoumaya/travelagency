@@ -1,6 +1,6 @@
 <?php if (!isset($_SESSION)) {
     session_start();
-}
+} $img="../countriesfinal/img/";
 
 ?>
 
@@ -290,6 +290,52 @@ include_once '../fragments/barre.php'
         </div>
     </div>
 </div>
+<!-------Welcome-text section------->
+<div class="welcome" id="welcome">
+    <section id="welcome-text">
+        <div class="container">
+            <h2>The Official Travel Site of the Think travel agency</h2>
+            <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
+        </div>
+        <?php
+        require('../countriesfinal/countries.php');
+        $db = new countries();
+        $countries = $db->get_countries();
+        ?>
+
+
+    </section>
+    <!-- Slides Section Start-->
+    <section id="slides-par">
+        <div class="container">
+            <a href="../countriesfinal/new york.php">
+                <div class="slides">
+
+                    <?php
+
+                    foreach ($countries as $c) :
+                        $id = $c['country_id']
+?>
+
+                        <div class="slide_1 slide_0 " id="id" name="id"> <a href='../countriesfinal/prototype.php?id=<?= $c['country_id'] ?>'>
+                            <img class="slide_1 " src="<?php echo $img."imgfolder".$c['country_name'].$c['photo_for_home']; ?>"></a>
+
+
+                            <div class="slide-info">
+                                <p><?php echo $c['country_name']; ?>
+
+
+
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    <?php endforeach;  ?>
+
+                    <?php   ?>
 
 
 

@@ -1,5 +1,5 @@
 <?php
-require('countries.php');
+require_once('countries.php');
 if (!isset($_SESSION)) {
     session_start();
 }

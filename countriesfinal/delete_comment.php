@@ -1,5 +1,5 @@
 <?php
-require('comment.php');
+require_once('comment.php');
 if (!isset($_SESSION)) {
     session_start();
 }

@@ -58,35 +58,38 @@ class countries
     $response->execute([$country_id]);
   }
 
-
+function storing($vars){
+  $this->country_id = $vars['country_id'];
+  $this->country_name = $vars['countryname'];
+  $this->population = $vars['population'];
+  $this->climate = $vars['climate'];
+  $this->currency = $vars['currency'];
+  $this->history = $vars['history'];
+  $this->price_car = $vars['price_car'];
+  $this->pricetg = $vars['pricetg'];
+  $this->pricetrip = $vars['pricetrip'];
+  $this->imgfolder = $_FILES['imgfolder']['name'];
+  $this->hero_src =$_FILES['hero_src']['name'];
+  $this->cta_src = $_FILES['cta_src']['name'];
+  $this->about_src = $_FILES['about_src']['name'];
+  $this->services_src = $_FILES['services_src']['name'];
+  $this->contact_src = $_FILES['contact_src']['name'];
+  $this->pic1= $_FILES['pic1']['name'];
+  $this->pic2 = $_FILES['pic2']['name'];
+  $this->pic3 = $_FILES['pic3']['name'];return;
+}
   function addcountry($vars)
   {
-    $this->country_id = $vars['country_id'];
-    $this->country_name = $vars['countryname'];
-    $this->population = $vars['population'];
-    $this->climate = $vars['climate'];
-    $this->currency = $vars['currency'];
-    $this->history = $vars['history'];
-    $this->price_car = $vars['price_car'];
-    $this->pricetg = $vars['pricetg'];
-    $this->pricetrip = $vars['pricetrip'];
-    $this->imgfolder = $vars['imgfolder'];
-    $this->hero_src = $_FILES['hero_src']['name'];
-    $this->cta_src = $_FILES['cta_src']['name'];
-    $this->about_src = $_FILES['about_src']['name'];
-    $this->services_src = $_FILES['services_src']['name'];
-    $this->contact_src = $_FILES['contact_src']['name'];
-    $this->pic1 = $_FILES['pic1']['name'];
-    $this->pic2 = $_FILES['pic2']['name'];
-    $this->pic3 = $_FILES['pic3']['name'];
+    $this->storing($vars);
 
 
     $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`,`pic1`,`pic2`,`pic3`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder','$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src','$this->pic1','$this->pic2','$this->pic3');";
     $response = $this->cnx->query($query);
     $file = new generate_country_file($this->country_id, $this->country_name,  $this->population, $this->climate, $this->currency, $this->history, $_FILES['hero_src']['name'], $_FILES['cta_src']['name'], $_FILES['about_src']['name'], $_FILES['services_src']['name'], $_FILES['contact_src']['name'], $this->pic1, $this->pic2, $this->pic3);
 
-    $txt = $file->get_file();
-    return $txt;
+   // $txt = $file->get_file();
+    return ;
+   
   }
 
 
