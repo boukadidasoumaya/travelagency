@@ -45,14 +45,14 @@ $clients = $db->get_clients();
                         <td><?php echo $cl['prix'] ?></td>
                         <td><?php echo $cl['user_id'] ?></td>
 
-                        <td><?php echo $cl['destination'] ?></td>
+                        <td><?php echo $cl['country_name'] ?></td>
                         <td><?php echo $cl['user_name'] ?></td>
                         <td><?php echo $cl['user_last_name'] ?></td>
                         <td><?php echo $cl['email'] ?></td>
 
 
                         <td>
-                            <a class='btn btn-success' href="update_page_admin.php?updatedid=<?= $cl['id_reservation'] ?> ">Edit</a>
+                            <a class='btn btn-success' href="update_page.php?updatedid=<?= $cl['id_reservation'] ?> ">Edit</a>
                             <a class='btn btn-danger' href="delete_booking.php?deletedid=<?= $cl['id_reservation'] ?>">Delete</a>
                         </td>
                     </tr>
@@ -62,7 +62,10 @@ $clients = $db->get_clients();
         <?php endforeach; ?>
 
         </table>
-
+        <div>
+            <a href='..\home\home.php'>
+                <button>Back to Home</button></a>
+        </div>
     </div>
 
 </body>

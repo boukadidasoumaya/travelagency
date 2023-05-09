@@ -48,12 +48,9 @@ class Booking
         $booking = $result->fetch(PDO::FETCH_OBJ);
         if ($booking == false) {
 
-            $sql = "INSERT INTO booking VALUES (null, '$this->trip_date', $this->price, $this->user_id, $this->destination)";
-            if ($this->conn->query($sql)) {
-                return true;
-            } else {
-                return false;
-            }
+            $sql = "INSERT INTO booking VALUES (?,?,?,?)";
+            $response = $this->conn->prepare($sql);
+            $response->execute($this->trip_date, $this->price, $this->user_id, $this->destination);
         } else {
             header("Location: booking.php");
         }
@@ -61,33 +58,37 @@ class Booking
 
     public function readBooking($booking_id)
     {
-        $sql = "SELECT * FROM booking WHERE id_reservation = $booking_id";
-        $result = $this->conn->query($sql);
-        return $result->fetch();
+        $sql = "SELECT * FROM booking WHERE id_reservation = ?";
+        $response = $this->conn->prepare($sql);
+        $response->execute($booking_id);
+        return $response->fetch();
     }
 
-    public function updateBooking($vars)
+    public function updateBooking($id_user, $id_country, $vars)
     {
         $this->id_reservation = $vars['id'];
         $this->trip_date = $vars['date'];
-        $this->$vars['destination'];
 
-        $sql = "UPDATE booking SET  date = '$this->trip_date' WHERE id_reservation ='$this->id_reservation '";
-        if ($this->conn->query($sql)) {
-            return true;
+
+        if ($id_country != 0) { /*partie admin */
+            $this->price = $vars['price'];
+            $sql = "UPDATE booking SET date = ? , prix=? , destination=? , user_id=?   WHERE id_reservation =? ";
+
+            $response = $this->conn->prepare($sql);
+            $response->execute([$this->trip_date, $this->price, $id_country, $id_user, $this->id_reservation]);
         } else {
-            return false;
+            $sql = "UPDATE booking SET  date = ? WHERE id_reservation =? ;UPDATE user SET  email=? ,num_passport=? WHERE user_id=?";
+
+            $response = $this->conn->prepare($sql);
+            $response->execute([$this->trip_date, $this->id_reservation, $vars['email'], $vars['passport'], $id_user]);
         }
     }
 
     public function deleteBooking($booking_id)
     {
-        $sql = "DELETE FROM booking WHERE id_reservation = $booking_id";
-        if ($this->conn->query($sql)) {
-            return true;
-        } else {
-            return false;
-        }
+        $sql = "DELETE FROM booking WHERE id_reservation = ?";
+        $res = $this->conn->prepare($sql);
+        $res->execute($booking_id);
     }
     public function get_clients()
     {
@@ -119,5 +120,27 @@ class Booking
         $resultat->execute([$user_id]);
         $reserv = $resultat->fetch(PDO::FETCH_ASSOC);
         return $reserv;
+    }
+    function get_countries()
+    {
+        $countries = array();
+
+
+        $query = "select * from `country` ;";
+        $response = $this->conn->prepare($query);
+        $response->execute([]);
+        $countries = $response->fetchAll(\PDO::FETCH_ASSOC);
+        return $countries;
+    }
+    function get_countriesbyname($country_name)
+    {
+        $countries = array();
+
+
+        $query = "select * from `country` where country_name=?;";
+        $response = $this->conn->prepare($query);
+        $response->execute([$country_name]);
+        $countries = $response->fetch(PDO::FETCH_ASSOC);
+        return $countries['country_id'];
     }
 }

@@ -3,7 +3,7 @@
 
 <?php
 require_once('bdd.php');
-$cnx = CBD::getInstance();
+
 require_once('storeimg.php');
 
 require_once('generate_country_file.php');
@@ -16,8 +16,6 @@ class countries
   public function __construct()
   {
     $this->cnx = CBD::getInstance();
-    /*  $query = "INSERT INTO `country` (`country_id`, `country_name`, `expectation`, `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`) VALUES ('$this->country_id','$this->name', '$this->expectation', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip','$this->pricetg','$this->imgfolder');";
-        $response = $cnx->query($query); */
   }
 
 
