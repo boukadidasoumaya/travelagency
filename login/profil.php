@@ -37,7 +37,7 @@ $reservation = $reservation->get_reservation($_GET['id']);
                     <div class="col-md-3 border-right">
                         <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="<?= $user['photo_profil'] ?>">
                             <label for="fileInput" id="changePhotoIcon"><i class="fa-solid fa-pen-to-square"></i></label>
-                            <input type="file" id="fileInput" name="fileInput" style="display: none;"> <span class="font-weight-bold"><?= $user['user_name'] ?></span>
+                            <input type="file" id="fileInput" name="photo_profil" style="display: none;"> <span class="font-weight-bold"><?= $user['user_name'] ?></span>
                         </div>
                     </div>
                     <div class="col-md-5 border-right">

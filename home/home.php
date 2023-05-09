@@ -33,8 +33,7 @@ include_once '../fragments/barre.php'
         <div class="header-info-par">
             <h1 class="typewrite" data-period="2000" data-type='["Travel brings power and love back into your life.","Travel far, travel wide, travel often.","Adventure Awaits, go find it."]'>
             </h1>
-            <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions.
-                It broadens our horizons and exposes us to different perspectives and ways of life.</p>
+
             <a href="#" class="a">Read More</a>
         </div>
         <div class="video">
@@ -106,12 +105,14 @@ include_once '../fragments/barre.php'
                     ?>
 
 
-                        <div class="slide_1 slide_0 " id="id" name="id"> <a href='../countriesfinal/prototype.php?id=<?= $c['country_id'] ?>'>
+                        <div class="slide_1 slide_<?= $i ?> " id="id" name="id"> <a href='../countriesfinal/prototype.php?id=<?= $c['country_id'] ?>'>
+
                                 <img class="slide_1 " src="<?php echo $c['photo_for_home']; ?>"></a>
 
 
                             <div class="slide-info">
-                                <p><?php echo $c['country_name']; ?>
+                                <p><?php echo $c['country_name'];
+                                    ?>
 
 
 

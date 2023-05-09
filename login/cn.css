@@ -1,7 +1,7 @@
 
 
 
-/*
+
 @keyframes background 
 {
    0%   {  background-image: url('https://source.unsplash.com/1600x900/?nature,mountains');
@@ -20,25 +20,30 @@
 
       background-size: cover;
       position: relative;}
-}*/
+}
 
 
 
 @-webkit-keyframes changeBg {
-  10% {
-    background-image: url('images/p1.jpg');
+  0% {
+    background: url('images/p1.jpg');
+    background-size: cover;position: relative;
   }
  
   25% {
-    background-image: url('images/p2.jpg');
+    background: url('images/p2.jpg');
+    background-size: cover;position: relative;
+
   }
 
   50% {
-    background-image: url('images/p3.jpg');
+    background: url('images/p3.jpg');
+    background-size: cover;position: relative;
   }
 
   100% {
-    background-image: url('images/p1.jpg');
+    background: url('images/p4.jpg');
+    background-size: cover;position: relative;
   }
 }
 
@@ -51,7 +56,7 @@ body {
 /*background-image:url('images/p1.jpg');
      background-size: cover;
   animation: background 15s linear infinite;*/
-       background-size: cover;
+      
 
    -webkit-animation: changeBg 10s infinite ease-in-out;
 
@@ -92,7 +97,7 @@ body.bg-image4 {
 }*/
 .slogan {
   color: white;
-  font-size: 5vw;
+  font-size: 4.5vw;
   font-family: 'Castoro Titling', serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin: auto;

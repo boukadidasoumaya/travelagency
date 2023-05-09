@@ -8,20 +8,22 @@ class users
     protected PDO $cnx;
     private  $user_id;
     private $user_name;
-    private $lastname ;
-    private $password ;
-    private $email ;
-    private $birthday ;
-    private $country ;
-    private $city ;
+    private $lastname;
+    private $password;
+    private $email;
+    private $birthday;
+    private $country;
+    private $city;
     private $passport;
     private $hashed_password;
+    private $photo_profil;
 
     public function __construct()
     {
         $this->cnx = CBD::getInstance();
     }
-    public function getCnx() {
+    public function getCnx()
+    {
         return $this->cnx;
     }
     public function find_user_by_email($email)
@@ -41,7 +43,6 @@ class users
         $response->execute([$user_name]);
         $user = $response->fetch(PDO::FETCH_ASSOC);
         return $user;
-    
     }
     public function verify_accountByemail($email)
     {
@@ -50,8 +51,7 @@ class users
         $response = $this->cnx->prepare($query);
         $response->execute([$email]);
         $user = $response->fetch(PDO::FETCH_ASSOC);
-            return $user;
-        
+        return $user;
     }
     public function verify_accountByemail_motdepasse_oublie($email)
     {
@@ -63,7 +63,7 @@ class users
         return $user;
     }
     public function motdepasse_oublie($id, $password)
-    {   
+    {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $query = "update user set password= ? where user_id=?";
         $response = $this->cnx->prepare($query);
@@ -119,22 +119,31 @@ class users
         $country = $_POST['country'];
         $city = $_POST['city'];
         $passport = $_POST['passport'];
-        
+
 
         //verifier si il existe
-        
-            $query = "INSERT INTO `user` (user_name, user_last_name,email,password,date_birth, country, city, num_passport) 
+
+        $query = "INSERT INTO `user` (user_name, user_last_name,email,password,date_birth, country, city, num_passport) 
                 VALUES (?, ?, ?, ?, ?, ?, ? , ?)";
         $response = $this->cnx->prepare($query);
         $response->execute([$user_name, $lastname, $email, $hashed_password, $birthday, $country, $city, $passport]);
         header("Location: sign in.php");
-       
-        
-
-        
     }
 
+    public function update_userprofil_photo($user_id, $vars)
+    {
 
+
+        $this->photo_profil = $_FILES['photo_profil']['name'];
+        $query = "UPDATE `user` SET photo_profil= ? WHERE `user_id` = ?";
+        $stmt = $this->cnx->prepare($query);
+
+        $stmt->execute([
+            $this->photo_profil,
+            $user_id,
+
+        ]);
+    }
 
     public function update_user($user_id, $new_info)
     {

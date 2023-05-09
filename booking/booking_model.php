@@ -40,11 +40,11 @@ class Booking
         $this->destination = $destination;
     }
 
-    public function createBooking()
+    public function createBooking($vars)
     {
-        $sql = "SELECT * FROM booking where user_id=" . $_POST['user'] . " AND date='" . $this->trip_date . "'";
+        $sql = "SELECT * FROM booking where user_id=" . $vars["user"] . " AND date='" . $this->trip_date . "'";
         $result = $this->conn->query($sql);
-
+        $this->user_id = $vars['user'];
         $booking = $result->fetch(PDO::FETCH_OBJ);
         if ($booking == false) {
 

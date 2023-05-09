@@ -47,11 +47,11 @@ $booking = new Booking($conn);
 
 $booking->setTripDate($_POST['trip-date']);
 $booking->setPrice($_POST['price']);
-$booking->setUserId($_POST['user']);
+$booking->setUserId($_POST['name']);
 $booking->setDestination($_POST['destination']);
 
 // save to database
-$booking->createBooking();
+$booking->createBooking($_POST);
 
 // prepare data for PDF file
 $sql = "SELECT * FROM user where user_id=" . $_POST['user'] . "";
@@ -89,21 +89,21 @@ $pdfContent = $pdf->Output('', 'S');
 $pdfData = chunk_split(base64_encode($pdfContent));
 $pdfName = 'receipt.pdf';
 
-// Sender and recipient email addresses
+
 $from = 'think.travel.agency.project@gmail.com';
 $to = 'soumaya.boukadida@insat.ucar.tn';
 
-// Email subject and body
+
 $subject = 'Booking Receipt';
 $body = 'Please find attached the booking receipt.';
 
-// Email headers
+
 $headers = "From: $from\r\n";
 $headers .= "Reply-To: $from\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: multipart/mixed; boundary=\"boundary\"\r\n";
 
-// Email content
+
 $message = "--boundary\r\n";
 $message .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $message .= "Content-Transfer-Encoding: 8bit\r\n";
@@ -115,11 +115,11 @@ $message .= "Content-Transfer-Encoding: base64\r\n";
 $message .= "\r\n$pdfData\r\n";
 $message .= "--boundary--\r\n";
 
-// Send the email
+
 if (mail($to, $subject, $message, $headers)) {
-    // Email sent successfully, redirect to booking.php
+
     header('Location: booking.php');
 } else {
-    // Email sending failed, show an error message
+
     echo 'Error sending email.';
 }

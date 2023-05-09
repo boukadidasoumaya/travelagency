@@ -35,27 +35,26 @@ if (!isset($_SESSION['user_name'])) {
 
                         if ((isset($_SESSION['user_name']))) {
                             if ($_SESSION['user_name'] != 'admin') {
+                                echo ('  <div class="form-group">
+                                <input type="hidden" id="user" name="user" value="' . $_SESSION['user_id'] . '">
+                                <input type="text" name="name" id="name" class="form-control" value="' . $_SESSION['user_name'] . '" readonly>
+                            </div>');
+                            } else {
                                 echo ('
-                        <div class="form-group">
-                            <label for="user">Traveler Name :</label>
-                             <select name="user" id="user" class="form-control" disabled>
-                            <option value="">' . $_SESSION['user_name'] . '</option>) ');
-                            }
-                        } else {
-                            echo ('
-                        <select name="user" id="user" class="form-control">
-                            <option value="">Select client</option> ');
+                            <select name="user" id="user" class="form-control">
+                                <option value="">Select client</option> ');
 
 
-                            $sql = "SELECT * FROM user";
-                            $result = $conn->query($sql);
+                                $sql = "SELECT * FROM user";
+                                $result = $conn->query($sql);
 
-                            if ($result->rowCount() > 0) {
-                                while ($row = $result->fetch()) {
-                                    echo "<option value=\"" . $row["user_id"] . "\">"
-                                        . $row["user_name"] . " "
-                                        . $row["user_last_name"] .
-                                        "</option>";
+                                if ($result->rowCount() > 0) {
+                                    while ($row = $result->fetch()) {
+                                        echo "<option value=\"" . $row["user_id"] . "\">"
+                                            . $row["user_name"] . " "
+                                            . $row["user_last_name"] .
+                                            "</option>";
+                                    }
                                 }
                             }
                         }
@@ -67,7 +66,6 @@ if (!isset($_SESSION['user_name'])) {
                         <label for="destination">Destination</label>
                         <select name="destination" id="destination" class="form-control">
                             <option value="">Select destination</option>
-                            <!-- PHP code to populate select options from database table -->
                             <?php
 
                             $sql = "SELECT * FROM country";

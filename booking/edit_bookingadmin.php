@@ -1,7 +1,7 @@
 <?php
 include "bdd.php";
 require('booking_model.php');
-$db = new Booking($conn);
+$db = new Booking();
 $clients = $db->get_clients();
 
 ?>
@@ -50,9 +50,10 @@ $clients = $db->get_clients();
                         <td><?php echo $cl['user_last_name'] ?></td>
                         <td><?php echo $cl['email'] ?></td>
 
+
                         <td>
-                            <button><a class="btn btn-success" href="update_booking.php?updatedid=<?= $cl['id_reservation'] ?> ">update your trip</a></button>
-                            <button><a href="delete_booking.php?deletedid=<?= $cl['id_reservation'] ?>">cancel your trip</a></button>
+                            <a class='btn btn-success' href="update_page_admin.php?updatedid=<?= $cl['id_reservation'] ?> ">Edit</a>
+                            <a class='btn btn-danger' href="delete_booking.php?deletedid=<?= $cl['id_reservation'] ?>">Delete</a>
                         </td>
                     </tr>
 
