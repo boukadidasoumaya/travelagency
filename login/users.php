@@ -63,10 +63,11 @@ class users
         return $user;
     }
     public function motdepasse_oublie($id, $password)
-    {
+    {   
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $query = "update user set password= ? where user_id=?";
         $response = $this->cnx->prepare($query);
-        $response->execute([$password, $id]);
+        $response->execute([$hashed_password, $id]);
     }
 
 
