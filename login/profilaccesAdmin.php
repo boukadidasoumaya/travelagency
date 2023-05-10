@@ -2,7 +2,7 @@
 require('users.php');
 $db = new users();
 
-$account_selected = $db->get_user_by_id($_GET['id']);
+$account_selected = $db->get_users_by_id($_GET['id']);
 ?>
 
 <!DOCTYPE html>

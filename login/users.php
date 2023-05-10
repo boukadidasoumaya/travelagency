@@ -82,7 +82,7 @@ class users
         $users = $response->fetchAll(\PDO::FETCH_ASSOC);
         return $users;
     }
-    function get_users_byid($id)
+    function get_users_by_id($id)
     {
         $user = array();
 
