@@ -6,18 +6,17 @@ require_once('bdd.php');
 $cnx = CBD::getInstance();
 require_once('storeimg.php');
 
-//require_once('generate_country_file.php');
+
 class countries
 {
   protected PDO $cnx;
-  private  $country_id, $country_name, $pic1,$pic2,$pic3,
+  private  $country_id, $country_name, $pic1,$pic2,$pic3,$iframe,
     $population, $climate, $currency, $history, $price_car, $pricetg, $pricetrip, $imgfolder, $hero_src, $cta_src, $about_src, $services_src, $contact_src;
 
   public function __construct()
   {
     $this->cnx = CBD::getInstance();
-    /*  $query = "INSERT INTO `country` (`country_id`, `country_name`, `expectation`, `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`) VALUES ('$this->country_id','$this->name', '$this->expectation', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip','$this->pricetg','$this->imgfolder');";
-        $response = $cnx->query($query); */
+   
   }
 
 
@@ -26,7 +25,7 @@ class countries
   function get_countries()
   {
     $countries = array();
-    /*  $cnx = CBD::getInstance(); */
+
 
     $query = "select * from `country` ;";
     $response = $this->cnx->prepare($query);
@@ -78,6 +77,8 @@ function storing($vars){
   $this->price_car = $vars['price_car'];
   $this->pricetg = $vars['pricetg'];
   $this->pricetrip = $vars['pricetrip'];
+  $this->iframe = $vars['iframe'];
+
   $this->imgfolder = $_FILES['imgfolder']['name'];
   $this->hero_src =$_FILES['hero_src']['name'];
   $this->cta_src = $_FILES['cta_src']['name'];
@@ -93,22 +94,34 @@ function storing($vars){
     $this->storing($vars);
 
 
-    $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`,`pic1`,`pic2`,`pic3`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder','$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src','$this->pic1','$this->pic2','$this->pic3');";
+    $query = "INSERT INTO `country` (`country_id`, `country_name`,  `population`,`climate`,`currency`,`history`,`price_car`,`price_trip`,`price_tour_guide`,`photo_for_home`,`hero_src`,`cta_src`,`about_src`,`services_src`,`contact_src`,`pic1`,`pic2`,`pic3`,`iframe`) VALUES ('$this->country_id','$this->country_name', '$this->population','$this->climate','$this->currency','$this->history','$this->price_car','$this->pricetrip', '$this->pricetg','$this->imgfolder','$this->hero_src','$this->cta_src','$this->about_src','$this->services_src','$this->contact_src','$this->pic1','$this->pic2','$this->pic3','$this->iframe');";
     $response = $this->cnx->query($query);
-    //$file = new generate_country_file($this->country_id, $this->country_name,  $this->population, $this->climate, $this->currency, $this->history, $_FILES['hero_src']['name'],$_FILES['cta_src']['name'],$_FILES['about_src']['name'], $_FILES['services_src']['name'],$_FILES['contact_src']['name'],$_FILES['pic1']['name'],$_FILES['pic2']['name'],$_FILES['pic3']['name']);
-
-   // $txt = $file->get_file();
+    
     return ;
    
   }
-
-
   function updatecountry($vars)
-  {$this->storing($vars);
-  
-    $cnx = CBD::getInstance();
-    $query = "UPDATE  `country` SET `country_id`='$this->country_id', `country_name`='$this->country_name', `population`= '$this->population',`climate`='$this->climate',`currency`='$this->currency',`history`='$this->history',`price_car`='$this->price_car',`price_trip`='$this->pricetrip',`price_tour_guide`='$this->pricetrip',`photo_for_home`='$this->imgfolder',`hero_src`='$this->hero_src',`cta_src`='$this->cta_src',`about_src`='$this->about_src',`services_src`='$this->services_src',`contact_src`='$this->contact_src',`pic1`='$this->pic1',`pic2`='$this->pic2',`pic3`='$this->pic3 where country_id=$this->country_id ;";
-    $response = $cnx->query($query); 
+  {
+    $this->country_id = $vars['country_id'];
+   $this->country_name = $vars['countryname'];
+  $this->population = $vars['population'];
+  $this->climate = $vars['climate'];
+  $this->currency = $vars['currency'];
+  $this->history = $vars['history'];
+  $this->price_car = $vars['price_car'];
+  $this->pricetg = $vars['pricetg'];
+  $this->pricetrip = $vars['pricetrip'];
+   
+    $query = "UPDATE  `country` SET  `country_name`='$this->country_name', `population`= '$this->population',`climate`='$this->climate',`currency`='$this->currency',`history`='$this->history',`price_car`='$this->price_car',`price_trip`='$this->pricetrip',`price_tour_guide`='$this->pricetrip' where country_id=$this->country_id ;";
+    $response = $this->cnx->query($query); 
+  }
+  function findByIdedit($id)
+  {$countries=array();
+    $query = "select * from `country` where country_id=$id";
+    $response = $this->cnx->query($query);
+
+    $countries = $response->fetch(PDO::FETCH_ASSOC);
+        return $countries;
   }
 }
 ?>

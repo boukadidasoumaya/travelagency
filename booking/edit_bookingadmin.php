@@ -3,7 +3,6 @@ include "bdd.php";
 require('booking_model.php');
 $db = new Booking();
 $clients = $db->get_clients();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,12 +39,13 @@ $clients = $db->get_clients();
                 foreach ($clients as $cl) :
                 ?>
                     <tr>
+                    
                         <th scope="row"><?php echo $cl['id_reservation'] ?></th>
                         <td><?php echo $cl['date'] ?></td>
                         <td><?php echo $cl['prix'] ?></td>
                         <td><?php echo $cl['user_id'] ?></td>
 
-                        <td><?php echo $cl['country_name'] ?></td>
+                        <td><?php echo $cl['destination_name'] ?></td>
                         <td><?php echo $cl['user_name'] ?></td>
                         <td><?php echo $cl['user_last_name'] ?></td>
                         <td><?php echo $cl['email'] ?></td>

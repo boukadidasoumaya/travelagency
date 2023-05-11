@@ -4,7 +4,7 @@
 }
 include_once 'users.php';
 $user = new users();
-$user = $user->get_users_byid($_GET['id']);
+$user = $user->get_users_by_id($_GET['id']);
 $reservation = new users();
 $reservation = $reservation->get_reservation($_GET['id']);
 
@@ -23,6 +23,14 @@ $reservation = $reservation->get_reservation($_GET['id']);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../fragments/footer.css">
     <title>Profil</title>
+    <style>
+        #trans{
+            border: none;
+            background-color: transparent;
+
+
+        }
+    </style>
 </head>
 
 <body>
@@ -32,15 +40,18 @@ $reservation = $reservation->get_reservation($_GET['id']);
         ?>
     </header>
     <section>
-        <form action="edit_profil.php?id=<?= $_GET['id'] ?>" method="post">
-            <div class="container rounded bg-white ">
+    <div class="container rounded bg-white ">
                 <div class="row">
                     <div class="col-md-3 border-right">
-                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="<?= $location.$user['user_id'].$user['photo_profil'] ?>">
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="<?= $location."fileInput".$user['user_id'].$user['photo_profil'] ?>">
                             <label for="fileInput" id="changePhotoIcon"><i class="fa-solid fa-pen-to-square"></i></label>
-                            <form action="edit_profilimg.php?id=<?= $_GET['id']  ?>" method="post">
-                            <input type="file" id="fileInput" name="photo_profil" style="display: none;"> <span class="font-weight-bold" type ="submit"><?= $user['user_name']?></span>
-                        </div>
+                            <form action="edit_profilimg.php?id=<?= $_GET['id']  ?>" method="POST" enctype="multipart/form-data">     
+                           <input type="file" id="fileInput" name="fileInput" style="display: none;" required> <span class="font-weight-bold" type ="submit"><?= $user['user_name']?></span>
+                           <button class="button" type="submit" id="trans"><i class="fa-solid fa-check fa-beat-fade fa-xs"></i></button>
+    
+                        </form> 
+        <form action="edit_profil.php?id=<?= $_GET['id'] ?>" method="post">
+          </div>
                     </div>
                     <div class="col-md-5 border-right">
                         <div class="p-3 py-5">

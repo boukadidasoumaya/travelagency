@@ -1,5 +1,6 @@
 <?php
 require_once 'bdd.php';
+require_once '../login/users.php';
 class storeimg {
 
 private $location ;
@@ -8,7 +9,7 @@ private $uploadOk = 1;
 private $imageFileType ;
  function __construct($loc)
 { $this->location=$loc;}
-function storeim($vars,$target){
+function storeim($vars,$target,$cid){
     
     
     $msg = ""; 
@@ -24,7 +25,7 @@ function storeim($vars,$target){
         $folder = $this->location.$filename;   
 
     // connect with the database
-    $id=$vars['country_id'];
+    //$id=$vars['country_id'];
 
         // query to insert the submitted data
 
@@ -39,7 +40,7 @@ function storeim($vars,$target){
         if (move_uploaded_file($tempname,$folder)) {
 
             $msg = "Image uploaded successfully";
-            rename( $folder, $this->location."".$target.$vars["countryname"]."".$filename);
+            rename( $folder, $this->location."".$target.$cid."".$filename);
 
 
         }else{
@@ -108,6 +109,16 @@ function deleteimg($id){
         }
     }
     rmdir($this->location);
+}
+function delete_photo_profil($user_id){
+$user=new users();
+   $user_img=$user->get_users_by_id($user_id);
+    $file=$this->location."fileInput".$user_id.$user_img['photo_profil'];
+    unlink($file);
+
+
+
+
 }
 }
 

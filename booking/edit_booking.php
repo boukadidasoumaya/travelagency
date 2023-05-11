@@ -1,9 +1,12 @@
 <?php include "bdd.php";
+if (!isset($_SESSION)) {
+    session_start();
+}
 require('booking_model.php');
 $db = new Booking();
 
 
-$id_user = htmlspecialchars($_GET['id']);
+$id_user = $_SESSION['user_id'];
 $clients = $db->get_reservation($id_user);
 ?>
 <!DOCTYPE html>
@@ -22,6 +25,7 @@ $clients = $db->get_reservation($id_user);
     <table class="table table-striped">
         <thead>
             <tr>
+
                 <th scope="col">user_name</th>
                 <th scope="col">user_last_name</th>
                 <th scope="col">id_reservation</th>
@@ -29,6 +33,7 @@ $clients = $db->get_reservation($id_user);
                 <th scope="col">date</th>
                 <th scope="col">price-trip</th>
                 <th scope="col">email</th>
+                <th scope="col">passport</th>
                 <th scope="col">changes</th>
 
             </tr>
@@ -40,18 +45,19 @@ $clients = $db->get_reservation($id_user);
                     <td><?php echo $cl['user_name'] ?></td>
                     <td><?php echo $cl['user_last_name'] ?></td>
                     <td><?php echo $cl['id_reservation'] ?></td>
-                    <td><?php echo $cl['country_name'] ?></td>
+                    <td><?php echo $cl['destination_name'] ?></td>
                     <td><?php echo $cl['date'] ?></td>
                     <td><?php echo $cl['prix'] ?></td>
                     <td><?php echo $cl['email'] ?></td>
+                    <td><?php echo $cl['num_passport'] ?></td>
 
 
 
 
 
                     <td>
-                        <a class='btn btn-success' href="update_page.php?updatedid=<?= $cl['id_reservation'] ?> ">Edit</a>
-                        <a class='btn btn-danger' href="delet_bookingforuser.php?deletedid=<?= $cl['id_reservation'] ?>">Delete</a>
+                        <a class='btn btn-success' href="update_page.php?updatedid=<?= $cl['id_reservation'] ?>  ">Edit</a>
+                        <a class='btn btn-danger' href="delete_booking.php?deletedid='<?= $cl['id_reservation'] ?>'">Delete</a>
                     </td>
                 </tr>
 

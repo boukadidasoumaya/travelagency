@@ -1,5 +1,5 @@
 <?php
-require('../countriesfinal/bdd.php');
+require_once('../countriesfinal/bdd.php');
 $cnx = CBD::getInstance();
 
 class users
@@ -163,9 +163,7 @@ class users
             $new_info['passport'],
         ]);
 
-        if ($stmt->rowCount() == 0) {
-            throw new Exception("User with ID $user_id does not exist.");
-        }
+       
     }
     public function update_userprofil($user_id, $new_info)
     {
@@ -177,16 +175,15 @@ class users
         $stmt->execute([
             $new_info['user_name'],
             $new_info['user_last_name'],
-            $new_info['email'],
+           
             $new_info['birthday'],
+            $new_info['email'],
             $new_info['country'],
             $new_info['city'],
             $new_info['passport'],
         ]);
 
-        if ($stmt->rowCount() == 0) {
-            throw new Exception("User with ID $user_id does not exist.");
-        }
+        
     }
 
     public function delete_user($user_id)
@@ -195,4 +192,10 @@ class users
         $stmt = $this->cnx->prepare($query);
         $stmt->execute([$user_id]);
     }
+    public function update_img($user_id,$vars){
+        $sql="UPDATE `user` SET `photo_profil`='$vars' WHERE `user_id`=$user_id";
+        $cnx=CBD::getInstance();
+        $result=$cnx->query($sql);
+    }
+
 }

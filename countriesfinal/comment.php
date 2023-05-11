@@ -69,12 +69,7 @@ $this->data=$response->fetch(PDO::FETCH_ASSOC);
  
     $query="INSERT INTO `comments` ( `content`, `comment_post_ID`,`user_id` ) VALUES ('$content ', '$comment_post_ID','$id');";
   
-   // if($this->validate_input($input) == true) {
-     // if( isset($this->data[$comment_post_ID]) == false ) {
-       // $this->data[$comment_post_ID] = array();
-      //}
-      
-     /*  $input['id'] = uniqid('comment_'); */
+  
 $cnx= CBD::getInstance();
      $response=$cnx->query($query);
      if ($response){
@@ -112,34 +107,14 @@ $cnx= CBD::getInstance();
 }
   
   
-  private function validate_input($input) {
-    $input['email'] = filter_var($input['email'], FILTER_SANITIZE_EMAIL);
-    if (filter_var($input['email'], FILTER_VALIDATE_EMAIL) == false) {
-      return false;
-    }
-    
-    $input['comment_author'] = substr($input['comment_author'], 0, 70);
-    if($this->check_string($input['comment_author']) == false) {
-      return false;
-    }
-    $input['comment_author'] = htmlentities($input['comment_author']);
 
-    $input['comment'] = substr($input['comment'], 0, 300);
-    if($this->check_string($input['comment'], 5) == false) {
-      return false;
-    }
-    $input['comment'] = htmlentities($input['comment']);
-
-    $input['comment_post_ID'] = filter_var($input['comment_post_ID'], FILTER_VALIDATE_INT);  
-    if (filter_var($input['comment_post_ID'], FILTER_VALIDATE_INT) == false) {
-      return false;
-    }
-
-    return true;
-  }
-  
   private function check_string($string, $min_size = 1) {
     return strlen(trim($string)) >= $min_size;
+  }
+  function delete_user_comment($user_id){
+
+    $sql="DELETE FROM `comments` WHERE `user_id`=$user_id";
+
   }
 }
 

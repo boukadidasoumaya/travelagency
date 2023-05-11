@@ -63,10 +63,11 @@ $countries = $countries->get_countries();
       <?php if ($_SESSION['user_name'] == 'admin') {
       ?>
         <div class="form-group">
-          <input type="hidden" name="country_id" class="form-control" id="destination" placeholder="change destination" value="<?= $res['country_id'] ?>">
+          <input type="hidden" name="country_id" class="form-control" id="destination" placeholder="change destination" value="<?= $res['destination'] ?>">
+          <input type="hidden" name="country_name" class="form-control" id="destination_name" placeholder="change destination" value="<?= $res['destination_name'] ?>">
           <label for="destination">Destination</label>
           <select name="destination" class="form-control">
-            <option value="<?= $res['country_name'] ?>"><?= $res['country_name'] ?></option>
+            <option value="<?= $res['destination_name'] ?>"><?= $res['destination_name'] ?></option>
             <?php foreach ($countries as $c) : ?>
               <option value="<?= $c['country_name'] ?>"><?= $c['country_name'] ?> </option>
             <?php endforeach ?>
@@ -74,8 +75,9 @@ $countries = $countries->get_countries();
         </div>
       <?php  } else {  ?> <div class="form-group">
           <label for="destination">Destination</label>
-          <input type="hidden" name="country_id" class="form-control" id="destination" placeholder="change destination" value="<?= $res['country_id'] ?>">
-          <input type="text" class="form-control" name="destination" class="form-control" value="<?= $res['country_name'] ?>" disabled>
+          <input type="hidden" name="country_id" class="form-control" id="destination" placeholder="change destination" value="<?= $res['destination'] ?>">
+          <input type="hidden" name="country_name" class="form-control" id="destination_name" placeholder="change destination" value="<?= $res['destination_name'] ?>">
+          <input type="text" class="form-control" name="destination" class="form-control" value="<?= $res['destination_name']  ?>" disabled>
         </div>
       <?php } ?>
 
@@ -93,10 +95,15 @@ $countries = $countries->get_countries();
         <label for="date">Date</label>
         <input type="date" class="form-control" name="date" value="<?= $res['date'] ?>" class="form-control" id="date" placeholder="change trip date">
       </div>
-      <div class="form-group">
+      <?php if ($_SESSION['user_name'] != 'admin') {
+      ?>
+       <div class="form-group">
+        
         <label for="Passwport">PASSPORT</label>
         <input type="text" class="form-control" name="passport" value="<?= $res['num_passport'] ?>">
       </div>
+      <?php  } ?>
+      
 
 
 

@@ -8,4 +8,4 @@ $id = $_GET['id'];
 
 $db->update_userprofil($_GET['id'], $_POST);
 
-header('Location: profil.php?id=' . $id . '');
+header('Location: profil.php?id='. $id .'');

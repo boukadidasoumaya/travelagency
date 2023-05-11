@@ -1,14 +1,4 @@
-/**
-* Template Name: Squadfree
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -604,15 +594,21 @@ section {
   bottom: 0;
   background: rgba(255, 255, 255, 0.005);
   z-index: 9;
+  background-color: #ffffff;
+  opacity: 0.8;
+ 
 }
 
 .about .container {
   position: relative;
   z-index: 10;
+
+ 
 }
 
 .about .content {
   padding: 30px 30px 30px 0;
+ 
 }
 
 .about .content h3 {
@@ -627,6 +623,7 @@ section {
 .about .content p {
   margin-bottom: 30px;
   font-family:tahoma;
+  
 
 }
 
@@ -670,7 +667,7 @@ section {
 
 .about .icon-boxes .icon-box p {
   font-size: 20px;
-  color: #fcfcfc;
+  color: #686262;
   font-family:tahoma;
 }
 
@@ -689,9 +686,9 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-/*.services{
-  background: url("../img/services.jpg");
-}*/
+.services{
+  background-size: cover;
+}
 .services .icon-box {
   padding: 30px;
   position: relative;

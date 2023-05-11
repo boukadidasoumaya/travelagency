@@ -5,6 +5,7 @@ if (!isset($_SESSION['user_name'])) {
     header('location:../login/sign in.php');
     $_SESSION['booking_msg'] = 'You have to sign in so that you can book a trip';
 }
+
 ?>
 
 <div class="container ">
@@ -14,17 +15,40 @@ if (!isset($_SESSION['user_name'])) {
         </div>
         <div class="card-body">
             <?php
-            if (isset($_GET['booking'])) {
-                if ($_GET['booking'] == true) {
+            if ($_SESSION['user_name'] != 'admin') {
+                if (isset($_SESSION['booking']) && !isset($_SESSION['error_date'])) {
+
             ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        Booking saved !
+                        <?php
+
+                        echo  $_SESSION['booking'];
+                        unset($_SESSION['booking']); ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-            <?php
+                <?php
+                } else if (isset($_SESSION['error_date'])) { ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?php echo  $_SESSION['error_date'];
+                        unset($_SESSION['error_date']); ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php
                 }
+            } else {
+                if (isset($_SESSION['error_date'])) { ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?php echo  'This User already have a reservation in this date!';
+                        unset($_SESSION['error_date']); ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+            <?php }
             }
             ?>
             <form action="save_booking.php" method="POST">
@@ -73,7 +97,7 @@ if (!isset($_SESSION['user_name'])) {
 
                             if ($result->rowCount() > 0) {
                                 while ($row = $result->fetch()) {
-                                    echo "<option value=\"" . $row["country_id"] .
+                                    echo "<option value=\"" . $row["country_name"] . ":" . $row["country_id"] .
                                         "\" data-price-trip=\"" . $row["price_trip"] .
                                         "\" data-price-car=\"" . $row["price_car"] .
                                         "\" data-tour-guide=\"" . $row["price_tour_guide"] . "
@@ -113,10 +137,12 @@ if (!isset($_SESSION['user_name'])) {
 
                     <button type="button" class="btn btn-secondary" onclick="toForm1()">Previous</button>
                     <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+
                 </div>
             </form>
         </div>
     </div>
+
 </div>
 
 

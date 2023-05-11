@@ -1,6 +1,7 @@
 <?php if (!isset($_SESSION)) {
     session_start();
-} $img="../countriesfinal/img/";
+}
+$img = "../countriesfinal/img/";
 
 ?>
 
@@ -33,9 +34,8 @@ include_once '../fragments/barre.php'
         <div class="header-info-par">
             <h1 class="typewrite" data-period="2000" data-type='["Travel brings power and love back into your life.","Travel far, travel wide, travel often.","Adventure Awaits, go find it."]'>
             </h1>
-            <p>Traveling is a wonderful experience that allows us to explore new places, cultures, and traditions.
-                It broadens our horizons and exposes us to different perspectives and ways of life.</p>
-            <a href="#" class="a">Read More</a>
+
+            <a href="#welcome" class="a">Read More</a>
         </div>
         <div class="video">
             <video id="video" autoplay loop muted>
@@ -59,7 +59,7 @@ include_once '../fragments/barre.php'
         </div>
         <div class="content">
             <div class="article">
-                <h2> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                <h2> Welcome to our travel agency, where we believe that every journey is an adventure.
 
 
                 </h2>
@@ -72,10 +72,10 @@ include_once '../fragments/barre.php'
                 </p>
 
                 </p>
-                <a href="" class="button">Let us introduce ourselves</a>
+                <a href="#team" class="button">Let us introduce ourselves</a>
             </div>
             <div class="image-section">
-                <img src="images/travel.jpg">
+                <img src="images/pic5.jpg">
             </div>
         </div>
     </div>
@@ -83,14 +83,79 @@ include_once '../fragments/barre.php'
 <!--------about section ends-->
 <?php
 ?>
+
+<!-------Welcome-text section------->
+<div class="welcome" id="welcome">
+    <section id="welcome-text">
+        <div class="container">
+            <h2>The Official Travel Site of the Think travel agency</h2>
+            <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
+        </div>
+        <?php
+        require('../countriesfinal/countries.php');
+        $db = new countries();
+        $countries = $db->get_countries();
+        ?>
+
+
+    </section>
+    <!-- Slides Section Start-->
+    <section id="slides-par">
+        <div class="container">
+            <a href="../countriesfinal/new york.php">
+                <div class="slides">
+
+                    <?php
+
+                    foreach ($countries as $c) :
+                        $id = $c['country_id']
+                    ?>
+
+                        <div class="slide_1 slide_0 " id="id" name="id"> <a href='../countriesfinal/prototype.php?id=<?= $c['country_id'] ?>'>
+                                <img class="slide_1 " src="<?php echo $img . $c['country_id']."/"."imgfolder" . $c['country_name'] . $c['photo_for_home']; ?>"></a>
+
+
+                            <div class="slide-info">
+                                <p><?php echo $c['country_name']; ?>
+
+
+
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    <?php endforeach;  ?>
+
+                    <?php   ?>
+
+
+
+                </div>
+            </a>
+            <div class="addedit"><?php if (isset($_SESSION['user_name']) && $_SESSION['user_name'] == 'admin') {
+
+                                        echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
+                <input type="hidden" name="id" value="">
+                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>');
+                                    } ?>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- Slides Section ends-->
+
 <!----------meet us-------->
 <div class="responsive-container-block outer-container">
-    <div class="responsive-container-block inner-container">
+    <div class="responsive-container-block inner-container" id="team">
         <p class="text-blk section-head-text">
             Meet Our Expert Instructors
         </p>
         <p class="text-blk section-subhead-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Our mission is to help you create unforgettable memories through personalized travel experiences.
+
         </p>
         <div class="responsive-container-block">
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
@@ -177,10 +242,10 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="images/bali.jpg">
+                        <img class="team-img" src="images/arij.jpg">
                     </div>
                     <p class="text-blk name">
-                        Maxwell Doe
+                        Zaidi Arij
                     </p>
                     <p class="text-blk position">
                         Instructor
@@ -204,10 +269,10 @@ include_once '../fragments/barre.php'
             <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                 <div class="team-card">
                     <div class="img-wrapper">
-                        <img class="team-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png">
+                        <img class="team-img" src="images/ahmed.jpg">
                     </div>
                     <p class="text-blk name">
-                        Maxwell Doe
+                      Trigui Ahmed
                     </p>
                     <p class="text-blk position">
                         Instructor
@@ -231,81 +296,15 @@ include_once '../fragments/barre.php'
         </div>
     </div>
 </div>
-<!-------Welcome-text section------->
-<div class="welcome" id="welcome">
-    <section id="welcome-text">
-        <div class="container">
-            <h2>The Official Travel Site of the Think travel agency</h2>
-            <p>when an unknown printer took a gallery of type and scrambled it to make a type speicmen</p>
-        </div>
-        <?php
-        require('../countriesfinal/countries.php');
-        $db = new countries();
-        $countries = $db->get_countries();
-        ?>
-
-
-    </section>
-    <!-- Slides Section Start-->
-    <section id="slides-par">
-        <div class="container">
-            <a href="../countriesfinal/new york.php">
-                <div class="slides">
-
-                    <?php
-
-                    foreach ($countries as $c) :
-                        $id = $c['country_id'];
-
-?>
-
-                        <div class="slide_1 slide_0 " id="id" name="id"> <a href='../countriesfinal/prototype.php?id=<?= $c['country_id'] ?>'>
-                            <img class="slide_1 " src="<?php echo $img.$c['country_id']."/imgfolder".$c['country_name'].$c['photo_for_home']; ?>"></a>
-
-
-                            <div class="slide-info">
-                                <p><?php echo $c['country_name']; ?>
-
-
-
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    <?php endforeach;  ?>
-
-                    <?php   ?>
-
-
-
-                </div>
-            </a>
-            <div class="addedit"><?php if (isset($_SESSION['user_name']) && $_SESSION['user_name'] == 'admin') {
-
-                                        echo ('<button id="btnadd" class="btnadd" onclick="window.location.href=\'../countriesfinal/countryform.php\'">Add a trip <i class="fa-solid fa-plus fa-beat"></i></button>
-                <input type="hidden" name="id" value="">
-                <button id="btnedit" class="btnedit" onclick="window.location.href=\'../countriesfinal/table_edit.php\'">Edit a trip <i class="fa-solid fa-pen-to-square fa-beat"></i></button>');
-                                    } ?>
-            </div>
-        </div>
-    </section>
-</div>
-<!-- Slides Section ends-->
-
-<!--------book now starts----->
-
-<!--------book now section ends------->
 
 <?php include_once '../fragments/footer.php' ?>
 
 
 
+<script src="../fragments/js/jquery-3.1.1.min.js"></script>
 
 <script src="js/home.js"></script>
-
+<script src="js/owl.carousel.min.js"></script>
 
 
 </body>

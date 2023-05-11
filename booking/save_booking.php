@@ -1,5 +1,8 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
 require('fpdf/fpdf.php');
 
 class PDF extends FPDF
@@ -25,6 +28,9 @@ class PDF extends FPDF
     // Page footer
     function Footer()
     {
+        $this->SetY(-50);
+
+        $this->Cell(0, 10, 'Note : Please contact us on site to confirm your reservation and proceed with payment.');
 
         // Position at 1.5 cm from bottom
         $this->SetY(-15);
@@ -41,17 +47,19 @@ class PDF extends FPDF
 require('bdd.php');
 require('booking_model.php');
 
+
+$user = new Booking();
+$user = $user->get_users_byid($_SESSION['user_id']);
+$email = $user['email'];
+
 $conn = CBD::getInstance();
 
 $booking = new Booking($conn);
 
-$booking->setTripDate($_POST['trip-date']);
-$booking->setPrice($_POST['price']);
-$booking->setUserId($_POST['name']);
-$booking->setDestination($_POST['destination']);
 
 // save to database
-$booking->createBooking($_POST);
+
+
 
 // prepare data for PDF file
 $sql = "SELECT * FROM user where user_id=" . $_POST['user'] . "";
@@ -59,10 +67,10 @@ $result = $conn->query($sql);
 
 $user = $result->fetchObject();
 
-$sql = "SELECT * FROM country where country_id=" . $_POST['destination'] . "";
-$result = $conn->query($sql);
+/* $sql = "SELECT * FROM country where country_id=" . $_POST['destination'] . "";
+$result = $conn->query($sql); */
 
-$destination = $result->fetchObject();
+$destination = $_POST['destination'];
 
 // Instantiation of FPDF class
 $pdf = new PDF();
@@ -78,11 +86,16 @@ $pdf->Ln();
 $pdf->Cell(40, 10, 'Passport Number : ' . $user->num_passport);
 $pdf->Ln();
 
-$pdf->Cell(40, 10, 'Destination : ' . $destination->country_name);
+$pdf->Cell(40, 10, 'Destination : ' . $destination);
 $pdf->Ln();
-
+$pdf->Cell(40, 10, 'Date : ' . $_POST['trip-date']);
+$pdf->Ln();
 $pdf->Cell(40, 10, 'Total Cost Price : ' . $_POST['price']);
 $pdf->Ln();
+
+
+
+
 
 // Prepare PDF data
 $pdfContent = $pdf->Output('', 'S');
@@ -91,7 +104,7 @@ $pdfName = 'receipt.pdf';
 
 
 $from = 'think.travel.agency.project@gmail.com';
-$to = 'soumaya.boukadida@insat.ucar.tn';
+$to = $email;
 
 
 $subject = 'Booking Receipt';
@@ -116,10 +129,20 @@ $message .= "\r\n$pdfData\r\n";
 $message .= "--boundary--\r\n";
 
 
-if (mail($to, $subject, $message, $headers)) {
 
-    header('Location: booking.php');
+echo $booking->check_date($_POST);
+echo $_POST['user'];
+if ($booking->check_date($_POST) == true) {
+    $_SESSION['error_date'] = 'You already have a reservation in this date';
+
+    header("Location: booking.php");
 } else {
+    $booking->createBooking($_POST);
+    if (mail($to, $subject, $message, $headers)) {
+        $_SESSION['booking'] = 'Check your email you will find your receit.Enjoy!';
+        header('Location: booking.php');
+    } else {
 
-    echo 'Error sending email.';
+        echo 'Error sending email.';
+    }
 }

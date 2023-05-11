@@ -34,6 +34,7 @@ include_once '../fragments/barrehead.php';
                     <th>Price trip</th>
                     <th>Price tour guide</th>
                     <th>Photo for home</th>
+                    <th>Changes</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,6 +50,7 @@ include_once '../fragments/barrehead.php';
                         <td><?= $c['currency'] ?></td>
                         <td><?= $c['history'] ?></td>
                         <td><?= $c['price_car'] ?></td>
+                        <td><?= $c['price_trip'] ?></td>
                         <td><?= $c['price_tour_guide'] ?></td>
                         <td><?= $c['photo_for_home'] ?></td>
 

@@ -34,14 +34,14 @@ if (!isset($_SESSION)) {
 
 <body>
     <nav>
-        <div class="container1 ">
-            <div class="menu-par ">
+        <div class="container1">
+            <div class="menu-par">
                 <div class="logo-par ">
                     <a href="../home/home.php">
                         <img src="../fragments/images/think travel1.png" alt="logo" class="logo">
                     </a>
                 </div>
-                <div class="nav ">
+                <div class="nav">
                     <ul>
                         <li><a class="menu-hover" href="../home/home.php">Home</a></li>
                         <li><a class="menu-hover" href="../home/home.php#about">About</a></li>
@@ -51,12 +51,11 @@ if (!isset($_SESSION)) {
 
                         <?php
 
-
                         if (isset($_SESSION)  && isset($_SESSION['user_name'])) {
 
                             if ($_SESSION['user_name'] == 'admin') {
                                 echo '<li><a class="menu-hover" href="../login/edit_accounts.php">Edit_accounts</a></li>
-                                <li><a class="menu-hover" href="../login/edit_bookingadmin.php">Edit_booking</a></li>
+                                <li><a class="menu-hover" href="../booking/edit_bookingadmin.php">Edit_booking</a></li>
                                 <li><a class="menu-hover" href="../login/log_out.php?logout=1">Log out </a>
                                 
                                 </li>';

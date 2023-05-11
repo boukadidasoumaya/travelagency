@@ -7,6 +7,7 @@ if (!isset($_SESSION)) {
 $c=$db1->findById($_GET['id']);
 foreach ($c as $vars ):
 $location="../countriesfinal/img/";
+$loc="../login/images/";
   
 
       $country_id=$vars['country_id'];
@@ -24,7 +25,7 @@ $location="../countriesfinal/img/";
                 $contact_src=$location.'/'.$country_id.'/'.'contact_src'.$country_name."".$vars['contact_src'];
                  $pic1=$location.'/'.$country_id.'/'.'pic1'.$country_name."".$vars['pic1'];
                  $pic2=$location.'/'.$country_id.'/'.'pic2'.$country_name."".$vars['pic2'];
-                 $pic3=$location.'/'.$country_id.'/'.'pic3'.$country_name."".$vars['pic3'];var_dump($about_src);
+                 $pic3=$location.'/'.$country_id.'/'.'pic3'.$country_name."".$vars['pic3'];
                  
 endforeach; 
 
@@ -327,7 +328,7 @@ endforeach;
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                         <?php echo($comment[ 'content']); ?>                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                       </p>
-                      <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                      <img src="<?=$loc.'fileInput'.$comment['user_id'].$comment['photo_profil']?>"class="testimonial-img" alt="">
                       <h3><?php echo($comment[ 'user_name']. '  '.$comment[ 'user_last_name']);
                         {if ($_SESSION['user_name']=="admin" ||$_SESSION[ 'user_name']==$comment[ 'user_name'] ){
                   
@@ -348,8 +349,7 @@ endforeach;
                   <p id="comment_' .$comment['com_id'].'; ?>">
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     '.$comment[ 'content'].');                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  </p><img src="'.$loc.'fileInput'.$comment['user_id'].$comment['photo_profil'].'"class="testimonial-img" >
                   <h3>'.$comment[ 'user_name'].'  '.$comment[ 'user_last_name']);?></h3>
                     </div>
                   </div><!-- End testimonial item -->
@@ -444,7 +444,16 @@ endforeach;
               </div>
       
               <div class="row">
-      
+              <div class="col-lg-6">
+
+<iframe src="<?= $vars['iframe'] ?>"></iframe>
+
+
+</div>
+
+
+
+<div class="col-lg-6">
                
       <!-- Wrapper container -->
       <div class="container py-4" name="commentsection" class="commentsection" id="commentsection">

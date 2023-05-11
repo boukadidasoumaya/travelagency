@@ -266,7 +266,17 @@
     }
   </style>
 </head>
-
+<?php
+function generateUniqueId() {
+  $prefix = 'myapp_'; // préfixe pour éviter les collisions avec d'autres identifiants
+  $uniqueId = uniqid($prefix, true); // génère un identifiant unique basé sur le préfixe et l'heure actuelle en microsecondes
+  $uniqueId = str_replace('.', '', $uniqueId); // supprime les points pour obtenir uniquement des chiffres
+  $uniqueId = substr($uniqueId, -8); // ne garde que les 8 derniers chiffres
+  $uniqueId = (int)$uniqueId; // convertit la chaîne de caractères en nombre entier
+  
+  return $uniqueId;
+}
+?>
 <body>
   <div class="testbox">
     <form action='post_country.php' method='post' role='form' enctype="multipart/form-data">
@@ -281,13 +291,9 @@
           <input id="countryname" type="text" name="countryname" required/>
         </div>
         <div class="item">
-          <label for="country_id">id #<span>*</span></label>
-          <input id="country_id" type="text" name="country_id" />
+          <input id="country_id" type="text" name="country_id" hidden value="<?= generateUniqueId();?>" />
         </div>
-        <div class="item">
-          <label for="expectation">expectation<span>*</span></label>
-          <input id="expectation" name="expectation" />
-        </div>
+       
         <div class="item">
           <label for="population">population <span>*</span></label>
           <input id="population" name="population" />
@@ -297,7 +303,7 @@
           <input id="climate" type="text" name="climate"required />
         </div>
         <div class="item">
-          <label for="activity">currency #<span>*</span></label>
+          <label for="activity">currency<span>*</span></label>
           <input id="currency" type="text" name="currency" required/>
         </div>
         <div class="item">
