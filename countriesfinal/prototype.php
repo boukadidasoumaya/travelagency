@@ -6,26 +6,26 @@ if (!isset($_SESSION)) {
  $db1=new countries();
 $c=$db1->findById($_GET['id']);
 foreach ($c as $vars ):
-
+$location="../countriesfinal/img/";
   
 
       $country_id=$vars['country_id'];
        $country_name=$vars['country_name'];
-       var_dump($country_name);
 
         $population=$vars['population'];
 
          $climate=$vars['climate'];
           $currency=$vars['currency'];
            $history=$vars['history'];
-            $hero_src='../countriesfinal/img/'.$vars['hero_src'];
-             $cta_src='../countriesfinal/img/'.$vars['cta_src'];;
-            $about_src='../img/'.$vars['about_src'];
-               $services_src='../countriesfinal/img/'.$vars['services_src'];
-                $contact_src='../countriesfinal/img/'.$vars['contact_src'];;
-                 $pic1='../countriesfinal/img/'.$vars['pic1'];;
-                 $pic2='../countriesfinal/img/'.$vars['pic2'];;
-                 $pic3='../countriesfinal/img/'.$vars['pic3'];;
+            $hero_src=$location.'/'.$country_id.'/'.'hero_src'.$country_name."".$vars['hero_src'];
+             $cta_src=$location.'/'.$country_id.'/'.'cta_src'.$country_name."".$vars['cta_src'];
+            $about_src=$location.'/'.$country_id.'/'.'about_src'.$country_name."".$vars['about_src'];;
+               $services_src=$location.'/'.$country_id.'/'.'services_src'.$country_name."".$vars['services_src'];
+                $contact_src=$location.'/'.$country_id.'/'.'contact_src'.$country_name."".$vars['contact_src'];
+                 $pic1=$location.'/'.$country_id.'/'.'pic1'.$country_name."".$vars['pic1'];
+                 $pic2=$location.'/'.$country_id.'/'.'pic2'.$country_name."".$vars['pic2'];
+                 $pic3=$location.'/'.$country_id.'/'.'pic3'.$country_name."".$vars['pic3'];var_dump($about_src);
+                 
 endforeach; 
 
                /*  $country_id='216';
@@ -144,7 +144,7 @@ endforeach;
         <main id="main">
       
           <!-- ======= About Section ======= -->
-          <section id="about" class="about" name="about" style="background:url('img/<?= $about_src ?>') ">
+          <section id="about" class="about" name="about"  >
             <div class="container">
       
               <div class="row no-gutters">
@@ -502,77 +502,10 @@ endforeach;
       
         </main><!-- End #main -->
       
-        <!-- ======= Footer ======= -->
-        <footer id="footer">
-          <div class="footer-top">
-            <div class="container">
-              <div class="row">
+        <?php include_once '../fragments/footer.php';?>
       
-                <div class="col-lg-4 col-md-6">
-                  <div class="footer-info">
-                    <h3>Squadfree</h3>
-                    <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
-                    <p>
-                      A108 Adam Street <br>
-                      NY 535022, USA<br><br>
-                      <strong>Phone:</strong> +1 5589 55488 55<br>
-                      <strong>Email:</strong> info@example.com<br>
-                    </p>
-                    <div class="social-links mt-3">
-                      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="col-lg-2 col-md-6 footer-links">
-                  <h4>Useful Links</h4>
-                  <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                  </ul>
-                </div>
-      
-                <div class="col-lg-2 col-md-6 footer-links">
-                  <h4>Our Services</h4>
-                  <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">hotel reservation</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">plane tickets</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">customer service</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">refunds</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">car rental service</a></li>
-                  </ul>
-                </div>
-      
-                <div class="col-lg-4 col-md-6 footer-newsletter">
-                  <h4>Our Newsletter</h4>
-                  <p>subscribe to our new letter to receive new offers</p>
-                  <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="Subscribe">
-                  </form>
-      
-                </div>
-      
-              </div>
-            </div>
-          </div>
-      
-          <div class="container">
-            <div class="copyright">
-              &copy; Copyright <strong><span>Squadfree</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-              
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-          </div>
-        </footer><!-- End Footer -->
+         
+          <!-- End Footer -->
       
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
       

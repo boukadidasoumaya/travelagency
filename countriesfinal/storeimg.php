@@ -92,13 +92,26 @@ if ($uploadOk == 0) {
         echo "<center>Sorry, there was an error uploading your file.</font></center>";
     }} */
 return $uploadOk;}
-function deleteimg($img){
-    if (file_exists($this->target_file)) {
-        unlink($this->location.$img);
+function deleteimg($id){
+    if (! is_dir($this->location)) {
+        throw new InvalidArgumentException("$this->location must be a directory");
+    }
+    if (substr($this->location, strlen($this->location) - 1, 1) != '/') {
+        $this->location .= '/';
+    }
+    $files = glob($this->location . '*', GLOB_MARK);
+    foreach ($files as $file) {
+        if (is_dir($file)) {
+            self::deleteimg($file);
+        } else {
+            unlink($file);
+        }
+    }
+    rmdir($this->location);
+}
 }
 
-}
-}
+
 ?>
 </body>
 </html> 

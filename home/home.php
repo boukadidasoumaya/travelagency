@@ -255,11 +255,12 @@ include_once '../fragments/barre.php'
                     <?php
 
                     foreach ($countries as $c) :
-                        $id = $c['country_id']
+                        $id = $c['country_id'];
+
 ?>
 
                         <div class="slide_1 slide_0 " id="id" name="id"> <a href='../countriesfinal/prototype.php?id=<?= $c['country_id'] ?>'>
-                            <img class="slide_1 " src="<?php echo $img."imgfolder".$c['country_name'].$c['photo_for_home']; ?>"></a>
+                            <img class="slide_1 " src="<?php echo $img.$c['country_id']."/imgfolder".$c['country_name'].$c['photo_for_home']; ?>"></a>
 
 
                             <div class="slide-info">

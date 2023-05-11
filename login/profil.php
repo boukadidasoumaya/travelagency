@@ -1,5 +1,6 @@
 <?php if (!isset($_SESSION)) {
     session_start();
+    $location='images/';
 }
 include_once 'users.php';
 $user = new users();
@@ -35,9 +36,10 @@ $reservation = $reservation->get_reservation($_GET['id']);
             <div class="container rounded bg-white ">
                 <div class="row">
                     <div class="col-md-3 border-right">
-                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="<?= $user['photo_profil'] ?>">
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="<?= $location.$user['user_id'].$user['photo_profil'] ?>">
                             <label for="fileInput" id="changePhotoIcon"><i class="fa-solid fa-pen-to-square"></i></label>
-                            <input type="file" id="fileInput" name="photo_profil" style="display: none;"> <span class="font-weight-bold"><?= $user['user_name'] ?></span>
+                            <form action="edit_profilimg.php?id=<?= $_GET['id']  ?>" method="post">
+                            <input type="file" id="fileInput" name="photo_profil" style="display: none;"> <span class="font-weight-bold" type ="submit"><?= $user['user_name']?></span>
                         </div>
                     </div>
                     <div class="col-md-5 border-right">
