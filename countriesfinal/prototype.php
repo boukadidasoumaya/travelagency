@@ -29,21 +29,7 @@ $loc="../login/images/";
                  
 endforeach; 
 
-               /*  $country_id='216';
-                 $country_name='JLOH';
-                  $population=421212; 
-          
-                  $climate='42';
-                    $currency='545';
-                     $history='../countriesfinal/img/bali1.jpg';
-                      $hero_src='../countriesfinal/img/bali1.jpg';
-                       $cta_src='../countriesfinal/img/bali1.jpg';
-                      $about_src='../img/bali2.jpg';
-                         $services_src='../countriesfinal/img/bali1.jpg';
-                          $contact_src='../countriesfinal/img/bali1.jpg';
-                           $pic1='../countriesfinal/img/bali1.jpg';
-                           $pic2='../countriesfinal/img/bali1.jpg';
-                           $pic3='../countriesfinal/img/bali1.jpg';  */
+             
                 ?>
 <style>
    #hero {
@@ -111,16 +97,10 @@ endforeach;
         <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
         
       
-        <!-- Template Main CSS File -->
+   
         <link href="assets/css/style.css" rel="stylesheet">
       
-        <!-- =======================================================
-        * Template Name: Squadfree
-        * Updated: Mar 10 2023 with Bootstrap v5.2.3
-        * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-        * Author: BootstrapMade.com
-        * License: https://bootstrapmade.com/license/
-        ======================================================== -->
+      
       </head>
       
       <body>
@@ -136,7 +116,7 @@ endforeach;
         <!-- ======= Hero Section ======= -->
         <section id="hero">
           <div class="hero-container" data-aos="fade-up" >
-            <h1>Explore '<?=  $country_name ?> '</h1>
+            <h1>Explore <?=  $country_name ?> </h1>
             <h2>a journey you will never forget</h2>
             <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
           </div>

@@ -15,3 +15,4 @@
     <link type="text/css" rel="stylesheet" href="../fragments/barre.css">
     <script src="../fragments/js/jquery-3.1.1.min.js"></script>
     <script src="../fragments/js/barre.js"></script>
+    <script src="js/owl.carousel.min.js"></script>

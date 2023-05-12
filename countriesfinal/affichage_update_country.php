@@ -319,15 +319,12 @@ $country_selected = $db->findByIdedit($_GET['id']);
             <label for="fname"> pricetourguide<span>*</span></label>
             <input id="pricetg" name="pricetg" value='<?= $country_selected['price_tour_guide'] ?>'>
           </div>
-          <div>
-            <label for="file">Choose link for maps</label>
-            <input type="link" id="iframe" name="iframe" multiple>
-          </div>
+          
          
            
       </fieldset>
       <div class="btn-block">
-        <button type="submit" href="/" Submit>add country</button>
+        <button type="submit" href="/" Submit>Edit country</button>
       </div>
     </form>
   </div>

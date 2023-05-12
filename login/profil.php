@@ -72,7 +72,7 @@ $reservation = $reservation->get_reservation($_GET['id']);
                                 <div class="col-md-12"><label class="labels">Email</label><input type="text" name="email" class="form-control" value="<?= $user['email'] ?>"></div>
 
                                 <div class="col-md-12"><label class="labels">Num Passport</label><input type="text" class="form-control" name="passport" value="<?= $user['num_passport'] ?>"></div>
-                                <div class="col-md-12"><label class="labels">Your Reservation</label> <textarea type="text" class="form-control" value=""><?php foreach ($reservation as $r) : ?> <?= $r['country_name'] ?> <?= $r['date'] ?> <?php endforeach; ?></textarea></div>
+                                <div class="col-md-12"><label class="labels">Your Reservation</label> <textarea type="text" class="form-control" value=""><?php foreach ($reservation as $r) : ?> <?= $r['destination_name'] ?> <?= $r['date'] ?> <?php endforeach; ?></textarea></div>
                                 <div class="col-md-12 "><a href="../booking/edit_booking.php?id=<?= $_GET['id'] ?>"> Edit reservation<a href=></a></div>
 
                             </div>

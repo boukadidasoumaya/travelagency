@@ -6,6 +6,9 @@ if (!isset($_SESSION)) {
 $db = new users();
 $id = $_GET['id'];
 
-$db->update_userprofil($_GET['id'], $_POST);
-
-header('Location: profil.php?id='. $id .'');
+$db->update_userprofil($id, $_POST);
+if ($_SESSION['user_name']=='admin'){
+header('Location: edit_accounts.php');
+}
+else
+header('Location: profil.php?id=' . $id . '');

@@ -99,7 +99,6 @@ class users
 
 
         $query = "SELECT * from booking
-        inner join country on booking.destination=country.country_id
         inner join user on booking.user_id=user.user_id
         where booking.user_id=?;";
         $response = $this->cnx->prepare($query);
@@ -175,7 +174,6 @@ class users
         $stmt->execute([
             $new_info['user_name'],
             $new_info['user_last_name'],
-           
             $new_info['birthday'],
             $new_info['email'],
             $new_info['country'],
